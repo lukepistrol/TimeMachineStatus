@@ -1,0 +1,36 @@
+//
+//  _InProgressState.swift
+//  TimeMachineStatus
+//
+//  Created by Lukas Pistrol on 2023-11-10.
+//
+//  Copyright © 2023 Lukas Pistrol. All rights reserved.
+//
+//  See LICENSE.md for license information.
+//  
+
+import Foundation
+
+extension BackupState {
+    class _InProgressState: _BaseState {
+        enum CodingKeys: String, CodingKey {
+            case stateChange = "DateOfStateChange"
+            case destinationMountPoint = "DestinationMountPoint"
+        }
+
+        required init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            let stateChangeString = try container.decode(String.self, forKey: .stateChange)
+            self.stateChange = if let date = _dateFormatter.date(from: stateChangeString) {
+                date
+            } else {
+                throw BackupStateError.couldNotConvertStringToDate(string: stateChangeString)
+            }
+            self.destinationMountPoint = try container.decode(String.self, forKey: .destinationMountPoint)
+            try super.init(from: decoder)
+        }
+
+        let stateChange: Date
+        let destinationMountPoint: String
+    }
+}
