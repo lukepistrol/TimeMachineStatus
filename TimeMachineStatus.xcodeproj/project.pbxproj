@@ -44,23 +44,6 @@
 		28A002702AFC342100E2A01E /* Starting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026F2AFC342100E2A01E /* Starting.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		28A002292AFBBFC400E2A01E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 28A0020F2AFBBFC300E2A01E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 28A002162AFBBFC300E2A01E;
-			remoteInfo = TimeMachineStatus;
-		};
-		28A002332AFBBFC400E2A01E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 28A0020F2AFBBFC300E2A01E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 28A002162AFBBFC300E2A01E;
-			remoteInfo = TimeMachineStatus;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2818224E2AFCF8500067E564 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		281822502AFCF8750067E564 /* DestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
@@ -82,8 +65,6 @@
 		28A0021E2AFBBFC400E2A01E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28A002212AFBBFC400E2A01E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		28A002232AFBBFC400E2A01E /* TimeMachineStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeMachineStatus.entitlements; sourceTree = "<group>"; };
-		28A002282AFBBFC400E2A01E /* TimeMachineStatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeMachineStatusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		28A002322AFBBFC400E2A01E /* TimeMachineStatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeMachineStatusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A0024C2AFC02DA00E2A01E /* Bool+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+.swift"; sourceTree = "<group>"; };
 		28A0024E2AFC030500E2A01E /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		28A002512AFC03A200E2A01E /* TMUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMUtility.swift; sourceTree = "<group>"; };
@@ -110,20 +91,6 @@
 				28A0024A2AFBC91500E2A01E /* ShellOut in Frameworks */,
 				28A002472AFBC09000E2A01E /* SFSymbolsMacro in Frameworks */,
 				281822652AFD438B0067E564 /* LoggingOSLog in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28A002252AFBBFC400E2A01E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28A0022F2AFBBFC400E2A01E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,8 +132,6 @@
 				281822702AFDB5AF0067E564 /* LICENSE.md */,
 				2818226F2AFDB0920067E564 /* README.md */,
 				28A002192AFBBFC300E2A01E /* TimeMachineStatus */,
-				28A0022B2AFBBFC400E2A01E /* TimeMachineStatusTests */,
-				28A002352AFBBFC400E2A01E /* TimeMachineStatusUITests */,
 				28A002182AFBBFC300E2A01E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,8 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */,
-				28A002282AFBBFC400E2A01E /* TimeMachineStatusTests.xctest */,
-				28A002322AFBBFC400E2A01E /* TimeMachineStatusUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,20 +169,6 @@
 				28A002212AFBBFC400E2A01E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		28A0022B2AFBBFC400E2A01E /* TimeMachineStatusTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TimeMachineStatusTests;
-			sourceTree = "<group>";
-		};
-		28A002352AFBBFC400E2A01E /* TimeMachineStatusUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TimeMachineStatusUITests;
 			sourceTree = "<group>";
 		};
 		28A0024B2AFC02C900E2A01E /* Extensions */ = {
@@ -311,42 +260,6 @@
 			productReference = 28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */;
 			productType = "com.apple.product-type.application";
 		};
-		28A002272AFBBFC400E2A01E /* TimeMachineStatusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 28A0023F2AFBBFC400E2A01E /* Build configuration list for PBXNativeTarget "TimeMachineStatusTests" */;
-			buildPhases = (
-				28A002242AFBBFC400E2A01E /* Sources */,
-				28A002252AFBBFC400E2A01E /* Frameworks */,
-				28A002262AFBBFC400E2A01E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				28A0022A2AFBBFC400E2A01E /* PBXTargetDependency */,
-			);
-			name = TimeMachineStatusTests;
-			productName = TimeMachineStatusTests;
-			productReference = 28A002282AFBBFC400E2A01E /* TimeMachineStatusTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		28A002312AFBBFC400E2A01E /* TimeMachineStatusUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 28A002422AFBBFC400E2A01E /* Build configuration list for PBXNativeTarget "TimeMachineStatusUITests" */;
-			buildPhases = (
-				28A0022E2AFBBFC400E2A01E /* Sources */,
-				28A0022F2AFBBFC400E2A01E /* Frameworks */,
-				28A002302AFBBFC400E2A01E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				28A002342AFBBFC400E2A01E /* PBXTargetDependency */,
-			);
-			name = TimeMachineStatusUITests;
-			productName = TimeMachineStatusUITests;
-			productReference = 28A002322AFBBFC400E2A01E /* TimeMachineStatusUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -360,14 +273,6 @@
 				TargetAttributes = {
 					28A002162AFBBFC300E2A01E = {
 						CreatedOnToolsVersion = 15.0;
-					};
-					28A002272AFBBFC400E2A01E = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = 28A002162AFBBFC300E2A01E;
-					};
-					28A002312AFBBFC400E2A01E = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = 28A002162AFBBFC300E2A01E;
 					};
 				};
 			};
@@ -391,8 +296,6 @@
 			projectRoot = "";
 			targets = (
 				28A002162AFBBFC300E2A01E /* TimeMachineStatus */,
-				28A002272AFBBFC400E2A01E /* TimeMachineStatusTests */,
-				28A002312AFBBFC400E2A01E /* TimeMachineStatusUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -404,20 +307,6 @@
 			files = (
 				28A002222AFBBFC400E2A01E /* Preview Assets.xcassets in Resources */,
 				28A0021F2AFBBFC400E2A01E /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28A002262AFBBFC400E2A01E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28A002302AFBBFC400E2A01E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,34 +349,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		28A002242AFBBFC400E2A01E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		28A0022E2AFBBFC400E2A01E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		28A0022A2AFBBFC400E2A01E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 28A002162AFBBFC300E2A01E /* TimeMachineStatus */;
-			targetProxy = 28A002292AFBBFC400E2A01E /* PBXContainerItemProxy */;
-		};
-		28A002342AFBBFC400E2A01E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 28A002162AFBBFC300E2A01E /* TimeMachineStatus */;
-			targetProxy = 28A002332AFBBFC400E2A01E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		28A0023A2AFBBFC400E2A01E /* Debug */ = {
@@ -664,78 +526,6 @@
 			};
 			name = Release;
 		};
-		28A002402AFBBFC400E2A01E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F992DREF6G;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatusTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeMachineStatus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TimeMachineStatus";
-			};
-			name = Debug;
-		};
-		28A002412AFBBFC400E2A01E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F992DREF6G;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatusTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeMachineStatus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TimeMachineStatus";
-			};
-			name = Release;
-		};
-		28A002432AFBBFC400E2A01E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F992DREF6G;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatusUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = TimeMachineStatus;
-			};
-			name = Debug;
-		};
-		28A002442AFBBFC400E2A01E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F992DREF6G;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatusUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = TimeMachineStatus;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -753,24 +543,6 @@
 			buildConfigurations = (
 				28A0023D2AFBBFC400E2A01E /* Debug */,
 				28A0023E2AFBBFC400E2A01E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		28A0023F2AFBBFC400E2A01E /* Build configuration list for PBXNativeTarget "TimeMachineStatusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				28A002402AFBBFC400E2A01E /* Debug */,
-				28A002412AFBBFC400E2A01E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		28A002422AFBBFC400E2A01E /* Build configuration list for PBXNativeTarget "TimeMachineStatusUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				28A002432AFBBFC400E2A01E /* Debug */,
-				28A002442AFBBFC400E2A01E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
