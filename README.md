@@ -9,7 +9,7 @@ and thus not available for download yet.
 
 - [x] Show current status of Time Machine
 - [x] Show time of last backup
-- [ ] Show time of next backup (if any)
+- [x] Show time of next backup (if any)
 - [x] List all backup volumes
 - [x] Allow to start a backup (automatic volume selection)
 - [x] Allow to start a backup manually (select volume)
@@ -17,7 +17,9 @@ and thus not available for download yet.
 - [x] Show progress of running backup
 - [ ] Schedule backups (instead of hourly backups)
 - [ ] Schedule backups on a per volume basis
-- [ ] Launch Time Machine
+- [x] Launch Time Machine
+- [ ] Launch app at login
+- [ ] Improve displayed information in menu bar
 
 ## Contributing
 
@@ -25,6 +27,16 @@ If you want to contribute to this project, please have a look at the open issues
 work on. If you have an idea for additional features, please open a new issue first so we can discuss it.
 
 > Do not create pull requests for new features without discussing it first.
+
+## Installing
+
+Currently it is only possible to run the app by building it from source using `Xcode 15`. To do so, clone the repository
+and open the project in Xcode.
+
+> Make sure that you change the signing team to your own, otherwise the `Full Disk Access` permission does not persist
+> between app launches.
+
+Then simply run the app using the `Run` button in Xcode.
 
 ## License
 

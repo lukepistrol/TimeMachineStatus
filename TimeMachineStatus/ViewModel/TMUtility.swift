@@ -89,4 +89,12 @@ class TMUtility: ObservableObject {
             log.error("Error stopping backup: \(error)")
         }
     }
+
+    func launchTimeMachine() {
+        do {
+            _ = try shellOut(to: Constants.Commands.launchTimeMachine)
+        } catch {
+            log.error("Error launching time machine: \(error)")
+        }
+    }
 }

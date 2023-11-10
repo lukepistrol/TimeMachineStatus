@@ -81,7 +81,21 @@ struct MenuView: View {
                 .font(.caption2)
             }
             Spacer()
-            SettingsLink {
+
+            Menu {
+                SettingsLink {
+                    Text("Settings")
+                }
+                Button("Browse Time Machine Backups") {
+                    utility.launchTimeMachine()
+                }
+                Divider()
+                Button {
+                    NSApp.terminate(nil)
+                } label: {
+                    Text("Quit")
+                }
+            } label: {
                 Label("Settings", systemImage: Symbols.gearshapeFill())
             }
             .focused($focusedField, equals: .settingsButton)
