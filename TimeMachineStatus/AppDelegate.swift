@@ -28,7 +28,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var sizeCancellable: AnyCancellable?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        guard !isPreview else { return }
+        // dont launch an extra instance of the menu bar item when in Xcode SwiftUI Preview
+        if !isPreview {
+            setupStatusItem()
+            setupPopover()
+        }
+
+        // subscribe to size changes of the menu bar item
+        sizeCancellable = sizePassthrough.sink { [weak self] size in
+            guard let self else { return }
+            let frame = NSRect(origin: .zero, size: .init(width: size.width, height: 24))
+            self.hostingView?.frame = frame
+            self.statusItem?.button?.frame = frame
+        }
+
+        // dismiss the popover when mouse clicks anywhere outside the app
+        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
+            self?.popover?.performClose(event)
+        }
+    }
+
+    private func setupStatusItem() {
         let itemView = StatusBarItem(sizePassthrough: sizePassthrough, utility: utility)
         let hostingView = NSHostingView(rootView: itemView)
         hostingView.frame = .init(x: 0, y: 0, width: 80, height: 24)
@@ -39,40 +59,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusItem = statusItem
         self.hostingView = hostingView
 
+        self.statusItem?.button?.target = self
+        self.statusItem?.button?.action = #selector(openPopover)
+    }
+
+    @objc
+    private func openPopover(_ sender: NSButton) {
+        guard let popover else { return }
+        if popover.isShown {
+            popover.performClose(sender)
+        } else {
+            popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
+        }
+    }
+
+    private func setupPopover() {
         let menuView = MenuView(utility: utility)
         popover = NSPopover()
         popover?.contentViewController = NSHostingController(rootView: menuView)
         popover?.animates = false
-
-        self.statusItem?.button?.target = self
-        self.statusItem?.button?.action = #selector(openPopover)
-
-        sizeCancellable = sizePassthrough.sink { [weak self] size in
-            let frame = NSRect(origin: .zero, size: .init(width: size.width, height: 24))
-            self?.hostingView?.frame = frame
-            self?.statusItem?.button?.frame = frame
-        }
-
-        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
-            self?.popover?.performClose(event)
-        }
-    }
-
-    @objc
-    func openPopover(_ sender: NSButton) {
-        guard let popover else { return }
-        if popover.isShown {
-            let positioningView = sender.subviews.first { $0.identifier == NSUserInterfaceItemIdentifier(rawValue: "positioningView") }
-            positioningView?.removeFromSuperview()
-        } else {
-            let positioningView = NSView(frame: sender.bounds)
-            positioningView.identifier = NSUserInterfaceItemIdentifier(rawValue: "positioningView")
-            sender.addSubview(positioningView)
-            popover.show(relativeTo: positioningView.bounds, of: positioningView, preferredEdge: .maxY)
-            positioningView.bounds = sender.bounds.offsetBy(dx: 0, dy: sender.bounds.height)
-            if let popoverWindow = popover.contentViewController?.view.window {
-                popoverWindow.setFrame(popoverWindow.frame.offsetBy(dx: 0, dy: 10), display: false)
-            }
-        }
+        popover?.behavior = .applicationDefined
+        popover?.setValue(true, forKeyPath: "shouldHideAnchor") // hide arrow
     }
 }
