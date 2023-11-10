@@ -23,8 +23,8 @@ and thus not available for download yet.
 
 ## Contributing
 
-If you want to contribute to this project, please have a look at the open issues and let me know which one you want to 
-work on. If you have an idea for additional features, please open a new issue first so we can discuss it.
+If you want to contribute to this project, please have a look at the [open issues](https://github.com/lukepistrol/TimeMachineStatus/issues) and let me know which one you want to 
+work on. If you have an idea for additional features, please open a [new issue](https://github.com/lukepistrol/TimeMachineStatus/issues/new/choose) first so we can discuss it.
 
 > Do not create pull requests for new features without discussing it first.
 
@@ -33,6 +33,7 @@ work on. If you have an idea for additional features, please open a new issue fi
 Currently it is only possible to run the app by building it from source using `Xcode 15`. To do so, clone the repository
 and open the project in Xcode.
 
+> **Warning**
 > Make sure that you change the signing team to your own, otherwise the `Full Disk Access` permission does not persist
 > between app launches.
 
