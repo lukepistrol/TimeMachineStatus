@@ -12,24 +12,19 @@
 import SwiftUI
 
 struct CustomButtonStyle: ButtonStyle {
-    @State private var hovering: Bool = false
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundStyle(foreground(configuration).gradient)
+            .foregroundStyle(foreground(configuration))
             .scaleEffect(configuration.isPressed ? .init(width: 0.95, height: 0.95) : .init(width: 1, height: 1))
             .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
-            .animation(.easeInOut(duration: 0.1), value: hovering)
-            .onHover { hovering in
-                self.hovering = hovering
-            }
     }
 
     private func foreground(_ configuration: Configuration) -> Color {
         if configuration.isPressed {
-            Color.secondary
+            Color.accentColor.opacity(0.8)
         } else {
-            hovering ? Color.primary : Color.secondary
+            Color.accentColor
         }
     }
 }

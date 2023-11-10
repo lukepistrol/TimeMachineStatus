@@ -46,6 +46,8 @@
 		28A0026E2AFC312000E2A01E /* Finishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026D2AFC312000E2A01E /* Finishing.swift */; };
 		28A002702AFC342100E2A01E /* Starting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026F2AFC342100E2A01E /* Starting.swift */; };
 		28FAD5A72AFE3DBF00F642E7 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */; };
+		28FAD5A92AFE9BCB00F642E7 /* DestinationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */; };
+		28FAD5AB2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		28A0026D2AFC312000E2A01E /* Finishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finishing.swift; sourceTree = "<group>"; };
 		28A0026F2AFC342100E2A01E /* Starting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starting.swift; sourceTree = "<group>"; };
 		28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
+		28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationInfoView.swift; sourceTree = "<group>"; };
+		28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabeledContentStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			children = (
 				2818224E2AFCF8500067E564 /* MenuView.swift */,
 				281822502AFCF8750067E564 /* DestinationCell.swift */,
+				28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */,
 				28A0021C2AFBBFC300E2A01E /* SettingsView.swift */,
 				2818225A2AFD10200067E564 /* StatusBarItem.swift */,
 			);
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				281822562AFCF9B20067E564 /* CustomButtonStyle.swift */,
+				28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */,
 				28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */,
 			);
 			path = Components;
@@ -356,6 +362,8 @@
 				28A002662AFC056600E2A01E /* Copying.swift in Sources */,
 				28A002642AFC055000E2A01E /* Thinning.swift in Sources */,
 				281822572AFCF9B20067E564 /* CustomButtonStyle.swift in Sources */,
+				28FAD5AB2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift in Sources */,
+				28FAD5A92AFE9BCB00F642E7 /* DestinationInfoView.swift in Sources */,
 				2818225D2AFD3FB80067E564 /* FIndingBackupVolume.swift in Sources */,
 				28A0026E2AFC312000E2A01E /* Finishing.swift in Sources */,
 				28A0026C2AFC0CC700E2A01E /* Preferences.swift in Sources */,

@@ -17,13 +17,6 @@ struct MenuView: View {
 
     @ObservedObject var utility: TMUtility
 
-    enum FocusedField {
-        case startButton
-        case settingsButton
-    }
-
-    @FocusState private var focusedField: FocusedField?
-
     var body: some View {
         VStack(spacing: 8) {
             UserfacingErrorView(error: utility.error)
@@ -46,7 +39,6 @@ struct MenuView: View {
             .padding()
             bottomToolbar
         }
-        .defaultFocus($focusedField, .settingsButton)
         .frame(width: 360)
         .fixedSize()
     }
@@ -62,19 +54,20 @@ struct MenuView: View {
             } label: {
                 Label("Start Backup", systemImage: utility.isIdle ? Symbols.playFill() : Symbols.stopFill())
             }
-            .focused($focusedField, equals: .startButton)
+            .focusable(false)
 
             if let latestDate = utility.preferences?.latestBackupDate,
                let latestVolume = utility.preferences?.latestBackupVolume {
                 VStack(alignment: .leading, spacing: 0) {
                     Text("\(latestDate.formatted(.relativeDate)) on \(latestVolume)")
-                    if let interval = utility.preferences?.autoBackupInterval {
+                    if let interval = utility.preferences?.autoBackupInterval, utility.preferences?.autoBackup == true {
                         let nextDate = latestDate.addingTimeInterval(.init(interval))
                         Text("Next automatic backup in \(nextDate.formatted(.relativeDate))")
                             .font(.caption)
                     } else {
                         Text("Automatic backups are disabled")
                             .font(.caption)
+                            .opacity(0.8)
                     }
                 }
                 .foregroundStyle(.secondary)
@@ -98,7 +91,7 @@ struct MenuView: View {
             } label: {
                 Label("Settings", systemImage: Symbols.gearshapeFill())
             }
-            .focused($focusedField, equals: .settingsButton)
+            .focusable(false)
         }
         .imageScale(.large)
         .labelStyle(.iconOnly)
@@ -115,7 +108,7 @@ struct MenuView: View {
 
 #Preview {
     MenuView(utility: .init())
-//        .preferredColorScheme(.light)
+    //        .preferredColorScheme(.light)
 }
 
 struct UserfacingErrorView: View {

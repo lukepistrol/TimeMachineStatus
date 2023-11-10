@@ -31,6 +31,8 @@ struct DestinationCell: View {
         return nil
     }
 
+    @State private var showInfo: Bool = false
+
     var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -39,6 +41,7 @@ struct DestinationCell: View {
                 Spacer()
                 progressIndicator
                 startStopButton
+                infoButton
             }
             .padding(.vertical, 4)
             .padding(.horizontal, 8)
@@ -101,6 +104,22 @@ struct DestinationCell: View {
         }
         .imageScale(.large)
         .buttonStyle(.custom)
+        .focusable(false)
+    }
+
+    private var infoButton: some View {
+        Button {
+            showInfo.toggle()
+        } label: {
+            Label("Info", systemImage: Symbols.infoCircle())
+                .labelStyle(.iconOnly)
+                .imageScale(.large)
+        }
+        .buttonStyle(.custom)
+        .focusable(false)
+        .popover(isPresented: $showInfo) {
+            DestinationInfoView(dest: dest)
+        }
     }
 
     @ViewBuilder
@@ -140,4 +159,9 @@ struct DestinationCell: View {
     private var byteFormat: ByteCountFormatStyle {
         .byteCount(style: .file)
     }
+}
+
+#Preview {
+    MenuView(utility: .init())
+    //        .preferredColorScheme(.light)
 }
