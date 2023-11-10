@@ -17,8 +17,9 @@ class TMUtility: ObservableObject {
     @Published var status: BackupState._State = BackupState.None()
     @Published var preferences: Preferences?
     @Published var lastUpdated: Date?
+    @Published var error: UserfacingError?
 
-    let log = Logger(label: "com.lukaspistrol.TimeMachineStatus.TMUtility")
+    let log = Logger(label: "\(Bundle.identifier).TMUtility")
 
     var isIdle: Bool { !status.running }
 
@@ -53,21 +54,25 @@ class TMUtility: ObservableObject {
     private func readPreferences() {
         do {
             let decoder = PropertyListDecoder()
-            let data = try Data(contentsOf: URL(fileURLWithPath: "/Library/Preferences/com.apple.TimeMachine.plist"))
+            let data = try Data(contentsOf: Constants.URLs.timeMachinePreferencesPlist)
             self.preferences = try decoder.decode(Preferences.self, from: data)
             log.trace("Got preferences: \(preferences.debugDescription)")
             lastUpdated = .now
+            self.error = nil
         } catch {
             log.error("Error reading preferences: \(error)")
+            if (error as NSError).code == 257 {
+                self.error = UserfacingError.fullDiskPermissionDenied
+            }
         }
     }
 
     func startBackup(id: UUID? = nil) {
         do {
             _ = if let id {
-                try shellOut(to: "tmutil startbackup -d \(id.uuidString)")
+                try shellOut(to: Constants.Commands.startBackup(id: id))
             } else {
-                try shellOut(to: "tmutil startbackup")
+                try shellOut(to: Constants.Commands.startBackup())
             }
             start(force: true)
         } catch {
@@ -77,7 +82,7 @@ class TMUtility: ObservableObject {
 
     func stopBackup() {
         do {
-            let response = try shellOut(to: "tmutil stopbackup")
+            let response = try shellOut(to: Constants.Commands.stopBackup)
             print(response)
             start(force: true)
         } catch {

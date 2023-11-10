@@ -14,6 +14,7 @@ import Foundation
 struct Preferences: Decodable {
     enum CodingKeys: String, CodingKey {
         case autoBackup = "AutoBackup"
+        case autoBackupInterval = "AutoBackupInterval"
         case preferencesVersion = "PreferencesVersion"
         case requiresACPower = "RequiresACPower"
         case lastConfigurationTraceDate = "LastConfigurationTraceDate"
@@ -23,6 +24,7 @@ struct Preferences: Decodable {
     }
 
     let autoBackup: Bool
+    let autoBackupInterval: Int?
     let preferencesVersion: Int
     let requiresACPower: Bool
     let lastConfigurationTraceDate: Date

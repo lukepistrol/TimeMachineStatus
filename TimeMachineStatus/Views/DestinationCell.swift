@@ -44,9 +44,7 @@ struct DestinationCell: View {
             .padding(.horizontal, 8)
             status
         }
-        .background(.background.secondary, in: .rect)
-        .clipShape(.rect(cornerRadius: 10))
-        .shadow(color: .black.opacity(0.1), radius: 3, x: 0, y: 1)
+        .card(.background.secondary)
     }
 
     private var symbol: some View {

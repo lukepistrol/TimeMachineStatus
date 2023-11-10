@@ -21,6 +21,9 @@
 		2818226A2AFD8E670067E564 /* _State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822692AFD8E670067E564 /* _State.swift */; };
 		2818226C2AFD8E9F0067E564 /* _BaseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818226B2AFD8E9F0067E564 /* _BaseState.swift */; };
 		2818226E2AFD8EC30067E564 /* _InProgressState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818226D2AFD8EC30067E564 /* _InProgressState.swift */; };
+		2818227A2AFE292A0067E564 /* UserfacingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822792AFE292A0067E564 /* UserfacingError.swift */; };
+		2818227C2AFE33CA0067E564 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227B2AFE33CA0067E564 /* Constants.swift */; };
+		2818227E2AFE36780067E564 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227D2AFE36780067E564 /* Bundle+.swift */; };
 		28A0021B2AFBBFC300E2A01E /* TimeMachineStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */; };
 		28A0021D2AFBBFC300E2A01E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0021C2AFBBFC300E2A01E /* SettingsView.swift */; };
 		28A0021F2AFBBFC400E2A01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A0021E2AFBBFC400E2A01E /* Assets.xcassets */; };
@@ -42,6 +45,7 @@
 		28A0026C2AFC0CC700E2A01E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026B2AFC0CC700E2A01E /* Preferences.swift */; };
 		28A0026E2AFC312000E2A01E /* Finishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026D2AFC312000E2A01E /* Finishing.swift */; };
 		28A002702AFC342100E2A01E /* Starting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026F2AFC342100E2A01E /* Starting.swift */; };
+		28FAD5A72AFE3DBF00F642E7 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,9 @@
 		2818226D2AFD8EC30067E564 /* _InProgressState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _InProgressState.swift; sourceTree = "<group>"; };
 		2818226F2AFDB0920067E564 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		281822702AFDB5AF0067E564 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		281822792AFE292A0067E564 /* UserfacingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserfacingError.swift; sourceTree = "<group>"; };
+		2818227B2AFE33CA0067E564 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2818227D2AFE36780067E564 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMachineStatusApp.swift; sourceTree = "<group>"; };
 		28A0021C2AFBBFC300E2A01E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -80,6 +87,7 @@
 		28A0026B2AFC0CC700E2A01E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		28A0026D2AFC312000E2A01E /* Finishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finishing.swift; sourceTree = "<group>"; };
 		28A0026F2AFC342100E2A01E /* Starting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starting.swift; sourceTree = "<group>"; };
+		28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				281822562AFCF9B20067E564 /* CustomButtonStyle.swift */,
+				28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				28A0024C2AFC02DA00E2A01E /* Bool+.swift */,
+				2818227D2AFE36780067E564 /* Bundle+.swift */,
 				28A002592AFC045400E2A01E /* BackupState+Optional.swift */,
 				281822522AFCF97C0067E564 /* FormatStyle+.swift */,
 				281822662AFD86AC0067E564 /* Color+RawRepresentable.swift */,
@@ -193,6 +203,7 @@
 		28A002532AFC03D700E2A01E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2818227B2AFE33CA0067E564 /* Constants.swift */,
 				28A0026A2AFC0CB300E2A01E /* Preferences */,
 				28A002692AFC0CAB00E2A01E /* BackupState */,
 			);
@@ -203,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				28A002572AFC042200E2A01E /* BackupStateError.swift */,
+				281822792AFE292A0067E564 /* UserfacingError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -317,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FAD5A72AFE3DBF00F642E7 /* CardViewModifier.swift in Sources */,
 				2818226E2AFD8EC30067E564 /* _InProgressState.swift in Sources */,
 				28A0021D2AFBBFC300E2A01E /* SettingsView.swift in Sources */,
 				28A0025C2AFC04B300E2A01E /* Idle.swift in Sources */,
@@ -326,12 +339,15 @@
 				28A002622AFC052B00E2A01E /* FindingChanges.swift in Sources */,
 				2818226A2AFD8E670067E564 /* _State.swift in Sources */,
 				28A002602AFC050200E2A01E /* Preparing.swift in Sources */,
+				2818227C2AFE33CA0067E564 /* Constants.swift in Sources */,
 				2818225B2AFD10200067E564 /* StatusBarItem.swift in Sources */,
 				281822532AFCF97C0067E564 /* FormatStyle+.swift in Sources */,
 				28A002702AFC342100E2A01E /* Starting.swift in Sources */,
+				2818227E2AFE36780067E564 /* Bundle+.swift in Sources */,
 				2818225F2AFD3FF20067E564 /* Stopping.swift in Sources */,
 				28A0024F2AFC030500E2A01E /* Symbols.swift in Sources */,
 				28A0025E2AFC04D300E2A01E /* Mounting.swift in Sources */,
+				2818227A2AFE292A0067E564 /* UserfacingError.swift in Sources */,
 				2818226C2AFD8E9F0067E564 /* _BaseState.swift in Sources */,
 				28A0021B2AFBBFC300E2A01E /* TimeMachineStatusApp.swift in Sources */,
 				28A002582AFC042200E2A01E /* BackupStateError.swift in Sources */,
@@ -484,6 +500,8 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TimeMachineStatus;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,6 +530,8 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TimeMachineStatus;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (

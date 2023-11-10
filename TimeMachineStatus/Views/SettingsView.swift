@@ -52,7 +52,7 @@ struct SettingsView: View {
         case about
     }
 
-    @State private var selection: Tabs = .appearance
+    @State private var selection: Tabs = .general
 
     var body: some View {
         TabView(selection: $selection) {
@@ -64,11 +64,27 @@ struct SettingsView: View {
     }
 
     private var generalTab: some View {
-        Text("General")
-            .tabItem {
-                Label("General", systemImage: "gear")
+        Form {
+            Section("Permissions") {
+                LabeledContent {
+                    Button("Settings") {
+                        NSWorkspace.shared.open(Constants.URLs.settingsFullDiskAccess)
+                    }
+                } label: {
+                    VStack(alignment: .leading) {
+                        Text("Full Disk Access")
+                        Text("Full disk access is required to read Time Machine preferences.")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
             }
-            .tag(Tabs.general)
+        }
+        .formStyle(.grouped)
+        .tabItem {
+            Label("General", systemImage: Symbols.gear())
+        }
+        .tag(Tabs.general)
     }
 
     private var appearandeTab: some View {
@@ -127,7 +143,7 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .tabItem {
-            Label("Appearance", systemImage: "wand.and.stars.inverse")
+            Label("Appearance", systemImage: Symbols.wandAndStarsInverse())
         }
         .tag(Tabs.appearance)
     }
@@ -146,13 +162,13 @@ struct SettingsView: View {
                     .font(.headline)
             }
             VStack {
-                Text("© 2021 Lukas Pistrol")
-                Link("lukaspistrol.com", destination: URL(string: "https://lukaspistrol.com")!)
+                Text("© 2023 Lukas Pistrol")
+                Link("lukaspistrol.com", destination: Constants.URLs.authorURL)
             }
             .font(.caption2)
         }
         .tabItem {
-            Label("About", systemImage: "info.circle")
+            Label("About", systemImage: Symbols.infoCircle())
         }
         .tag(Tabs.about)
     }
@@ -160,27 +176,4 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
-}
-
-public extension Bundle {
-    static var appName: String {
-        if let name = Bundle.main.infoDictionary?["CFBundleName"] as? String {
-            return name
-        }
-        return ""
-    }
-
-    static var appVersionString: String {
-        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            return version
-        }
-        return ""
-    }
-
-    static var appBuildString: String {
-        if let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-            return version
-        }
-        return ""
-    }
 }

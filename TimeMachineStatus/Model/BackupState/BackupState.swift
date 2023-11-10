@@ -14,10 +14,10 @@ import ShellOut
 import Logging
 
 enum BackupState {
-    static let log = Logger(label: "com.lukaspistrol.TimeMachineStatus.BackupState")
+    static let log = Logger(label: "\(Bundle.identifier).BackupState")
 
     static func getState() throws -> _State {
-        let result = try shellOut(to: "tmutil status | tail -n +2")
+        let result = try shellOut(to: Constants.Commands.status)
 
         log.trace("Raw State: \(result)")
 

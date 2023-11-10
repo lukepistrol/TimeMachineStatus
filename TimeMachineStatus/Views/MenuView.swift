@@ -26,6 +26,7 @@ struct MenuView: View {
 
     var body: some View {
         VStack(spacing: 8) {
+            UserfacingErrorView(error: utility.error)
             VStack(alignment: .leading) {
                 if let destinations = utility.preferences?.destinations {
                     Section {
@@ -50,7 +51,6 @@ struct MenuView: View {
         .fixedSize()
     }
 
-
     private var bottomToolbar: some View {
         HStack {
             Button {
@@ -66,9 +66,19 @@ struct MenuView: View {
 
             if let latestDate = utility.preferences?.latestBackupDate,
                let latestVolume = utility.preferences?.latestBackupVolume {
-                Text("\(latestDate.formatted(.relativeDate)) on \(latestVolume)")
-                    .foregroundStyle(.secondary)
-                    .font(.caption2)
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("\(latestDate.formatted(.relativeDate)) on \(latestVolume)")
+                    if let interval = utility.preferences?.autoBackupInterval {
+                        let nextDate = latestDate.addingTimeInterval(.init(interval))
+                        Text("Next automatic backup in \(nextDate.formatted(.relativeDate))")
+                            .font(.caption)
+                    } else {
+                        Text("Automatic backups are disabled")
+                            .font(.caption)
+                    }
+                }
+                .foregroundStyle(.secondary)
+                .font(.caption2)
             }
             Spacer()
             SettingsLink {
@@ -91,5 +101,39 @@ struct MenuView: View {
 
 #Preview {
     MenuView(utility: .init())
-        .preferredColorScheme(.light)
+//        .preferredColorScheme(.light)
+}
+
+struct UserfacingErrorView: View {
+    let error: UserfacingError?
+
+    @ViewBuilder
+    var body: some View {
+        if let error {
+            VStack(alignment: .trailing, spacing: 8) {
+                HStack(spacing: 4) {
+                    Symbols.exclamationMarkTriangleFill.image
+                        .foregroundStyle(.red)
+                    Text(error.localizedDescription)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundStyle(.primary)
+                }
+                .font(.headline)
+                if let failureReason = error.failureReason {
+                    Text(failureReason)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
+                if let action = error.action {
+                    Button(action.title) {
+                        NSWorkspace.shared.open(action.url)
+                    }
+                }
+            }
+            .padding(8)
+            .card(.fill)
+            .padding()
+        }
+    }
 }
