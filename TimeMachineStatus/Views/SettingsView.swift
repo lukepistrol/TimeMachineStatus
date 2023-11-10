@@ -18,7 +18,8 @@ enum StorageKeys {
         let `default`: Value
     }
 
-    static let padding = Key(id: "padding", default: 0.0)
+    static let horizontalPadding = Key(id: "horizontalPadding", default: 0.0)
+    static let verticalPadding = Key(id: "verticalPadding", default: 0.0)
     static let boldFont = Key(id: "boldFont", default: false)
     static let showStatus = Key(id: "showStatus", default: false)
     static let spacing = Key(id: "spacing", default: 4.0)
@@ -28,9 +29,12 @@ enum StorageKeys {
 
 struct SettingsView: View {
 
-    @AppStorage(StorageKeys.padding.id) 
-    private var padding: Double = StorageKeys.padding.default
-    
+    @AppStorage(StorageKeys.horizontalPadding.id) 
+    private var horizontalPadding: Double = StorageKeys.horizontalPadding.default
+
+    @AppStorage(StorageKeys.verticalPadding.id)
+    private var verticalPadding: Double = StorageKeys.verticalPadding.default
+
     @AppStorage(StorageKeys.boldFont.id)
     private var boldFont: Bool = StorageKeys.boldFont.default
     
@@ -92,11 +96,11 @@ struct SettingsView: View {
             Section("Menu Bar Item") {
                 LabeledContent {
                     HStack {
-                        Text(padding.formatted(.number))
-                        Slider(value: $padding, in: 0...10, step: 1)
+                        Text(horizontalPadding.formatted(.number))
+                        Slider(value: $horizontalPadding, in: 0...10, step: 1)
                     }
                 } label: {
-                    Text("Padding")
+                    Text("Horizontal Padding")
                 }
                 HStack {
                     ColorPicker("Background Color", selection: $bgColor)
@@ -105,6 +109,14 @@ struct SettingsView: View {
                     }
                 }
                 if bgColor.cgColor?.alpha != 0 {
+                    LabeledContent {
+                        HStack {
+                            Text(verticalPadding.formatted(.number))
+                            Slider(value: $verticalPadding, in: 0...5, step: 1)
+                        }
+                    } label: {
+                        Text("Vertical Padding")
+                    }
                     LabeledContent {
                         HStack {
                             Text(cornerRadius.formatted(.number))
@@ -129,7 +141,8 @@ struct SettingsView: View {
             }
             Section {
                 Button("Reset To Default") {
-                    padding = StorageKeys.padding.default
+                    horizontalPadding = StorageKeys.horizontalPadding.default
+                    verticalPadding = StorageKeys.verticalPadding.default
                     boldFont = StorageKeys.boldFont.default
                     showStatus = StorageKeys.showStatus.default
                     spacing = StorageKeys.spacing.default

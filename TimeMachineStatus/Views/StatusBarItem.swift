@@ -24,8 +24,11 @@ struct StatusBarItem: View {
 
     @Environment(\.colorScheme) private var colorScheme
 
-    @AppStorage(StorageKeys.padding.id)
-    private var padding: Double = StorageKeys.padding.default
+    @AppStorage(StorageKeys.horizontalPadding.id)
+    private var padding: Double = StorageKeys.horizontalPadding.default
+
+    @AppStorage(StorageKeys.verticalPadding.id)
+    private var verticalPadding: Double = StorageKeys.verticalPadding.default
 
     @AppStorage(StorageKeys.boldFont.id)
     private var boldFont: Bool = StorageKeys.boldFont.default
@@ -62,6 +65,7 @@ struct StatusBarItem: View {
             .padding(.horizontal, 4 + padding)
             .frame(maxHeight: .infinity)
             .background(bgColor, in: .rect(cornerRadius: cornerRadius))
+            .padding(.vertical, verticalPadding)
             .fixedSize(horizontal: true, vertical: false)
             .overlay(
                 GeometryReader { geometryProxy in
