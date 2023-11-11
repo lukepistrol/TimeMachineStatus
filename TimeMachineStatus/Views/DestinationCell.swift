@@ -32,6 +32,7 @@ struct DestinationCell: View {
     }
 
     @State private var showInfo: Bool = false
+    @State private var hovering: Bool = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -41,13 +42,31 @@ struct DestinationCell: View {
                 Spacer()
                 progressIndicator
                 startStopButton
-                infoButton
             }
             .padding(.vertical, 4)
             .padding(.horizontal, 8)
+            .padding(.trailing, 4)
             status
         }
+        .overlay { hoverOverlay }
+        .contentShape(.rect)
+        .contextMenu { contextMenuActions }
         .card(.background.secondary)
+        .onHover(perform: { hovering in
+            self.hovering = hovering
+        })
+        .popover(isPresented: $showInfo) {
+            DestinationInfoView(dest: dest)
+        }
+    }
+
+    @ViewBuilder
+    private var hoverOverlay: some View {
+        if hovering {
+            Rectangle()
+                .fill(.fill.secondary)
+                .allowsHitTesting(false)
+        }
     }
 
     private var symbol: some View {
@@ -107,18 +126,12 @@ struct DestinationCell: View {
         .focusable(false)
     }
 
-    private var infoButton: some View {
-        Button {
-            showInfo.toggle()
-        } label: {
-            Label("Info", systemImage: Symbols.infoCircle())
-                .labelStyle(.iconOnly)
-                .imageScale(.large)
-        }
-        .buttonStyle(.custom)
-        .focusable(false)
-        .popover(isPresented: $showInfo) {
-            DestinationInfoView(dest: dest)
+    @ViewBuilder
+    private var contextMenuActions: some View {
+        Button("Show Info") { showInfo.toggle() }
+        Divider()
+        Button("Backup to \(dest.lastKnownVolumeName) now") {
+            utility.startBackup(id: dest.destinationID)
         }
     }
 
@@ -142,18 +155,20 @@ struct DestinationCell: View {
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 8)
             .padding(.vertical, 2)
-            .background {
-                GeometryReader(content: { geometry in
-                    if let percent = utility.status.progessPercentage {
-                        Color.accentColor
-                            .frame(width: geometry.size.width * percent)
-                            .opacity(0.3)
-                            .animation(.easeInOut, value: percent)
-                    }
-                })
-            }
+            .background { progressBackground }
             .background(.fill.tertiary, in: .rect)
         }
+    }
+
+    private var progressBackground: some View {
+        GeometryReader(content: { geometry in
+            if let percent = utility.status.progessPercentage {
+                Color.accentColor
+                    .frame(width: geometry.size.width * percent)
+                    .opacity(0.3)
+                    .animation(.easeInOut, value: percent)
+            }
+        })
     }
 
     private var byteFormat: ByteCountFormatStyle {
@@ -161,7 +176,12 @@ struct DestinationCell: View {
     }
 }
 
-#Preview {
+#Preview("Light") {
     MenuView(utility: .init())
-    //        .preferredColorScheme(.light)
+        .preferredColorScheme(.light)
+}
+
+#Preview("Dark") {
+    MenuView(utility: .init())
+        .preferredColorScheme(.dark)
 }

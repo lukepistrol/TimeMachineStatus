@@ -48,6 +48,8 @@
 		28FAD5A72AFE3DBF00F642E7 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */; };
 		28FAD5A92AFE9BCB00F642E7 /* DestinationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */; };
 		28FAD5AB2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */; };
+		28FAD5AD2AFF0D7200F642E7 /* ExpandableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5AC2AFF0D7200F642E7 /* ExpandableSection.swift */; };
+		28FAD5AF2AFF0D9600F642E7 /* UserfacingErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5AE2AFF0D9600F642E7 /* UserfacingErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 		28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationInfoView.swift; sourceTree = "<group>"; };
 		28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabeledContentStyle.swift; sourceTree = "<group>"; };
+		28FAD5AC2AFF0D7200F642E7 /* ExpandableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableSection.swift; sourceTree = "<group>"; };
+		28FAD5AE2AFF0D9600F642E7 /* UserfacingErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserfacingErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				281822562AFCF9B20067E564 /* CustomButtonStyle.swift */,
 				28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */,
 				28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */,
+				28FAD5AC2AFF0D7200F642E7 /* ExpandableSection.swift */,
+				28FAD5AE2AFF0D9600F642E7 /* UserfacingErrorView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -350,9 +356,11 @@
 				281822532AFCF97C0067E564 /* FormatStyle+.swift in Sources */,
 				28A002702AFC342100E2A01E /* Starting.swift in Sources */,
 				2818227E2AFE36780067E564 /* Bundle+.swift in Sources */,
+				28FAD5AD2AFF0D7200F642E7 /* ExpandableSection.swift in Sources */,
 				2818225F2AFD3FF20067E564 /* Stopping.swift in Sources */,
 				28A0024F2AFC030500E2A01E /* Symbols.swift in Sources */,
 				28A0025E2AFC04D300E2A01E /* Mounting.swift in Sources */,
+				28FAD5AF2AFF0D9600F642E7 /* UserfacingErrorView.swift in Sources */,
 				2818227A2AFE292A0067E564 /* UserfacingError.swift in Sources */,
 				2818226C2AFD8E9F0067E564 /* _BaseState.swift in Sources */,
 				28A0021B2AFBBFC300E2A01E /* TimeMachineStatusApp.swift in Sources */,

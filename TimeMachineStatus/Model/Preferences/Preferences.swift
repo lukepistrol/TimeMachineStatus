@@ -15,21 +15,25 @@ struct Preferences: Decodable {
     enum CodingKeys: String, CodingKey {
         case autoBackup = "AutoBackup"
         case autoBackupInterval = "AutoBackupInterval"
+        case excludedVolumeUUIDs = "ExcludedVolumeUUIDs"
         case preferencesVersion = "PreferencesVersion"
         case requiresACPower = "RequiresACPower"
         case lastConfigurationTraceDate = "LastConfigurationTraceDate"
         case lastDestinationID = "LastDestinationID"
         case localizedDiskImageVolumeName = "LocalizedDiskImageVolumeName"
         case destinations = "Destinations"
+        case skipPaths = "SkipPaths"
     }
 
     let autoBackup: Bool
     let autoBackupInterval: Int?
+    let excludedVolumeUUIDs: [UUID]
     let preferencesVersion: Int
     let requiresACPower: Bool
     let lastConfigurationTraceDate: Date
     let lastDestinationID: UUID?
     let localizedDiskImageVolumeName: String
+    let skipPaths: [String]
     let destinations: [Destination]
 
     var latestBackupDate: Date? {

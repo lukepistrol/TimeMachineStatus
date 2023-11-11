@@ -20,21 +20,9 @@ struct MenuView: View {
     var body: some View {
         VStack(spacing: 8) {
             UserfacingErrorView(error: utility.error)
-            VStack(alignment: .leading) {
-                if let destinations = utility.preferences?.destinations {
-                    Section {
-                        ForEach(destinations, id: \.destinationID) { dest in
-                            DestinationCell(dest)
-                                .frame(maxWidth: .infinity)
-                                .environmentObject(utility)
-                        }
-                    } header: {
-                        Text("Destinations")
-                            .foregroundStyle(.secondary)
-                            .font(.headline)
-                    }
-                    .listRowSeparator(.hidden, edges: .all)
-                }
+            VStack(spacing: 16) {
+                destinationsSection
+                generalInfoSection
             }
             .padding()
             bottomToolbar
@@ -43,8 +31,68 @@ struct MenuView: View {
         .fixedSize()
     }
 
+    @ViewBuilder
+    private var destinationsSection: some View {
+        if let destinations = utility.preferences?.destinations {
+            ExpandableSection {
+                VStack(alignment: .leading) {
+                    ForEach(destinations, id: \.destinationID) { dest in
+                        DestinationCell(dest)
+                            .frame(maxWidth: .infinity)
+                            .environmentObject(utility)
+                    }
+                }
+            } header: {
+                Text("Destinations")
+            }
+            .listRowSeparator(.hidden, edges: .all)
+        }
+    }
+
+    @ViewBuilder
+    private var generalInfoSection: some View {
+        if let preferences = utility.preferences {
+            ExpandableSection(expanded: false) {
+                VStack {
+                    LabeledContent("Image Volume Name", value: preferences.localizedDiskImageVolumeName)
+                        .padding(10)
+                        .card(.background.secondary)
+                    LabeledContent("Auto Backup", value: preferences.autoBackup ? "Enabled" : "Disabled")
+                        .padding(10)
+                        .card(.background.secondary)
+                    if let interval = preferences.autoBackupInterval, preferences.autoBackup {
+                        let measurement = Measurement(value: Double(interval), unit: UnitDuration.seconds).converted(to: .hours)
+                        LabeledContent("Backup Interval", value: measurement.formatted(.measurement(width: .wide)))
+                            .padding(10)
+                            .card(.background.secondary)
+                    }
+                    LabeledContent("Requires Power", value: preferences.requiresACPower ? "Yes" : "No")
+                        .padding(10)
+                        .card(.background.secondary)
+                    LabeledContent("Skip Paths") {
+                        VStack(alignment: .trailing, spacing: 4) {
+                            if preferences.skipPaths.isEmpty {
+                                Text("Empty")
+                                    .foregroundColor(.secondary)
+                            } else {
+                                ForEach(preferences.skipPaths, id: \.self) { path in
+                                    Text(path)
+                                }
+                            }
+                        }
+                    }
+                    .padding(10)
+                    .card(.background.secondary)
+                }
+            } header: {
+                Text("General Info")
+            }
+            .labeledContentStyle(CustomLabeledContentStyle())
+        }
+    }
+    
     private var bottomToolbar: some View {
-        HStack {
+        HStack(spacing: 12) {
             Button {
                 if utility.isIdle {
                     utility.startBackup()
@@ -106,41 +154,12 @@ struct MenuView: View {
     }
 }
 
-#Preview {
+#Preview("Light") {
     MenuView(utility: .init())
-    //        .preferredColorScheme(.light)
+        .preferredColorScheme(.light)
 }
 
-struct UserfacingErrorView: View {
-    let error: UserfacingError?
-
-    @ViewBuilder
-    var body: some View {
-        if let error {
-            VStack(alignment: .trailing, spacing: 8) {
-                HStack(spacing: 4) {
-                    Symbols.exclamationMarkTriangleFill.image
-                        .foregroundStyle(.red)
-                    Text(error.localizedDescription)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundStyle(.primary)
-                }
-                .font(.headline)
-                if let failureReason = error.failureReason {
-                    Text(failureReason)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
-                }
-                if let action = error.action {
-                    Button(action.title) {
-                        NSWorkspace.shared.open(action.url)
-                    }
-                }
-            }
-            .padding(8)
-            .card(.fill)
-            .padding()
-        }
-    }
+#Preview("Dark") {
+    MenuView(utility: .init())
+        .preferredColorScheme(.dark)
 }

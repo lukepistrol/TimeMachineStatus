@@ -13,7 +13,7 @@ import SwiftUI
 
 struct CustomLabeledContentStyle: LabeledContentStyle {
     func makeBody(configuration: Configuration) -> some View {
-        HStack {
+        HStack(alignment: .firstTextBaseline) {
             HStack(spacing: 0) {
                 configuration.label
                 Text(":")
