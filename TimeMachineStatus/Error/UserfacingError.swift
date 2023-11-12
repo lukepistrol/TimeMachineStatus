@@ -9,22 +9,22 @@
 //  See LICENSE.md for license information.
 //  
 
-import Foundation
+import SwiftUI
 
-enum UserfacingError: LocalizedError {
+enum UserfacingError: Error {
     case fullDiskPermissionDenied
 
-    var errorDescription: String? {
+    var title: LocalizedStringKey {
         switch self {
         case .fullDiskPermissionDenied:
-            return "Full Disk Access permission denied"
+            return "error_fulldiskpermissiondenied_title"
         }
     }
 
-    var failureReason: String? {
+    var failureReason: LocalizedStringKey? {
         switch self {
         case .fullDiskPermissionDenied:
-            return "TimeMachineStatus needs full disk access to read Time Machine preferences.\n\nPlease grant TimeMachineStatus full disk access in System Settings > Privacy & Security > Full Disk Access."
+            return "error_fulldiskpermissiondenied_description"
         }
     }
 
@@ -32,14 +32,14 @@ enum UserfacingError: LocalizedError {
         switch self {
         case .fullDiskPermissionDenied:
             Action(
-                title: "Open System Settings",
+                title: "button_opensystemsettings",
                 url: Constants.URLs.settingsFullDiskAccess
             )
         }
     }
 
     struct Action {
-        let title: String
+        let title: LocalizedStringKey
         let url: URL
     }
 }

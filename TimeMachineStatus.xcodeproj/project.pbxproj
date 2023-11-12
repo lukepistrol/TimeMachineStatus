@@ -24,6 +24,7 @@
 		2818227A2AFE292A0067E564 /* UserfacingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822792AFE292A0067E564 /* UserfacingError.swift */; };
 		2818227C2AFE33CA0067E564 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227B2AFE33CA0067E564 /* Constants.swift */; };
 		2818227E2AFE36780067E564 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227D2AFE36780067E564 /* Bundle+.swift */; };
+		288F12FB2B011A9300678FAD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 288F12FA2B011A9300678FAD /* Localizable.xcstrings */; };
 		28A0021B2AFBBFC300E2A01E /* TimeMachineStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */; };
 		28A0021D2AFBBFC300E2A01E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0021C2AFBBFC300E2A01E /* SettingsView.swift */; };
 		28A0021F2AFBBFC400E2A01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A0021E2AFBBFC400E2A01E /* Assets.xcassets */; };
@@ -35,7 +36,6 @@
 		28A002522AFC03A200E2A01E /* TMUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A002512AFC03A200E2A01E /* TMUtility.swift */; };
 		28A002552AFC03E300E2A01E /* BackupState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A002542AFC03E300E2A01E /* BackupState.swift */; };
 		28A002582AFC042200E2A01E /* BackupStateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A002572AFC042200E2A01E /* BackupStateError.swift */; };
-		28A0025A2AFC045400E2A01E /* BackupState+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A002592AFC045400E2A01E /* BackupState+Optional.swift */; };
 		28A0025C2AFC04B300E2A01E /* Idle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0025B2AFC04B300E2A01E /* Idle.swift */; };
 		28A0025E2AFC04D300E2A01E /* Mounting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0025D2AFC04D300E2A01E /* Mounting.swift */; };
 		28A002602AFC050200E2A01E /* Preparing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0025F2AFC050200E2A01E /* Preparing.swift */; };
@@ -70,6 +70,7 @@
 		281822792AFE292A0067E564 /* UserfacingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserfacingError.swift; sourceTree = "<group>"; };
 		2818227B2AFE33CA0067E564 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2818227D2AFE36780067E564 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
+		288F12FA2B011A9300678FAD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMachineStatusApp.swift; sourceTree = "<group>"; };
 		28A0021C2AFBBFC300E2A01E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		28A002512AFC03A200E2A01E /* TMUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMUtility.swift; sourceTree = "<group>"; };
 		28A002542AFC03E300E2A01E /* BackupState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupState.swift; sourceTree = "<group>"; };
 		28A002572AFC042200E2A01E /* BackupStateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupStateError.swift; sourceTree = "<group>"; };
-		28A002592AFC045400E2A01E /* BackupState+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BackupState+Optional.swift"; sourceTree = "<group>"; };
 		28A0025B2AFC04B300E2A01E /* Idle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idle.swift; sourceTree = "<group>"; };
 		28A0025D2AFC04D300E2A01E /* Mounting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mounting.swift; sourceTree = "<group>"; };
 		28A0025F2AFC050200E2A01E /* Preparing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preparing.swift; sourceTree = "<group>"; };
@@ -180,6 +180,7 @@
 				28A0021E2AFBBFC400E2A01E /* Assets.xcassets */,
 				28A002232AFBBFC400E2A01E /* TimeMachineStatus.entitlements */,
 				28A002202AFBBFC400E2A01E /* Preview Content */,
+				288F12FA2B011A9300678FAD /* Localizable.xcstrings */,
 			);
 			path = TimeMachineStatus;
 			sourceTree = "<group>";
@@ -197,7 +198,6 @@
 			children = (
 				28A0024C2AFC02DA00E2A01E /* Bool+.swift */,
 				2818227D2AFE36780067E564 /* Bundle+.swift */,
-				28A002592AFC045400E2A01E /* BackupState+Optional.swift */,
 				281822522AFCF97C0067E564 /* FormatStyle+.swift */,
 				281822662AFD86AC0067E564 /* Color+RawRepresentable.swift */,
 			);
@@ -307,6 +307,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 28A0020E2AFBBFC300E2A01E;
 			packageReferences = (
@@ -331,6 +332,7 @@
 			files = (
 				28A002222AFBBFC400E2A01E /* Preview Assets.xcassets in Resources */,
 				28A0021F2AFBBFC400E2A01E /* Assets.xcassets in Resources */,
+				288F12FB2B011A9300678FAD /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +367,6 @@
 				2818226C2AFD8E9F0067E564 /* _BaseState.swift in Sources */,
 				28A0021B2AFBBFC300E2A01E /* TimeMachineStatusApp.swift in Sources */,
 				28A002582AFC042200E2A01E /* BackupStateError.swift in Sources */,
-				28A0025A2AFC045400E2A01E /* BackupState+Optional.swift in Sources */,
 				28A0024D2AFC02DA00E2A01E /* Bool+.swift in Sources */,
 				28A002662AFC056600E2A01E /* Copying.swift in Sources */,
 				28A002642AFC055000E2A01E /* Thinning.swift in Sources */,

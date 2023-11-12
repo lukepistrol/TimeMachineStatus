@@ -43,7 +43,7 @@ struct MenuView: View {
                     }
                 }
             } header: {
-                Text("Destinations")
+                Text("section_destinations")
             }
             .listRowSeparator(.hidden, edges: .all)
         }
@@ -54,29 +54,29 @@ struct MenuView: View {
         if let preferences = utility.preferences {
             ExpandableSection(expanded: false) {
                 VStack {
-                    LabeledContent("Image Volume Name", value: preferences.localizedDiskImageVolumeName)
+                    LabeledContent("general_info_volumename", value: preferences.localizedDiskImageVolumeName)
                         .padding(10)
                         .card(.background.secondary)
-                    LabeledContent("Auto Backup", value: preferences.autoBackup ? "Enabled" : "Disabled")
+                    LabeledContent("general_info_autobackup", value: preferences.autoBackup ? "Enabled" : "Disabled")
                         .padding(10)
                         .card(.background.secondary)
                     if let interval = preferences.autoBackupInterval, preferences.autoBackup {
                         let measurement = Measurement(value: Double(interval), unit: UnitDuration.seconds).converted(to: .hours)
-                        LabeledContent("Backup Interval", value: measurement.formatted(.measurement(width: .wide)))
+                        LabeledContent("general_info_interval", value: measurement.formatted(.measurement(width: .wide)))
                             .padding(10)
                             .card(.background.secondary)
                     }
-                    LabeledContent("Requires Power", value: preferences.requiresACPower ? "Yes" : "No")
+                    LabeledContent("general_info_requirespower", value: preferences.requiresACPower ? "Yes" : "No")
                         .padding(10)
                         .card(.background.secondary)
-                    LabeledContent("Skip Paths") {
+                    LabeledContent("general_info_skippaths") {
                         VStack(alignment: .trailing, spacing: 4) {
                             if let skipPaths = preferences.skipPaths {
                                 ForEach(skipPaths, id: \.self) { path in
                                     Text(path)
                                 }
                             } else {
-                                Text("Empty")
+                                Text("general_info_skippaths_empty")
                                     .foregroundColor(.secondary)
                             }
                         }
@@ -85,7 +85,7 @@ struct MenuView: View {
                     .card(.background.secondary)
                 }
             } header: {
-                Text("General Info")
+                Text("section_general_info")
             }
             .labeledContentStyle(CustomLabeledContentStyle())
         }
@@ -100,20 +100,20 @@ struct MenuView: View {
                     utility.stopBackup()
                 }
             } label: {
-                Label("Start Backup", systemImage: utility.isIdle ? Symbols.playFill() : Symbols.stopFill())
+                Label("button_startbackup", systemImage: utility.isIdle ? Symbols.playFill() : Symbols.stopFill())
             }
             .focusable(false)
 
             if let latestDate = utility.preferences?.latestBackupDate,
                let latestVolume = utility.preferences?.latestBackupVolume {
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("\(latestDate.formatted(.relativeDate)) on \(latestVolume)")
+                    Text("label_lastbackup_\(latestDate.formatted(.relativeDate))_on_\(latestVolume)")
                     if let interval = utility.preferences?.autoBackupInterval, utility.preferences?.autoBackup == true {
                         let nextDate = latestDate.addingTimeInterval(.init(interval))
-                        Text("Next automatic backup in \(nextDate.formatted(.relativeDate))")
+                        Text("label_nextbackup_\(nextDate.formatted(.relativeDate))")
                             .font(.caption)
                     } else {
-                        Text("Automatic backups are disabled")
+                        Text("label_autobackupdisabled")
                             .font(.caption)
                             .opacity(0.8)
                     }
@@ -125,19 +125,19 @@ struct MenuView: View {
 
             Menu {
                 SettingsLink {
-                    Text("Settings")
+                    Text("settings_button_settings")
                 }
-                Button("Browse Time Machine Backups") {
+                Button("button_browsebackups") {
                     utility.launchTimeMachine()
                 }
                 Divider()
                 Button {
                     NSApp.terminate(nil)
                 } label: {
-                    Text("Quit")
+                    Text("button_quit")
                 }
             } label: {
-                Label("Settings", systemImage: Symbols.gearshapeFill())
+                Label("settings_button_settings", systemImage: Symbols.gearshapeFill())
             }
             .focusable(false)
         }

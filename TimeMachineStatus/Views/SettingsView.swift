@@ -69,15 +69,15 @@ struct SettingsView: View {
 
     private var generalTab: some View {
         Form {
-            Section("Permissions") {
+            Section("settings_section_permissions") {
                 LabeledContent {
-                    Button("Settings") {
+                    Button("settings_button_settings") {
                         NSWorkspace.shared.open(Constants.URLs.settingsFullDiskAccess)
                     }
                 } label: {
                     VStack(alignment: .leading) {
-                        Text("Full Disk Access")
-                        Text("Full disk access is required to read Time Machine preferences.")
+                        Text("settings_item_fulldiskaccess_title")
+                        Text("settings_item_fulldiskaccess_description")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -86,25 +86,25 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .tabItem {
-            Label("General", systemImage: Symbols.gear())
+            Label("settings_tab_item_general", systemImage: Symbols.gear())
         }
         .tag(Tabs.general)
     }
 
     private var appearandeTab: some View {
         Form {
-            Section("Menu Bar Item") {
+            Section("settings_section_menubaritem") {
                 LabeledContent {
                     HStack {
                         Text(horizontalPadding.formatted(.number))
                         Slider(value: $horizontalPadding, in: 0...10, step: 1)
                     }
                 } label: {
-                    Text("Horizontal Padding")
+                    Text("settings_item_horizontalpadding")
                 }
                 HStack {
-                    ColorPicker("Background Color", selection: $bgColor)
-                    Button("Default") {
+                    ColorPicker("settings_item_backgroundcolor", selection: $bgColor)
+                    Button("settings_button_default") {
                         bgColor = .clear
                     }
                 }
@@ -115,7 +115,7 @@ struct SettingsView: View {
                             Slider(value: $verticalPadding, in: 0...5, step: 1)
                         }
                     } label: {
-                        Text("Vertical Padding")
+                        Text("settings_item_verticalpadding")
                     }
                     LabeledContent {
                         HStack {
@@ -123,11 +123,11 @@ struct SettingsView: View {
                             Slider(value: $cornerRadius, in: 0...12, step: 1)
                         }
                     } label: {
-                        Text("Corner Radius")
+                        Text("settings_item_cornerradius")
                     }
                 }
-                Toggle("Bold font", isOn: $boldFont)
-                Toggle("Show Status", isOn: $showStatus)
+                Toggle("settings_item_boldfont", isOn: $boldFont)
+                Toggle("settings_item_showstatus", isOn: $showStatus)
                 if showStatus {
                     LabeledContent {
                         HStack {
@@ -135,12 +135,12 @@ struct SettingsView: View {
                             Slider(value: $spacing, in: 2...12, step: 1)
                         }
                     } label: {
-                        Text("Spacing")
+                        Text("settings_item_spacing")
                     }
                 }
             }
             Section {
-                Button("Reset To Default") {
+                Button("settings_button_resettodefault") {
                     horizontalPadding = StorageKeys.horizontalPadding.default
                     verticalPadding = StorageKeys.verticalPadding.default
                     boldFont = StorageKeys.boldFont.default
@@ -156,7 +156,7 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .tabItem {
-            Label("Appearance", systemImage: Symbols.wandAndStarsInverse())
+            Label("settings_tab_item_appearance", systemImage: Symbols.wandAndStarsInverse())
         }
         .tag(Tabs.appearance)
     }
@@ -175,13 +175,13 @@ struct SettingsView: View {
                     .font(.headline)
             }
             VStack {
-                Text("© 2023 Lukas Pistrol")
-                Link("lukaspistrol.com", destination: Constants.URLs.authorURL)
+                Text("about_copyright")
+                Link("about_weblink", destination: Constants.URLs.authorURL)
             }
             .font(.caption2)
         }
         .tabItem {
-            Label("About", systemImage: Symbols.infoCircle())
+            Label("settings_tab_item_about", systemImage: Symbols.infoCircle())
         }
         .tag(Tabs.about)
     }

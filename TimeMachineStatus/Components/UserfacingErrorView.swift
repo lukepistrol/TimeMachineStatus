@@ -21,7 +21,7 @@ struct UserfacingErrorView: View {
                 HStack(spacing: 4) {
                     Symbols.exclamationMarkTriangleFill.image
                         .foregroundStyle(.red)
-                    Text(error.localizedDescription)
+                    Text(error.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundStyle(.primary)
                 }

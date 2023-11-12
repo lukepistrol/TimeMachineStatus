@@ -94,7 +94,7 @@ struct DestinationCell: View {
                 }
             }
             HStack {
-                Text("\(dest.bytesUsed.formatted(byteFormat)) used, \(dest.bytesAvailable.formatted(byteFormat)) free")
+                Text("dest_label_\(dest.bytesUsed.formatted(byteFormat))_used_\(dest.bytesAvailable.formatted(byteFormat))_free")
                     .monospacedDigit()
             }
             .font(.caption2)
@@ -128,9 +128,9 @@ struct DestinationCell: View {
 
     @ViewBuilder
     private var contextMenuActions: some View {
-        Button("Show Info") { showInfo.toggle() }
+        Button("button_show_info") { showInfo.toggle() }
         Divider()
-        Button("Backup to \(dest.lastKnownVolumeName) now") {
+        Button("button_backup_to_\(dest.lastKnownVolumeName)_now") {
             utility.startBackup(id: dest.destinationID)
         }
     }
@@ -146,7 +146,7 @@ struct DestinationCell: View {
                 if let copying {
                     if let bytes = copying.progress.bytes,
                        let files = copying.progress.files {
-                        Text("\(files) Files (\(bytes.formatted(byteFormat)))")
+                        Text("dest_label_progress_\(files.formatted())_files_\(bytes.formatted(byteFormat))")
                     }
                 }
             }

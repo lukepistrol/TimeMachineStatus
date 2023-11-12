@@ -16,7 +16,7 @@ struct CustomLabeledContentStyle: LabeledContentStyle {
         HStack(alignment: .firstTextBaseline) {
             HStack(spacing: 0) {
                 configuration.label
-                Text(":")
+                Text(verbatim: ":")
             }
             .font(.body.weight(.semibold))
             .foregroundStyle(.primary)
