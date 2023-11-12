@@ -307,19 +307,43 @@
         }
       }
     },
-    "dest_label_progress_%@_files_%@" : {
+    "dest_label_progress_%lld_files_%@" : {
       "extractionState" : "manual",
       "localizations" : {
         "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ Dateien (%2$@)"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$@ Datei (%2$@)"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$@ Dateien (%2$@)"
+                }
+              }
+            }
           }
         },
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ Files (%2$@)"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld File (%2$@)"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Files (%2$@)"
+                }
+              }
+            }
           }
         }
       }
@@ -483,13 +507,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ auf %2$@"
+            "value" : "%1$@ auf \"%2$@\""
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@ on %2$@"
+            "value" : "%1$@ on \"%2$@\""
           }
         }
       }

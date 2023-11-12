@@ -146,7 +146,7 @@ struct DestinationCell: View {
                 if let copying {
                     if let bytes = copying.progress.bytes,
                        let files = copying.progress.files {
-                        Text("dest_label_progress_\(files.formatted())_files_\(bytes.formatted(byteFormat))")
+                        Text("dest_label_progress_\(files)_files_\(bytes.formatted(byteFormat))")
                     }
                 }
             }
