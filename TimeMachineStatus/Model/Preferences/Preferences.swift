@@ -33,7 +33,7 @@ struct Preferences: Decodable {
     let lastConfigurationTraceDate: Date
     let lastDestinationID: UUID?
     let localizedDiskImageVolumeName: String
-    let skipPaths: [String]
+    let skipPaths: [String]?
     let destinations: [Destination]
 
     var latestBackupDate: Date? {

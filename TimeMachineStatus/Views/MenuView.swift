@@ -71,13 +71,13 @@ struct MenuView: View {
                         .card(.background.secondary)
                     LabeledContent("Skip Paths") {
                         VStack(alignment: .trailing, spacing: 4) {
-                            if preferences.skipPaths.isEmpty {
-                                Text("Empty")
-                                    .foregroundColor(.secondary)
-                            } else {
-                                ForEach(preferences.skipPaths, id: \.self) { path in
+                            if let skipPaths = preferences.skipPaths {
+                                ForEach(skipPaths, id: \.self) { path in
                                     Text(path)
                                 }
+                            } else {
+                                Text("Empty")
+                                    .foregroundColor(.secondary)
                             }
                         }
                     }
