@@ -3,7 +3,7 @@
 This app is a simple status bar app that shows the status of Time Machine backups. It is still in early development
 and thus not available for download yet.
 
-![Preview Banner](https://github.com/lukepistrol/TimeMachineStatus/assets/9460130/b131862a-eb73-4915-ad6f-5721abb4767a)
+![Header](https://github.com/lukepistrol/TimeMachineStatus/assets/9460130/c0c89b5a-cf47-434a-891d-16c874f0ae16)
 
 ## Roadmap
 
