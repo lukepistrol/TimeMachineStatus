@@ -57,6 +57,7 @@ struct SettingsView: View {
     }
 
     @State private var selection: Tabs = .general
+    @StateObject private var launchItemProvider = LaunchItemProvider()
 
     var body: some View {
         TabView(selection: $selection) {
@@ -78,6 +79,17 @@ struct SettingsView: View {
                     VStack(alignment: .leading) {
                         Text("settings_item_fulldiskaccess_title")
                         Text("settings_item_fulldiskaccess_description")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+            Section {
+                VStack(alignment: .leading) {
+                    Toggle("settings_item_launchatlogin", isOn: $launchItemProvider.launchAtLogin)
+                        .disabled(launchItemProvider.requiresApproval)
+                    if launchItemProvider.requiresApproval {
+                        Text("settings_item_launchatlogin_approval_notice")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }

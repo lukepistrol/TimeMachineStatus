@@ -24,6 +24,10 @@
 		2818227A2AFE292A0067E564 /* UserfacingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822792AFE292A0067E564 /* UserfacingError.swift */; };
 		2818227C2AFE33CA0067E564 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227B2AFE33CA0067E564 /* Constants.swift */; };
 		2818227E2AFE36780067E564 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227D2AFE36780067E564 /* Bundle+.swift */; };
+		28263F912B023D4E00F74655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28263F902B023D4E00F74655 /* AppDelegate.swift */; };
+		28263FA02B023FD100F74655 /* TimeMachineStatusHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		28263FA32B023FFE00F74655 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28263FA22B023FFE00F74655 /* ServiceManagement.framework */; };
+		2885D6652B024D0B00C260DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885D6642B024D0B00C260DB /* main.swift */; };
 		288F12FB2B011A9300678FAD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 288F12FA2B011A9300678FAD /* Localizable.xcstrings */; };
 		28A0021B2AFBBFC300E2A01E /* TimeMachineStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */; };
 		28A0021D2AFBBFC300E2A01E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0021C2AFBBFC300E2A01E /* SettingsView.swift */; };
@@ -45,12 +49,27 @@
 		28A0026C2AFC0CC700E2A01E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026B2AFC0CC700E2A01E /* Preferences.swift */; };
 		28A0026E2AFC312000E2A01E /* Finishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026D2AFC312000E2A01E /* Finishing.swift */; };
 		28A002702AFC342100E2A01E /* Starting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026F2AFC342100E2A01E /* Starting.swift */; };
+		28F2D4402B02560400B75998 /* LaunchItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2D43F2B02560400B75998 /* LaunchItemProvider.swift */; };
+		28F2D4412B0257E700B75998 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227B2AFE33CA0067E564 /* Constants.swift */; };
 		28FAD5A72AFE3DBF00F642E7 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */; };
 		28FAD5A92AFE9BCB00F642E7 /* DestinationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */; };
 		28FAD5AB2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */; };
 		28FAD5AD2AFF0D7200F642E7 /* ExpandableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5AC2AFF0D7200F642E7 /* ExpandableSection.swift */; };
 		28FAD5AF2AFF0D9600F642E7 /* UserfacingErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5AE2AFF0D9600F642E7 /* UserfacingErrorView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		28263F9F2B023FB500F74655 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				28263FA02B023FD100F74655 /* TimeMachineStatusHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2818224E2AFCF8500067E564 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -70,6 +89,11 @@
 		281822792AFE292A0067E564 /* UserfacingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserfacingError.swift; sourceTree = "<group>"; };
 		2818227B2AFE33CA0067E564 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2818227D2AFE36780067E564 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
+		28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatusHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28263F902B023D4E00F74655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28263FA22B023FFE00F74655 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		28263FA42B0241E200F74655 /* TimeMachineStatusHelper.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TimeMachineStatusHelper.entitlements; sourceTree = "<group>"; };
+		2885D6642B024D0B00C260DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		288F12FA2B011A9300678FAD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMachineStatusApp.swift; sourceTree = "<group>"; };
@@ -91,6 +115,7 @@
 		28A0026B2AFC0CC700E2A01E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		28A0026D2AFC312000E2A01E /* Finishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finishing.swift; sourceTree = "<group>"; };
 		28A0026F2AFC342100E2A01E /* Starting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starting.swift; sourceTree = "<group>"; };
+		28F2D43F2B02560400B75998 /* LaunchItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchItemProvider.swift; sourceTree = "<group>"; };
 		28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 		28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationInfoView.swift; sourceTree = "<group>"; };
 		28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabeledContentStyle.swift; sourceTree = "<group>"; };
@@ -99,12 +124,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		28263F8B2B023D4E00F74655 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28A002142AFBBFC300E2A01E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				281822622AFD40920067E564 /* Logging in Frameworks */,
 				28A0024A2AFBC91500E2A01E /* ShellOut in Frameworks */,
+				28263FA32B023FFE00F74655 /* ServiceManagement.framework in Frameworks */,
 				28A002472AFBC09000E2A01E /* SFSymbolsMacro in Frameworks */,
 				281822652AFD438B0067E564 /* LoggingOSLog in Frameworks */,
 			);
@@ -147,13 +180,34 @@
 			path = Internal;
 			sourceTree = "<group>";
 		};
+		28263F8F2B023D4E00F74655 /* TimeMachineStatusHelper */ = {
+			isa = PBXGroup;
+			children = (
+				28263FA42B0241E200F74655 /* TimeMachineStatusHelper.entitlements */,
+				28263F902B023D4E00F74655 /* AppDelegate.swift */,
+				2885D6642B024D0B00C260DB /* main.swift */,
+			);
+			path = TimeMachineStatusHelper;
+			sourceTree = "<group>";
+		};
+		28263FA12B023FFE00F74655 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28263FA22B023FFE00F74655 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		28A0020E2AFBBFC300E2A01E = {
 			isa = PBXGroup;
 			children = (
+				28F2D4422B02582300B75998 /* Shared */,
 				281822702AFDB5AF0067E564 /* LICENSE.md */,
 				2818226F2AFDB0920067E564 /* README.md */,
 				28A002192AFBBFC300E2A01E /* TimeMachineStatus */,
+				28263F8F2B023D4E00F74655 /* TimeMachineStatusHelper */,
 				28A002182AFBBFC300E2A01E /* Products */,
+				28263FA12B023FFE00F74655 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */,
+				28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				28A002512AFC03A200E2A01E /* TMUtility.swift */,
+				28F2D43F2B02560400B75998 /* LaunchItemProvider.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -215,7 +271,6 @@
 		28A002532AFC03D700E2A01E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2818227B2AFE33CA0067E564 /* Constants.swift */,
 				28A0026A2AFC0CB300E2A01E /* Preferences */,
 				28A002692AFC0CAB00E2A01E /* BackupState */,
 			);
@@ -258,9 +313,34 @@
 			path = Preferences;
 			sourceTree = "<group>";
 		};
+		28F2D4422B02582300B75998 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2818227B2AFE33CA0067E564 /* Constants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		28263F8D2B023D4E00F74655 /* TimeMachineStatusHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28263F9C2B023D5000F74655 /* Build configuration list for PBXNativeTarget "TimeMachineStatusHelper" */;
+			buildPhases = (
+				28263F8A2B023D4E00F74655 /* Sources */,
+				28263F8B2B023D4E00F74655 /* Frameworks */,
+				28263F8C2B023D4E00F74655 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeMachineStatusHelper;
+			productName = TimeMachineStatusHelper;
+			productReference = 28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		28A002162AFBBFC300E2A01E /* TimeMachineStatus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28A0023C2AFBBFC400E2A01E /* Build configuration list for PBXNativeTarget "TimeMachineStatus" */;
@@ -268,6 +348,7 @@
 				28A002132AFBBFC300E2A01E /* Sources */,
 				28A002142AFBBFC300E2A01E /* Frameworks */,
 				28A002152AFBBFC300E2A01E /* Resources */,
+				28263F9F2B023FB500F74655 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -295,6 +376,9 @@
 				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "Lukas Pistrol";
 				TargetAttributes = {
+					28263F8D2B023D4E00F74655 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					28A002162AFBBFC300E2A01E = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -321,11 +405,19 @@
 			projectRoot = "";
 			targets = (
 				28A002162AFBBFC300E2A01E /* TimeMachineStatus */,
+				28263F8D2B023D4E00F74655 /* TimeMachineStatusHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		28263F8C2B023D4E00F74655 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28A002152AFBBFC300E2A01E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,6 +431,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		28263F8A2B023D4E00F74655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2885D6652B024D0B00C260DB /* main.swift in Sources */,
+				28263F912B023D4E00F74655 /* AppDelegate.swift in Sources */,
+				28F2D4412B0257E700B75998 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28A002132AFBBFC300E2A01E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,6 +476,7 @@
 				28FAD5AB2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift in Sources */,
 				28FAD5A92AFE9BCB00F642E7 /* DestinationInfoView.swift in Sources */,
 				2818225D2AFD3FB80067E564 /* FIndingBackupVolume.swift in Sources */,
+				28F2D4402B02560400B75998 /* LaunchItemProvider.swift in Sources */,
 				28A0026E2AFC312000E2A01E /* Finishing.swift in Sources */,
 				28A0026C2AFC0CC700E2A01E /* Preferences.swift in Sources */,
 				281822512AFCF8750067E564 /* DestinationCell.swift in Sources */,
@@ -385,6 +488,62 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		28263F9A2B023D5000F74655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TimeMachineStatusHelper/TimeMachineStatusHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Lukas Pistrol. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatusHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		28263F9B2B023D5000F74655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TimeMachineStatusHelper/TimeMachineStatusHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Lukas Pistrol. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatusHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		28A0023A2AFBBFC400E2A01E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -566,6 +725,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		28263F9C2B023D5000F74655 /* Build configuration list for PBXNativeTarget "TimeMachineStatusHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28263F9A2B023D5000F74655 /* Debug */,
+				28263F9B2B023D5000F74655 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		28A002122AFBBFC300E2A01E /* Build configuration list for PBXProject "TimeMachineStatus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

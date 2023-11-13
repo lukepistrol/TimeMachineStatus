@@ -18,7 +18,7 @@ and thus not available for download yet.
 - [ ] Schedule backups (instead of hourly backups)
 - [ ] Schedule backups on a per volume basis
 - [x] Launch Time Machine
-- [ ] Launch app at login
+- [x] Launch app at login
 - [ ] Improve displayed information in menu bar
 
 ## Contributing
@@ -34,7 +34,7 @@ Currently it is only possible to run the app by building it from source using `X
 and open the project in Xcode.
 
 > **Warning**
-> Make sure that you change the signing team to your own, otherwise the `Full Disk Access` permission does not persist
+> Make sure that you change the signing team in all targets to your own, otherwise the `Full Disk Access` permission does not persist
 > between app launches.
 
 Then simply run the app using the `Run` button in Xcode.

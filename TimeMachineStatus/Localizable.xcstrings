@@ -722,6 +722,38 @@
         }
       }
     },
+    "settings_item_launchatlogin" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bei Login starten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Launch at Login"
+          }
+        }
+      }
+    },
+    "settings_item_launchatlogin_approval_notice" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TimeMachineStatus muss in Systemeinstellungen > Allgemein > Anmeldeobjekte aktiviert sein."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TimeMachineStatus must be enabled in System Settings > General > Login Items"
+          }
+        }
+      }
+    },
     "settings_item_showstatus" : {
       "extractionState" : "manual",
       "localizations" : {

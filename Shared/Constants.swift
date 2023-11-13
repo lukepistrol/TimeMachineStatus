@@ -33,4 +33,9 @@ enum Constants {
         static let status: String = "tmutil status | tail -n +2"
         static let launchTimeMachine = "open -n \"/System/Applications/Time Machine.app\" --args -AppCommandLineArg"
     }
+
+    enum BundleIds {
+        static let main = "com.lukaspistrol.TimeMachineStatus"
+        static let helper = "com.lukaspistrol.TimeMachineStatusHelper"
+    }
 }

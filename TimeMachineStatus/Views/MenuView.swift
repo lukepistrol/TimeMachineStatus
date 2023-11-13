@@ -127,6 +127,7 @@ struct MenuView: View {
                 SettingsLink {
                     Text("settings_button_settings")
                 }
+                .keyboardShortcut(",", modifiers: .command)
                 Button("button_browsebackups") {
                     utility.launchTimeMachine()
                 }
@@ -136,6 +137,7 @@ struct MenuView: View {
                 } label: {
                     Text("button_quit")
                 }
+                .keyboardShortcut("q", modifiers: .command)
             } label: {
                 Label("settings_button_settings", systemImage: Symbols.gearshapeFill())
             }
