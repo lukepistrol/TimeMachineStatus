@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    name: Build and Publish Release
+    runs-on: macOS-13
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install certificates
+        env:
+          DEV_SIGN_CERT: ${{ secrets.DEV_SIGN_CERT }}
+          DEV_SIGN_PW: ${{ secrets.DEV_SIGN_PW }}
+          KEYCHAIN_TIMEOUT: 21600
+        run: |
+          DEV_CERT_P12="$RUNNER_TEMP/dev_cert.p12"
+          KEYCHAIN_DB="$RUNNER_TEMP/keychain.keychain-db"
+          KEYCHAIN_PW=$(openssl rand -base64 24)
+
+          security create-keychain -p "$KEYCHAIN_PW" "$KEYCHAIN_DB"
+          security set-keychain-settings -lut "$KEYCHAIN_TIMEOUT" "$KEYCHAIN_DB"
+          security unlock-keychain -p "$KEYCHAIN_PW" "$KEYCHAIN_DB"
+
+          echo -n "$DEV_SIGN_CERT" | base64 --decode -o "$DEV_CERT_P12"
+          security import "$DEV_CERT_P12" -P "$DEV_SIGN_PW" -A -t cert -f pkcs12 -k "$KEYCHAIN_DB"
+          security list-keychain -d user -s "$KEYCHAIN_DB"
+
+      - name: Build, Sign, Notarize & Package
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          CODE_SIGN_IDENTITY: ${{ secrets.CODE_SIGN_IDENTITY }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        run: ./scripts/build.sh
+      - name: Clean up keychain and provisioning profile
+        if: ${{ always() }}
+        run: |
+          security delete-keychain "$RUNNER_TEMP/keychain.keychain-db"
+          rm -rf "~/Library/MobileDevice/Provisioning Profiles"

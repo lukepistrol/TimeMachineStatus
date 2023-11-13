@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "sfsymbolsmacro",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/lukepistrol/SFSymbolsMacro.git",
-      "state" : {
-        "revision" : "ad2183d29dc928f7f9cd5dc6efcc4546efc7857b",
-        "version" : "0.5.1"
-      }
-    },
-    {
       "identity" : "shellout",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/JohnSundell/ShellOut.git",
@@ -34,15 +25,6 @@
       "state" : {
         "revision" : "176d41d46429e79c806333025b226e0c50a0c602",
         "version" : "0.2.2"
-      }
-    },
-    {
-      "identity" : "swift-syntax",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-syntax.git",
-      "state" : {
-        "revision" : "6ad4ea24b01559dde0773e3d091f1b9e36175036",
-        "version" : "509.0.2"
       }
     }
   ],

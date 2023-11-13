@@ -10,9 +10,7 @@
 //  
 
 import SwiftUI
-import SFSymbolsMacro
 
-@SFSymbol
 enum Symbols: String {
     case checkmarkCircleFill = "checkmark.circle.fill"
     case exclamationMarkTriangleFill = "exclamationmark.triangle.fill"
@@ -26,4 +24,20 @@ enum Symbols: String {
     case timeMachine = "clock.arrow.circlepath"
     case wandAndStarsInverse = "wand.and.stars.inverse"
     case xmarkCircleFill = "xmark.circle.fill"
+
+    var image: Image {
+        Image(systemName: self.rawValue)
+    }
+
+    var name: String {
+        self.rawValue
+    }
+
+    func nsImage(accessibilityDescription: String? = nil) -> NSImage {
+        return NSImage(systemSymbolName: self.rawValue, accessibilityDescription: accessibilityDescription)!
+    }
+
+    func callAsFunction() -> String {
+        return self.rawValue
+    }
 }
