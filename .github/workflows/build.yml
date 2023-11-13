@@ -1,0 +1,55 @@
+name: Build (PR)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_15.0.app/Contents/Developer
+
+jobs:
+  build:
+    name: Build and Publish Release
+    runs-on: macOS-13
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install certificates
+        env:
+          MAC_SIGN_CERT: ${{ secrets.MAC_SIGN_CERT }}
+          MAC_SIGN_PW: ${{ secrets.MAC_SIGN_PW }}
+          KEYCHAIN_TIMEOUT: 21600
+        run: |
+          MAC_CERT_P12="$RUNNER_TEMP/mac_cert.p12"
+          KEYCHAIN_DB="$RUNNER_TEMP/keychain.keychain-db"
+          KEYCHAIN_PW=$(openssl rand -base64 24)
+
+          security create-keychain -p "$KEYCHAIN_PW" "$KEYCHAIN_DB"
+          security set-keychain-settings -lut "$KEYCHAIN_TIMEOUT" "$KEYCHAIN_DB"
+          security unlock-keychain -p "$KEYCHAIN_PW" "$KEYCHAIN_DB"
+
+          echo -n "$MAC_SIGN_CERT" | base64 --decode -o "$MAC_CERT_P12"
+          security import "$MAC_CERT_P12" -P "$MAC_SIGN_PW" -A -t cert -f pkcs12 -k "$KEYCHAIN_DB"
+          security list-keychain -d user -s "$KEYCHAIN_DB"
+
+      - name: Build
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          set -o pipefail && xcodebuild build -project "TimeMachineStatus.xcodeproj" \
+            -scheme "TimeMachineStatus" \
+            -configuration "Release" \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData" \
+            DEVELOPMENT_TEAM=$APPLE_TEAM_ID
+
+      - name: Clean up keychain and provisioning profile
+        if: ${{ always() }}
+        run: |
+          security delete-keychain "$RUNNER_TEMP/keychain.keychain-db"
+          rm -rf "~/Library/MobileDevice/Provisioning Profiles"

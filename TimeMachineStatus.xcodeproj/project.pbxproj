@@ -33,7 +33,6 @@
 		28A0021D2AFBBFC300E2A01E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0021C2AFBBFC300E2A01E /* SettingsView.swift */; };
 		28A0021F2AFBBFC400E2A01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A0021E2AFBBFC400E2A01E /* Assets.xcassets */; };
 		28A002222AFBBFC400E2A01E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A002212AFBBFC400E2A01E /* Preview Assets.xcassets */; };
-		28A002472AFBC09000E2A01E /* SFSymbolsMacro in Frameworks */ = {isa = PBXBuildFile; productRef = 28A002462AFBC09000E2A01E /* SFSymbolsMacro */; };
 		28A0024A2AFBC91500E2A01E /* ShellOut in Frameworks */ = {isa = PBXBuildFile; productRef = 28A002492AFBC91500E2A01E /* ShellOut */; };
 		28A0024D2AFC02DA00E2A01E /* Bool+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0024C2AFC02DA00E2A01E /* Bool+.swift */; };
 		28A0024F2AFC030500E2A01E /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0024E2AFC030500E2A01E /* Symbols.swift */; };
@@ -138,7 +137,6 @@
 				281822622AFD40920067E564 /* Logging in Frameworks */,
 				28A0024A2AFBC91500E2A01E /* ShellOut in Frameworks */,
 				28263FA32B023FFE00F74655 /* ServiceManagement.framework in Frameworks */,
-				28A002472AFBC09000E2A01E /* SFSymbolsMacro in Frameworks */,
 				281822652AFD438B0067E564 /* LoggingOSLog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +354,6 @@
 			);
 			name = TimeMachineStatus;
 			packageProductDependencies = (
-				28A002462AFBC09000E2A01E /* SFSymbolsMacro */,
 				28A002492AFBC91500E2A01E /* ShellOut */,
 				281822612AFD40920067E564 /* Logging */,
 				281822642AFD438B0067E564 /* LoggingOSLog */,
@@ -395,7 +392,6 @@
 			);
 			mainGroup = 28A0020E2AFBBFC300E2A01E;
 			packageReferences = (
-				28A002452AFBC09000E2A01E /* XCRemoteSwiftPackageReference "SFSymbolsMacro" */,
 				28A002482AFBC91500E2A01E /* XCRemoteSwiftPackageReference "ShellOut" */,
 				281822602AFD40920067E564 /* XCRemoteSwiftPackageReference "swift-log" */,
 				281822632AFD438B0067E564 /* XCRemoteSwiftPackageReference "swift-log-oslog" */,
@@ -771,14 +767,6 @@
 				minimumVersion = 0.2.2;
 			};
 		};
-		28A002452AFBC09000E2A01E /* XCRemoteSwiftPackageReference "SFSymbolsMacro" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lukepistrol/SFSymbolsMacro.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.5.0;
-			};
-		};
 		28A002482AFBC91500E2A01E /* XCRemoteSwiftPackageReference "ShellOut" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JohnSundell/ShellOut.git";
@@ -799,11 +787,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 281822632AFD438B0067E564 /* XCRemoteSwiftPackageReference "swift-log-oslog" */;
 			productName = LoggingOSLog;
-		};
-		28A002462AFBC09000E2A01E /* SFSymbolsMacro */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 28A002452AFBC09000E2A01E /* XCRemoteSwiftPackageReference "SFSymbolsMacro" */;
-			productName = SFSymbolsMacro;
 		};
 		28A002492AFBC91500E2A01E /* ShellOut */ = {
 			isa = XCSwiftPackageProductDependency;
