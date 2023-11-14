@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SUFeedURL</key>
+	<string>https://github.com/lukepistrol/TimeMachineStatus/releases/latest/download/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>CGObployTwcYNX3H9eaJdiwcIg1PD7I+zd404vJ9y0k=</string>
 </dict>
