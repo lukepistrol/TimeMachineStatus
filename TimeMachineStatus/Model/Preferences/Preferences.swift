@@ -27,22 +27,22 @@ struct Preferences: Decodable {
 
     let autoBackup: Bool
     let autoBackupInterval: Int?
-    let excludedVolumeUUIDs: [UUID]
+    let excludedVolumeUUIDs: [UUID]?
     let preferencesVersion: Int
     let requiresACPower: Bool
     let lastConfigurationTraceDate: Date
     let lastDestinationID: UUID?
     let localizedDiskImageVolumeName: String
     let skipPaths: [String]?
-    let destinations: [Destination]
+    let destinations: [Destination]?
 
     var latestBackupDate: Date? {
-        destinations.map(\.snapshotDates).flatMap { $0 }.max()
+        destinations?.map(\.snapshotDates).flatMap { $0 }.max()
     }
 
     var latestBackupVolume: String? {
         guard let lastDestinationID else { return nil }
-        return destinations
+        return destinations?
             .first { $0.destinationID == lastDestinationID }?
             .lastKnownVolumeName
     }
