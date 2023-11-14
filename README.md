@@ -15,18 +15,15 @@ After downloading it once it can be updated from within the app.
 
 A download using homebrew is [planned](https://github.com/lukepistrol/TimeMachineStatus/issues/10) (hit me up if you want to set this up).
 
+## Features
+
+* Show the current status in the menu bar
+* List all backup destinations and detailed information about them
+* Start a backup on a specific volume
+* Customize the appearance of the menu bar item
+
 ## Roadmap
 
-- [x] Show current status of Time Machine
-- [x] Show time of last backup
-- [x] Show time of next backup (if any)
-- [x] List all backup volumes
-- [x] Allow to start a backup (automatic volume selection)
-- [x] Allow to start a backup manually (select volume)
-- [x] Stop a running backup
-- [x] Show progress of running backup
-- [x] Launch Time Machine
-- [x] Launch app at login
 - [ ] Improve displayed information in menu bar
 - [ ] Schedule backups (instead of hourly backups)
 - [ ] Schedule backups on a per volume basis
