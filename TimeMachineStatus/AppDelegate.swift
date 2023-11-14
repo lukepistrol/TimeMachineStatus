@@ -11,6 +11,7 @@
 
 import SwiftUI
 import Combine
+import Sparkle
 
 private var isPreview: Bool {
     return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
@@ -23,6 +24,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var popover: NSPopover?
 
     let utility: TMUtility = .init()
+
+    var updaterController: SPUStandardUpdaterController!
+
+    override init() {
+        super.init()
+        self.updaterController = .init(
+            startingUpdater: true,
+            updaterDelegate: nil,
+            userDriverDelegate: self
+        )
+    }
 
     private var sizePassthrough = PassthroughSubject<CGSize, Never>()
     private var sizeCancellable: AnyCancellable?
@@ -75,11 +87,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func setupPopover() {
-        let menuView = MenuView(utility: utility)
+        let menuView = MenuView(utility: utility, updater: updaterController.updater)
         popover = NSPopover()
         popover?.contentViewController = NSHostingController(rootView: menuView)
         popover?.animates = false
         popover?.behavior = .applicationDefined
         popover?.setValue(true, forKeyPath: "shouldHideAnchor") // hide arrow
+    }
+}
+
+extension AppDelegate: SPUStandardUserDriverDelegate {
+    var supportsGentleScheduledUpdateReminders: Bool {
+        return true
+    }
+
+    func standardUserDriverShouldHandleShowingScheduledUpdate(
+        _ update: SUAppcastItem,
+        andInImmediateFocus immediateFocus: Bool
+    ) -> Bool {
+        return true
     }
 }

@@ -50,6 +50,8 @@
 		28A002702AFC342100E2A01E /* Starting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0026F2AFC342100E2A01E /* Starting.swift */; };
 		28F2D4402B02560400B75998 /* LaunchItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2D43F2B02560400B75998 /* LaunchItemProvider.swift */; };
 		28F2D4412B0257E700B75998 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227B2AFE33CA0067E564 /* Constants.swift */; };
+		28F2D4452B02F2F300B75998 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 28F2D4442B02F2F300B75998 /* Sparkle */; };
+		28F2D4472B02F62400B75998 /* UpdaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2D4462B02F62400B75998 /* UpdaterViewModel.swift */; };
 		28FAD5A72AFE3DBF00F642E7 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */; };
 		28FAD5A92AFE9BCB00F642E7 /* DestinationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */; };
 		28FAD5AB2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */; };
@@ -115,6 +117,8 @@
 		28A0026D2AFC312000E2A01E /* Finishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finishing.swift; sourceTree = "<group>"; };
 		28A0026F2AFC342100E2A01E /* Starting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starting.swift; sourceTree = "<group>"; };
 		28F2D43F2B02560400B75998 /* LaunchItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchItemProvider.swift; sourceTree = "<group>"; };
+		28F2D4462B02F62400B75998 /* UpdaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterViewModel.swift; sourceTree = "<group>"; };
+		28F2D4482B03000900B75998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 		28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationInfoView.swift; sourceTree = "<group>"; };
 		28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabeledContentStyle.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F2D4452B02F2F300B75998 /* Sparkle in Frameworks */,
 				281822622AFD40920067E564 /* Logging in Frameworks */,
 				28A0024A2AFBC91500E2A01E /* ShellOut in Frameworks */,
 				28263FA32B023FFE00F74655 /* ServiceManagement.framework in Frameworks */,
@@ -221,6 +226,7 @@
 		28A002192AFBBFC300E2A01E /* TimeMachineStatus */ = {
 			isa = PBXGroup;
 			children = (
+				28F2D4482B03000900B75998 /* Info.plist */,
 				281822582AFCFAE50067E564 /* AppDelegate.swift */,
 				28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */,
 				28A0024E2AFC030500E2A01E /* Symbols.swift */,
@@ -262,6 +268,7 @@
 			children = (
 				28A002512AFC03A200E2A01E /* TMUtility.swift */,
 				28F2D43F2B02560400B75998 /* LaunchItemProvider.swift */,
+				28F2D4462B02F62400B75998 /* UpdaterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -357,6 +364,7 @@
 				28A002492AFBC91500E2A01E /* ShellOut */,
 				281822612AFD40920067E564 /* Logging */,
 				281822642AFD438B0067E564 /* LoggingOSLog */,
+				28F2D4442B02F2F300B75998 /* Sparkle */,
 			);
 			productName = TimeMachineStatus;
 			productReference = 28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */;
@@ -395,6 +403,7 @@
 				28A002482AFBC91500E2A01E /* XCRemoteSwiftPackageReference "ShellOut" */,
 				281822602AFD40920067E564 /* XCRemoteSwiftPackageReference "swift-log" */,
 				281822632AFD438B0067E564 /* XCRemoteSwiftPackageReference "swift-log-oslog" */,
+				28F2D4432B02F2F300B75998 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 28A002182AFBBFC300E2A01E /* Products */;
 			projectDirPath = "";
@@ -473,6 +482,7 @@
 				28FAD5A92AFE9BCB00F642E7 /* DestinationInfoView.swift in Sources */,
 				2818225D2AFD3FB80067E564 /* FIndingBackupVolume.swift in Sources */,
 				28F2D4402B02560400B75998 /* LaunchItemProvider.swift in Sources */,
+				28F2D4472B02F62400B75998 /* UpdaterViewModel.swift in Sources */,
 				28A0026E2AFC312000E2A01E /* Finishing.swift in Sources */,
 				28A0026C2AFC0CC700E2A01E /* Preferences.swift in Sources */,
 				281822512AFCF8750067E564 /* DestinationCell.swift in Sources */,
@@ -672,10 +682,12 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimeMachineStatus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TimeMachineStatus;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -685,6 +697,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -702,10 +715,12 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimeMachineStatus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TimeMachineStatus;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_PREPROCESS = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -715,6 +730,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -775,6 +791,14 @@
 				minimumVersion = 2.3.0;
 			};
 		};
+		28F2D4432B02F2F300B75998 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -792,6 +816,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 28A002482AFBC91500E2A01E /* XCRemoteSwiftPackageReference "ShellOut" */;
 			productName = ShellOut;
+		};
+		28F2D4442B02F2F300B75998 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28F2D4432B02F2F300B75998 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

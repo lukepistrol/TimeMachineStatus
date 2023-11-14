@@ -37,7 +37,7 @@ struct TimeMachineStatusApp: App {
         /* The menu bar item and menu view are set up in AppDelegate */
 
         Settings {
-            SettingsView()
+            SettingsView(updater: appDelegate.updaterController.updater)
                 .environmentObject(appDelegate.utility)
         }
     }

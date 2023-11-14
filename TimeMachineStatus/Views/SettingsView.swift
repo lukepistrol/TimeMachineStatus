@@ -10,6 +10,7 @@
 //  
 
 import SwiftUI
+import Sparkle
 
 enum StorageKeys {
 
@@ -58,6 +59,13 @@ struct SettingsView: View {
 
     @State private var selection: Tabs = .general
     @StateObject private var launchItemProvider = LaunchItemProvider()
+    @ObservedObject private var updaterViewModel: UpdaterViewModel
+    private let updater: SPUUpdater
+
+    init(updater: SPUUpdater) {
+        self.updater = updater
+        self.updaterViewModel = UpdaterViewModel(updater: updater)
+    }
 
     var body: some View {
         TabView(selection: $selection) {
@@ -94,6 +102,10 @@ struct SettingsView: View {
                             .foregroundStyle(.secondary)
                     }
                 }
+                Toggle(
+                    "settings_item_autocheckupdates",
+                    isOn: $updaterViewModel.automaticallyChecksForUpdates
+                )
             }
         }
         .formStyle(.grouped)
@@ -185,6 +197,10 @@ struct SettingsView: View {
                     .fontWeight(.bold)
                 Text("Version " + Bundle.appVersionString + " (" + Bundle.appBuildString + ")")
                     .font(.headline)
+                Button("settings_button_checkforupdates") {
+                    updater.checkForUpdates()
+                }
+                .disabled(!updaterViewModel.canCheckForUpdates)
             }
             VStack {
                 Text("about_copyright")
@@ -200,5 +216,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    SettingsView(updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater)
 }

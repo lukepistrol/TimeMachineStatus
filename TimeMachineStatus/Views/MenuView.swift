@@ -11,11 +11,20 @@
 
 import SwiftUI
 import Combine
+import Sparkle
 
 struct MenuView: View {
     @Environment(\.openWindow) private var openWindow
 
-    @ObservedObject var utility: TMUtility
+    @ObservedObject private var utility: TMUtility
+    @ObservedObject private var updaterViewModel: UpdaterViewModel
+    private let updater: SPUUpdater
+
+    init(utility: TMUtility, updater: SPUUpdater) {
+        self.utility = utility
+        self.updater = updater
+        self.updaterViewModel = UpdaterViewModel(updater: updater)
+    }
 
     var body: some View {
         VStack(spacing: 8) {
@@ -128,6 +137,10 @@ struct MenuView: View {
                     Text("settings_button_settings")
                 }
                 .keyboardShortcut(",", modifiers: .command)
+                Button("settings_button_checkforupdates") {
+                    updater.checkForUpdates()
+                }
+                .disabled(!updaterViewModel.canCheckForUpdates)
                 Button("button_browsebackups") {
                     utility.launchTimeMachine()
                 }
@@ -157,11 +170,17 @@ struct MenuView: View {
 }
 
 #Preview("Light") {
-    MenuView(utility: .init())
-        .preferredColorScheme(.light)
+    MenuView(
+        utility: .init(),
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
+    )
+    .preferredColorScheme(.light)
 }
 
 #Preview("Dark") {
-    MenuView(utility: .init())
-        .preferredColorScheme(.dark)
+    MenuView(
+        utility: .init(),
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
+    )
+    .preferredColorScheme(.dark)
 }

@@ -176,12 +176,20 @@ struct DestinationCell: View {
     }
 }
 
+import Sparkle
+
 #Preview("Light") {
-    MenuView(utility: .init())
-        .preferredColorScheme(.light)
+    MenuView(
+        utility: .init(),
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
+    )
+    .preferredColorScheme(.light)
 }
 
 #Preview("Dark") {
-    MenuView(utility: .init())
-        .preferredColorScheme(.dark)
+    MenuView(
+        utility: .init(),
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
+    )
+    .preferredColorScheme(.dark)
 }

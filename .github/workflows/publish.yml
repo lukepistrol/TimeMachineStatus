@@ -2,6 +2,9 @@ name: Build & Publish
 
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - '*.*.*'
 
 env:
   DEVELOPER_DIR: /Applications/Xcode_15.0.app/Contents/Developer
@@ -87,6 +90,44 @@ jobs:
             --skip-jenkins \
             "$RUNNER_TEMP/TimeMachineStatus.dmg" \
             "$RUNNER_TEMP/TimeMachineStatus.xcarchive/Products/Applications/TimeMachineStatus.app"
+
+      - name: Get Build Number
+        run: |
+          APP_BUILD=$(xcrun agvtool vers -terse)
+          echo "APP_BUILD=$APP_BUILD" >> $GITHUB_ENV
+
+      - name: Sparkle
+        env:
+          SPARKLE_KEY: ${{ secrets.SPARKLE_KEY }}
+          SPARKLE_DL_PREFIX: "https://github.com/lukepistrol/TimeMachineStatus/releases/download"
+          SPARKLE_LINK: "https://github.com/lukepistrol/TimeMachineStatus"
+          APP_VERSION: ${{ github.ref_name }}
+          APP_BUILD: ${{ env.APP_BUILD }}
+        run: |
+          SPARKLE_BIN="$RUNNER_TEMP/DerivedData/SourcePackages/artifacts/sparkle/Sparkle/bin"
+          SPARKLE_ARCHIVE="$RUNNER_TEMP/Sparkle_Archive"
+          echo -n "$SPARKLE_KEY" | tee "$RUNNER_TEMP/sparkle_key"
+          mkdir "$SPARKLE_ARCHIVE"
+          cp "$RUNNER_TEMP/TimeMachineStatus.dmg" "$SPARKLE_ARCHIVE"
+          SPARKLE_SIG=$("$SPARKLE_BIN/sign_update" --ed-key-file "$RUNNER_TEMP/sparkle_key" "$SPARKLE_ARCHIVE/TimeMachineStatus.dmg" | cut -d\" -f2)
+          "$SPARKLE_BIN/generate_appcast" \
+            --ed-key-file "$RUNNER_TEMP/sparkle_key" \
+            --download-url-prefix "${{ env.SPARKLE_DL_PREFIX }}/${{ env.APP_VERSION }}/" \
+            --link "$SPARKLE_LINK" \
+            --maximum-deltas 0 \
+            "$SPARKLE_ARCHIVE"
+
+      - name: Publish Release
+        uses: marvinpinto/action-automatic-releases@latest
+        env:
+          APP_VERSION: ${{ env.APP_VERSION }}
+        with:
+          title: "${{ env.APP_VERSION }}"
+          files: |
+            ${{ RUNNER.TEMP }}/Sparkle_Archive/TimeMachineStatus.dmg
+            ${{ RUNNER.TEMP }}/Sparkle_Archive/appcast.xml
+          prerelease: false
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Clean up keychain and provisioning profile
         if: ${{ always() }}
