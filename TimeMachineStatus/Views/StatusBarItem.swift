@@ -9,8 +9,8 @@
 //  See LICENSE.md for license information.
 //  
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 struct ItemSizePreferenceKey: PreferenceKey {
     static var defaultValue: CGSize = .zero
@@ -73,9 +73,9 @@ struct StatusBarItem: View {
                         .preference(key: ItemSizePreferenceKey.self, value: geometryProxy.size)
                 }
             )
-            .onPreferenceChange(ItemSizePreferenceKey.self, perform: { size in
+            .onPreferenceChange(ItemSizePreferenceKey.self) { size in
                 sizePassthrough.send(size)
-            })
+            }
             .offset(y: -1)
     }
 }

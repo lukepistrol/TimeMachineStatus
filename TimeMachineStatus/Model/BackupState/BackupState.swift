@@ -10,8 +10,8 @@
 //  
 
 import Foundation
-import ShellOut
 import Logging
+import ShellOut
 
 enum BackupState {
     static let log = Logger(label: "\(Bundle.identifier).BackupState")
@@ -41,7 +41,8 @@ extension BackupState {
         return formatter
     }()
 
-    static private func _decodePlist(_ data: Data) throws -> _State? {
+    // swiftlint:disable:next cyclomatic_complexity
+    private static func _decodePlist(_ data: Data) throws -> _State? {
         let decoder = PropertyListDecoder()
         let state = try decoder.decode(BackupState._State.self, from: data)
         switch state.state {

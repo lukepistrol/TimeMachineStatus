@@ -9,9 +9,9 @@
 //  See LICENSE.md for license information.
 //  
 
-import SwiftUI
 import Logging
 import LoggingOSLog
+import SwiftUI
 
 @main
 struct TimeMachineStatusApp: App {

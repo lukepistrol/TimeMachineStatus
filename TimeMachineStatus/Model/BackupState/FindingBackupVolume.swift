@@ -1,5 +1,5 @@
 //
-//  FIndingBackupVolume.swift
+//  FindingBackupVolume.swift
 //  TimeMachineStatus
 //
 //  Created by Lukas Pistrol on 2023-11-10.

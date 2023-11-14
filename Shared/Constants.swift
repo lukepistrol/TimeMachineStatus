@@ -11,6 +11,7 @@
 
 import Foundation
 
+// swiftlint:disable line_length force_unwrapping
 enum Constants {
     enum URLs {
         static let timeMachinePreferencesPlist = URL(fileURLWithPath: "/Library/Preferences/com.apple.TimeMachine.plist")
@@ -39,3 +40,4 @@ enum Constants {
         static let helper = "com.lukaspistrol.TimeMachineStatusHelper"
     }
 }
+// swiftlint:enable line_length force_unwrapping

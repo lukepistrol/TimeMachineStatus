@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  HelperAppDelegate.swift
 //  TimeMachineStatus
 //
 //  Created by Lukas Pistrol on 13.11.23.

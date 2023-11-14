@@ -9,9 +9,9 @@
 //  See LICENSE.md for license information.
 //  
 
-import SwiftUI
 import Combine
 import Sparkle
+import SwiftUI
 
 struct MenuView: View {
     @Environment(\.openWindow) private var openWindow
@@ -70,10 +70,16 @@ struct MenuView: View {
                         .padding(10)
                         .card(.background.secondary)
                     if let interval = preferences.autoBackupInterval, preferences.autoBackup {
-                        let measurement = Measurement(value: Double(interval), unit: UnitDuration.seconds).converted(to: .hours)
-                        LabeledContent("general_info_interval", value: measurement.formatted(.measurement(width: .wide)))
-                            .padding(10)
-                            .card(.background.secondary)
+                        let measurement = Measurement(
+                            value: Double(interval),
+                            unit: UnitDuration.seconds
+                        ).converted(to: .hours)
+                        LabeledContent(
+                            "general_info_interval",
+                            value: measurement.formatted(.measurement(width: .wide))
+                        )
+                        .padding(10)
+                        .card(.background.secondary)
                     }
                     LabeledContent("general_info_requirespower", value: preferences.requiresACPower ? "Yes" : "No")
                         .padding(10)
@@ -99,7 +105,7 @@ struct MenuView: View {
             .labeledContentStyle(CustomLabeledContentStyle())
         }
     }
-    
+
     private var bottomToolbar: some View {
         HStack(spacing: 12) {
             Button {

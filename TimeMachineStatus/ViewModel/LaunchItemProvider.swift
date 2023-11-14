@@ -10,8 +10,8 @@
 //  
 
 import Foundation
-import ServiceManagement
 import Logging
+import ServiceManagement
 
 class LaunchItemProvider: ObservableObject {
 

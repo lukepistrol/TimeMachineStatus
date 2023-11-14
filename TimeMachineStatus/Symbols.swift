@@ -33,8 +33,8 @@ enum Symbols: String {
         self.rawValue
     }
 
-    func nsImage(accessibilityDescription: String? = nil) -> NSImage {
-        return NSImage(systemSymbolName: self.rawValue, accessibilityDescription: accessibilityDescription)!
+    func nsImage(accessibilityDescription: String? = nil) -> NSImage? {
+        return NSImage(systemSymbolName: self.rawValue, accessibilityDescription: accessibilityDescription)
     }
 
     func callAsFunction() -> String {

@@ -13,7 +13,7 @@
 		281822572AFCF9B20067E564 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822562AFCF9B20067E564 /* CustomButtonStyle.swift */; };
 		281822592AFCFAE50067E564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822582AFCFAE50067E564 /* AppDelegate.swift */; };
 		2818225B2AFD10200067E564 /* StatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818225A2AFD10200067E564 /* StatusBarItem.swift */; };
-		2818225D2AFD3FB80067E564 /* FIndingBackupVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818225C2AFD3FB80067E564 /* FIndingBackupVolume.swift */; };
+		2818225D2AFD3FB80067E564 /* FindingBackupVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818225C2AFD3FB80067E564 /* FindingBackupVolume.swift */; };
 		2818225F2AFD3FF20067E564 /* Stopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818225E2AFD3FF20067E564 /* Stopping.swift */; };
 		281822622AFD40920067E564 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 281822612AFD40920067E564 /* Logging */; };
 		281822652AFD438B0067E564 /* LoggingOSLog in Frameworks */ = {isa = PBXBuildFile; productRef = 281822642AFD438B0067E564 /* LoggingOSLog */; };
@@ -24,8 +24,8 @@
 		2818227A2AFE292A0067E564 /* UserfacingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822792AFE292A0067E564 /* UserfacingError.swift */; };
 		2818227C2AFE33CA0067E564 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227B2AFE33CA0067E564 /* Constants.swift */; };
 		2818227E2AFE36780067E564 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227D2AFE36780067E564 /* Bundle+.swift */; };
-		28263F912B023D4E00F74655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28263F902B023D4E00F74655 /* AppDelegate.swift */; };
-		28263FA02B023FD100F74655 /* TimeMachineStatusHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		28263F912B023D4E00F74655 /* HelperAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28263F902B023D4E00F74655 /* HelperAppDelegate.swift */; };
+		28263FA02B023FD100F74655 /* TimeMachineStatusHelper.app in Copy Helper */ = {isa = PBXBuildFile; fileRef = 28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		28263FA32B023FFE00F74655 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28263FA22B023FFE00F74655 /* ServiceManagement.framework */; };
 		2885D6652B024D0B00C260DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885D6642B024D0B00C260DB /* main.swift */; };
 		288F12FB2B011A9300678FAD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 288F12FA2B011A9300678FAD /* Localizable.xcstrings */; };
@@ -60,14 +60,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		28263F9F2B023FB500F74655 /* CopyFiles */ = {
+		28263F9F2B023FB500F74655 /* Copy Helper */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				28263FA02B023FD100F74655 /* TimeMachineStatusHelper.app in CopyFiles */,
+				28263FA02B023FD100F74655 /* TimeMachineStatusHelper.app in Copy Helper */,
 			);
+			name = "Copy Helper";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -79,7 +80,7 @@
 		281822562AFCF9B20067E564 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		281822582AFCFAE50067E564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2818225A2AFD10200067E564 /* StatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarItem.swift; sourceTree = "<group>"; };
-		2818225C2AFD3FB80067E564 /* FIndingBackupVolume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIndingBackupVolume.swift; sourceTree = "<group>"; };
+		2818225C2AFD3FB80067E564 /* FindingBackupVolume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingBackupVolume.swift; sourceTree = "<group>"; };
 		2818225E2AFD3FF20067E564 /* Stopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopping.swift; sourceTree = "<group>"; };
 		281822662AFD86AC0067E564 /* Color+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+RawRepresentable.swift"; sourceTree = "<group>"; };
 		281822692AFD8E670067E564 /* _State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _State.swift; sourceTree = "<group>"; };
@@ -91,7 +92,7 @@
 		2818227B2AFE33CA0067E564 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2818227D2AFE36780067E564 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatusHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		28263F902B023D4E00F74655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28263F902B023D4E00F74655 /* HelperAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperAppDelegate.swift; sourceTree = "<group>"; };
 		28263FA22B023FFE00F74655 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		28263FA42B0241E200F74655 /* TimeMachineStatusHelper.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TimeMachineStatusHelper.entitlements; sourceTree = "<group>"; };
 		2885D6642B024D0B00C260DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -187,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				28263FA42B0241E200F74655 /* TimeMachineStatusHelper.entitlements */,
-				28263F902B023D4E00F74655 /* AppDelegate.swift */,
+				28263F902B023D4E00F74655 /* HelperAppDelegate.swift */,
 				2885D6642B024D0B00C260DB /* main.swift */,
 			);
 			path = TimeMachineStatusHelper;
@@ -297,7 +298,7 @@
 				281822682AFD8E5A0067E564 /* Internal */,
 				28A002542AFC03E300E2A01E /* BackupState.swift */,
 				28A0025B2AFC04B300E2A01E /* Idle.swift */,
-				2818225C2AFD3FB80067E564 /* FIndingBackupVolume.swift */,
+				2818225C2AFD3FB80067E564 /* FindingBackupVolume.swift */,
 				28A0026F2AFC342100E2A01E /* Starting.swift */,
 				28A0025D2AFC04D300E2A01E /* Mounting.swift */,
 				28A0025F2AFC050200E2A01E /* Preparing.swift */,
@@ -350,10 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28A0023C2AFBBFC400E2A01E /* Build configuration list for PBXNativeTarget "TimeMachineStatus" */;
 			buildPhases = (
+				28D66AC52B03677A00D41262 /* SwiftLint */,
 				28A002132AFBBFC300E2A01E /* Sources */,
 				28A002142AFBBFC300E2A01E /* Frameworks */,
 				28A002152AFBBFC300E2A01E /* Resources */,
-				28263F9F2B023FB500F74655 /* CopyFiles */,
+				28263F9F2B023FB500F74655 /* Copy Helper */,
 			);
 			buildRules = (
 			);
@@ -435,13 +437,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		28D66AC52B03677A00D41262 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  if $CI; then\n    echo \"Skipping SwiftLint (CI)\"\n  else\n    swiftlint\n  fi\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		28263F8A2B023D4E00F74655 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2885D6652B024D0B00C260DB /* main.swift in Sources */,
-				28263F912B023D4E00F74655 /* AppDelegate.swift in Sources */,
+				28263F912B023D4E00F74655 /* HelperAppDelegate.swift in Sources */,
 				28F2D4412B0257E700B75998 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,7 +504,7 @@
 				281822572AFCF9B20067E564 /* CustomButtonStyle.swift in Sources */,
 				28FAD5AB2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift in Sources */,
 				28FAD5A92AFE9BCB00F642E7 /* DestinationInfoView.swift in Sources */,
-				2818225D2AFD3FB80067E564 /* FIndingBackupVolume.swift in Sources */,
+				2818225D2AFD3FB80067E564 /* FindingBackupVolume.swift in Sources */,
 				28F2D4402B02560400B75998 /* LaunchItemProvider.swift in Sources */,
 				28F2D4472B02F62400B75998 /* UpdaterViewModel.swift in Sources */,
 				28A0026E2AFC312000E2A01E /* Finishing.swift in Sources */,
@@ -501,8 +525,8 @@
 				CODE_SIGN_ENTITLEMENTS = TimeMachineStatusHelper/TimeMachineStatusHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
 				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -530,8 +554,8 @@
 				CODE_SIGN_ENTITLEMENTS = TimeMachineStatusHelper/TimeMachineStatusHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
 				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -683,6 +707,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TimeMachineStatus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TimeMachineStatus;
@@ -716,6 +741,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TimeMachineStatus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TimeMachineStatus;

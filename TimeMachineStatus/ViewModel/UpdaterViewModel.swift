@@ -9,9 +9,9 @@
 //  See LICENSE.md for license information.
 //  
 
+import Combine
 import Foundation
 import Sparkle
-import Combine
 
 class UpdaterViewModel: ObservableObject {
     @Published private (set) var canCheckForUpdates = false

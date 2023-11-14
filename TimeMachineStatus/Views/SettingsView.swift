@@ -9,8 +9,8 @@
 //  See LICENSE.md for license information.
 //  
 
-import SwiftUI
 import Sparkle
+import SwiftUI
 
 enum StorageKeys {
 
@@ -30,7 +30,7 @@ enum StorageKeys {
 
 struct SettingsView: View {
 
-    @AppStorage(StorageKeys.horizontalPadding.id) 
+    @AppStorage(StorageKeys.horizontalPadding.id)
     private var horizontalPadding: Double = StorageKeys.horizontalPadding.default
 
     @AppStorage(StorageKeys.verticalPadding.id)
@@ -38,16 +38,16 @@ struct SettingsView: View {
 
     @AppStorage(StorageKeys.boldFont.id)
     private var boldFont: Bool = StorageKeys.boldFont.default
-    
+
     @AppStorage(StorageKeys.showStatus.id)
     private var showStatus: Bool = StorageKeys.showStatus.default
-    
+
     @AppStorage(StorageKeys.spacing.id)
     private var spacing: Double = StorageKeys.spacing.default
 
     @AppStorage(StorageKeys.backgroundColor.id)
     private var bgColor: Color = StorageKeys.backgroundColor.default
-    
+
     @AppStorage(StorageKeys.cornerRadius.id)
     private var cornerRadius: Double = StorageKeys.cornerRadius.default
 

@@ -14,7 +14,8 @@ import Foundation
 extension BackupState {
     class _State: Decodable {
         enum _BState {
-            case _idle, _findingBackupVol, _starting, _mounting, _preparing, _findingChanges, _copying, _finishing, _stopping, _thinning, _unknown
+            case _idle, _findingBackupVol, _starting, _mounting, _preparing, _findingChanges, _copying, _finishing
+            case _stopping, _thinning, _unknown
         }
 
         enum CodingKeys: String, CodingKey {
@@ -86,7 +87,6 @@ extension BackupState {
         }
     }
 }
-
 
 extension BackupState._State {
     var activeDestinationID: UUID? {

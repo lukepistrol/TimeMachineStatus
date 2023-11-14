@@ -52,9 +52,9 @@ struct DestinationCell: View {
         .contentShape(.rect)
         .contextMenu { contextMenuActions }
         .card(.background.secondary)
-        .onHover(perform: { hovering in
+        .onHover { hovering in
             self.hovering = hovering
-        })
+        }
         .popover(isPresented: $showInfo) {
             DestinationInfoView(dest: dest)
         }
@@ -94,7 +94,9 @@ struct DestinationCell: View {
                 }
             }
             HStack {
-                Text("dest_label_\(dest.bytesUsed.formatted(byteFormat))_used_\(dest.bytesAvailable.formatted(byteFormat))_free")
+                let bytesUsed = dest.bytesUsed.formatted(byteFormat)
+                let bytesAvailable = dest.bytesAvailable.formatted(byteFormat)
+                Text("dest_label_\(bytesUsed)_used_\(bytesAvailable)_free")
                     .monospacedDigit()
             }
             .font(.caption2)
@@ -144,8 +146,7 @@ struct DestinationCell: View {
                 }
                 Spacer()
                 if let copying {
-                    if let bytes = copying.progress.bytes,
-                       let files = copying.progress.files {
+                    if let bytes = copying.progress.bytes, let files = copying.progress.files {
                         Text("dest_label_progress_\(files)_files_\(bytes.formatted(byteFormat))")
                     }
                 }
@@ -161,14 +162,14 @@ struct DestinationCell: View {
     }
 
     private var progressBackground: some View {
-        GeometryReader(content: { geometry in
+        GeometryReader { geometry in
             if let percent = utility.status.progessPercentage {
                 Color.accentColor
                     .frame(width: geometry.size.width * percent)
                     .opacity(0.3)
                     .animation(.easeInOut, value: percent)
             }
-        })
+        }
     }
 
     private var byteFormat: ByteCountFormatStyle {

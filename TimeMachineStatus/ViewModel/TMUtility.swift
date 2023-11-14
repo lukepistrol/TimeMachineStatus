@@ -10,8 +10,8 @@
 //  
 
 import Foundation
-import ShellOut
 import Logging
+import ShellOut
 
 class TMUtility: ObservableObject {
     @Published var status: BackupState._State = BackupState.None()
@@ -33,7 +33,7 @@ class TMUtility: ObservableObject {
     func start(force: Bool = false) {
         timer?.invalidate()
         let timeInterval: TimeInterval = isIdle && !force ? 15 : force ? 0 : 2
-        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false) { [weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false) { [weak self] _ in
             guard let self else { return }
             self.updateStatus()
             self.readPreferences()
