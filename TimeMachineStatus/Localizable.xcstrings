@@ -307,6 +307,39 @@
         }
       }
     },
+    "dest_label_no_size_info" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Speicherplatz Informationen verfügbar"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No storage info available"
+          }
+        }
+      }
+    },
+    "dest_label_no_volume_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unbekannt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        }
+      }
+    },
     "dest_label_progress_%lld_files_%@" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -341,6 +374,46 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld Files (%2$@)"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "dest_label_progress_found%lld" : {
+      "localizations" : {
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Änderung gefunden"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Änderungen gefunden"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld change found"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld changes found"
                 }
               }
             }
@@ -529,6 +602,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Automatic backups are disabled"
+          }
+        }
+      }
+    },
+    "label_currentbackup_%@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backup auf \"%@\" läuft..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backing up to \"%@\"..."
           }
         }
       }

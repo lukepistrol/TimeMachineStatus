@@ -24,6 +24,13 @@ struct DestinationCell: View {
         utility.status.activeDestinationID == dest.destinationID
     }
 
+    private var findingChanges: BackupState.FindingChanges? {
+        if let findingChanges = utility.status as? BackupState.FindingChanges {
+            return findingChanges
+        }
+        return nil
+    }
+
     private var copying: BackupState.Copying? {
         if let copying = utility.status as? BackupState.Copying {
             return copying
@@ -85,23 +92,28 @@ struct DestinationCell: View {
     private var volumeInfo: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(dest.lastKnownVolumeName)
+                Text(dest.lastKnownVolumeName ?? "dest_label_no_volume_name")
                     .font(.headline)
-                if let latest = dest.snapshotDates.max() {
+                if let latest = dest.snapshotDates?.max() {
                     Text(latest.formatted(.relativeDate))
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                 }
             }
-            HStack {
-                let bytesUsed = dest.bytesUsed.formatted(byteFormat)
-                let bytesAvailable = dest.bytesAvailable.formatted(byteFormat)
-                Text("dest_label_\(bytesUsed)_used_\(bytesAvailable)_free")
+            if let bytesUsed = dest.bytesUsed, let bytesAvailable = dest.bytesAvailable {
+                let used = bytesUsed.formatted(byteFormat)
+                let available = bytesAvailable.formatted(byteFormat)
+                Text("dest_label_\(used)_used_\(available)_free")
                     .monospacedDigit()
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            } else {
+                Text("dest_label_no_size_info")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
             }
-            .font(.caption2)
-            .foregroundStyle(.secondary)
         }
+        .lineLimit(1)
     }
 
     @ViewBuilder
@@ -130,9 +142,10 @@ struct DestinationCell: View {
 
     @ViewBuilder
     private var contextMenuActions: some View {
+        let unknown = NSLocalizedString("dest_label_no_volume_name", comment: "")
         Button("button_show_info") { showInfo.toggle() }
         Divider()
-        Button("button_backup_to_\(dest.lastKnownVolumeName)_now") {
+        Button("button_backup_to_\(dest.lastKnownVolumeName ?? unknown)_now") {
             utility.startBackup(id: dest.destinationID)
         }
     }
@@ -145,6 +158,9 @@ struct DestinationCell: View {
                     Text(state.statusString)
                 }
                 Spacer()
+                if let findingChanges {
+                    Text("dest_label_progress_found\(findingChanges.itemsFound)")
+                }
                 if let copying {
                     if let bytes = copying.progress.bytes, let files = copying.progress.files {
                         Text("dest_label_progress_\(files)_files_\(bytes.formatted(byteFormat))")

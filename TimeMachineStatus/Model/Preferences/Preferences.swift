@@ -25,19 +25,19 @@ struct Preferences: Decodable {
         case skipPaths = "SkipPaths"
     }
 
-    let autoBackup: Bool
+    let autoBackup: Bool?
     let autoBackupInterval: Int?
     let excludedVolumeUUIDs: [UUID]?
     let preferencesVersion: Int
-    let requiresACPower: Bool
-    let lastConfigurationTraceDate: Date
+    let requiresACPower: Bool?
+    let lastConfigurationTraceDate: Date?
     let lastDestinationID: UUID?
-    let localizedDiskImageVolumeName: String
+    let localizedDiskImageVolumeName: String?
     let skipPaths: [String]?
     let destinations: [Destination]?
 
     var latestBackupDate: Date? {
-        destinations?.map(\.snapshotDates).flatMap { $0 }.max()
+        destinations?.compactMap(\.snapshotDates).flatMap { $0 }.max()
     }
 
     var latestBackupVolume: String? {
@@ -64,16 +64,16 @@ struct Destination: Decodable {
         case attemptDates = "AttemptDates"
     }
 
-    let lastKnownVolumeName: String
-    let bytesUsed: Int
-    let bytesAvailable: Int
-    let filesystemTypeName: String
-    let lastKnownEncryptionState: String
+    let lastKnownVolumeName: String?
+    let bytesUsed: Int?
+    let bytesAvailable: Int?
+    let filesystemTypeName: String?
+    let lastKnownEncryptionState: String?
     let quotaGB: Double?
     let networkURL: String?
     let destinationID: UUID
-    let consistencyScanDate: Date
-    let referenceLocalSnapshotDate: Date
-    let snapshotDates: [Date]
-    let attemptDates: [Date]
+    let consistencyScanDate: Date?
+    let referenceLocalSnapshotDate: Date?
+    let snapshotDates: [Date]?
+    let attemptDates: [Date]?
 }

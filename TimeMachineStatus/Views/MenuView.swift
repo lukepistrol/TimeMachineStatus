@@ -63,27 +63,33 @@ struct MenuView: View {
         if let preferences = utility.preferences {
             ExpandableSection(expanded: false) {
                 VStack {
-                    LabeledContent("general_info_volumename", value: preferences.localizedDiskImageVolumeName)
-                        .padding(10)
-                        .card(.background.secondary)
-                    LabeledContent("general_info_autobackup", value: preferences.autoBackup ? "Enabled" : "Disabled")
-                        .padding(10)
-                        .card(.background.secondary)
-                    if let interval = preferences.autoBackupInterval, preferences.autoBackup {
-                        let measurement = Measurement(
-                            value: Double(interval),
-                            unit: UnitDuration.seconds
-                        ).converted(to: .hours)
-                        LabeledContent(
-                            "general_info_interval",
-                            value: measurement.formatted(.measurement(width: .wide))
-                        )
-                        .padding(10)
-                        .card(.background.secondary)
+                    if let volumeName = preferences.localizedDiskImageVolumeName {
+                        LabeledContent("general_info_volumename", value: volumeName)
+                            .padding(10)
+                            .card(.background.secondary)
                     }
-                    LabeledContent("general_info_requirespower", value: preferences.requiresACPower ? "Yes" : "No")
-                        .padding(10)
-                        .card(.background.secondary)
+                    if let autoBackup = preferences.autoBackup {
+                        LabeledContent("general_info_autobackup", value: autoBackup ? "Enabled" : "Disabled")
+                            .padding(10)
+                            .card(.background.secondary)
+                        if let interval = preferences.autoBackupInterval, autoBackup {
+                            let measurement = Measurement(
+                                value: Double(interval),
+                                unit: UnitDuration.seconds
+                            ).converted(to: .hours)
+                            LabeledContent(
+                                "general_info_interval",
+                                value: measurement.formatted(.measurement(width: .wide))
+                            )
+                            .padding(10)
+                            .card(.background.secondary)
+                        }
+                    }
+                    if let requiresACPower = preferences.requiresACPower {
+                        LabeledContent("general_info_requirespower", value: requiresACPower ? "Yes" : "No")
+                            .padding(10)
+                            .card(.background.secondary)
+                    }
                     LabeledContent("general_info_skippaths") {
                         VStack(alignment: .trailing, spacing: 4) {
                             if let skipPaths = preferences.skipPaths {
@@ -118,7 +124,43 @@ struct MenuView: View {
                 Label("button_startbackup", systemImage: utility.isIdle ? Symbols.playFill() : Symbols.stopFill())
             }
             .focusable(false)
+            toolbarStatus
+            Spacer()
 
+            toolbarMenu
+        }
+        .lineLimit(1)
+        .imageScale(.large)
+        .labelStyle(.iconOnly)
+        .buttonStyle(.custom)
+        .padding(.horizontal)
+        .frame(height: 42)
+        .frame(maxWidth: .infinity)
+        .background(Material.bar, in: .rect)
+        .overlay(alignment: .top) {
+            Divider()
+        }
+    }
+
+    @ViewBuilder
+    private var toolbarStatus: some View {
+        if let activeUUID = utility.status.activeDestinationID,
+           let destination = utility.preferences?.destinations?.first(where: { $0.destinationID == activeUUID }) {
+            let unknown = NSLocalizedString("dest_label_no_volume_name", comment: "")
+            VStack(alignment: .leading, spacing: 0) {
+                Text("label_currentbackup_\(destination.lastKnownVolumeName ?? unknown)")
+                HStack(spacing: 0) {
+                    Text(utility.status.statusString)
+                    if let percentage = utility.status.progessPercentage {
+                        Text(verbatim: " – " + percentage.formatted(.percent.precision(.fractionLength(0))))
+                    }
+                }
+                .font(.caption)
+                .opacity(0.8)
+            }
+            .foregroundStyle(.secondary)
+            .font(.caption2)
+        } else {
             if let latestDate = utility.preferences?.latestBackupDate,
                let latestVolume = utility.preferences?.latestBackupVolume {
                 VStack(alignment: .leading, spacing: 0) {
@@ -136,42 +178,44 @@ struct MenuView: View {
                 .foregroundStyle(.secondary)
                 .font(.caption2)
             }
-            Spacer()
+        }
+    }
 
-            Menu {
-                SettingsLink {
-                    Text("settings_button_settings")
-                }
-                .keyboardShortcut(",", modifiers: .command)
-                Button("settings_button_checkforupdates") {
-                    updater.checkForUpdates()
-                }
-                .disabled(!updaterViewModel.canCheckForUpdates)
-                Button("button_browsebackups") {
-                    utility.launchTimeMachine()
-                }
-                Divider()
-                Button {
-                    NSApp.terminate(nil)
-                } label: {
-                    Text("button_quit")
-                }
-                .keyboardShortcut("q", modifiers: .command)
-            } label: {
-                Label("settings_button_settings", systemImage: Symbols.gearshapeFill())
+    private var toolbarMenu: some View {
+        Menu {
+            SettingsLink {
+                Text("settings_button_settings")
             }
-            .focusable(false)
-        }
-        .imageScale(.large)
-        .labelStyle(.iconOnly)
-        .buttonStyle(.custom)
-        .padding(.horizontal)
-        .frame(height: 40)
-        .frame(maxWidth: .infinity)
-        .background(Material.bar, in: .rect)
-        .overlay(alignment: .top) {
+            .keyboardShortcut(",", modifiers: .command)
+            Button("settings_button_checkforupdates") {
+                updater.checkForUpdates()
+            }
+            .disabled(!updaterViewModel.canCheckForUpdates)
+            Button("button_browsebackups") {
+                utility.launchTimeMachine()
+            }
             Divider()
+            Button {
+                NSApp.terminate(nil)
+            } label: {
+                Text("button_quit")
+            }
+            .keyboardShortcut("q", modifiers: .command)
+        } label: {
+            Label {
+                Text("settings_button_settings")
+            } icon: {
+                Image(.iconPlain)
+                    .shadow(
+                        color: .black.opacity(0.8),
+                        radius: 0.5,
+                        x: 0,
+                        y: 0.5
+                    )
+            }
         }
+        .focusable(false)
+        .buttonStyle(.plain)
     }
 }
 
