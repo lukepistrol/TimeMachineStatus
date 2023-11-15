@@ -29,7 +29,7 @@ enum UserfacingError: Error {
         case .fullDiskPermissionDenied:
             return "error_fulldiskpermissiondenied_description"
         case .debugError(let error):
-            return "error_debug_description\(error.localizedDescription)"
+            return "error_debug_description\(String(describing: error))"
         }
     }
 
