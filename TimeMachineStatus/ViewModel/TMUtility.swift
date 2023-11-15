@@ -47,6 +47,7 @@ class TMUtility: ObservableObject {
             start(force: status is BackupState.None)
         } catch {
             log.error("Error updating status: \(error)")
+            self.error = UserfacingError.debugError(error: error)
             start(force: true)
         }
     }
@@ -63,6 +64,8 @@ class TMUtility: ObservableObject {
             log.error("Error reading preferences: \(error)")
             if (error as NSError).code == 257 {
                 self.error = UserfacingError.fullDiskPermissionDenied
+            } else {
+                self.error = UserfacingError.debugError(error: error)
             }
         }
     }

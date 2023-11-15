@@ -348,6 +348,38 @@
         }
       }
     },
+    "error_debug_description%@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error Description: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error Description: %@"
+          }
+        }
+      }
+    },
+    "error_debug_title" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Error"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Error"
+          }
+        }
+      }
+    },
     "error_fulldiskpermissiondenied_description" : {
       "extractionState" : "manual",
       "localizations" : {

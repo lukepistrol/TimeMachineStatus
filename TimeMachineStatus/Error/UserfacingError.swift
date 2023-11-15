@@ -13,11 +13,14 @@ import SwiftUI
 
 enum UserfacingError: Error {
     case fullDiskPermissionDenied
+    case debugError(error: Error)
 
     var title: LocalizedStringKey {
         switch self {
         case .fullDiskPermissionDenied:
             return "error_fulldiskpermissiondenied_title"
+        case .debugError:
+            return "error_debug_title"
         }
     }
 
@@ -25,6 +28,8 @@ enum UserfacingError: Error {
         switch self {
         case .fullDiskPermissionDenied:
             return "error_fulldiskpermissiondenied_description"
+        case .debugError(let error):
+            return "error_debug_description\(error.localizedDescription)"
         }
     }
 
@@ -35,6 +40,7 @@ enum UserfacingError: Error {
                 title: "button_opensystemsettings",
                 url: Constants.URLs.settingsFullDiskAccess
             )
+        default: nil
         }
     }
 
