@@ -79,16 +79,16 @@ struct SettingsView: View {
     private var generalTab: some View {
         Form {
             Section("settings_section_permissions") {
-                LabeledContent {
+                VStack(alignment: .leading) {
+                    Text("settings_item_fulldiskaccess_title")
+                    Text("settings_item_fulldiskaccess_description")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                HStack {
+                    Spacer()
                     Button("settings_button_settings") {
                         NSWorkspace.shared.open(Constants.URLs.settingsFullDiskAccess)
-                    }
-                } label: {
-                    VStack(alignment: .leading) {
-                        Text("settings_item_fulldiskaccess_title")
-                        Text("settings_item_fulldiskaccess_description")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
                     }
                 }
             }
@@ -120,8 +120,9 @@ struct SettingsView: View {
             Section("settings_section_menubaritem") {
                 LabeledContent {
                     HStack {
-                        Text(horizontalPadding.formatted(.number))
-                        Slider(value: $horizontalPadding, in: 0...10, step: 1)
+                        Text(horizontalPadding.formatted(.number) + " pt")
+                        Stepper("", value: $horizontalPadding, in: 0...10, step: 1)
+                            .labelsHidden()
                     }
                 } label: {
                     Text("settings_item_horizontalpadding")
@@ -135,16 +136,18 @@ struct SettingsView: View {
                 if bgColor.cgColor?.alpha != 0 {
                     LabeledContent {
                         HStack {
-                            Text(verticalPadding.formatted(.number))
-                            Slider(value: $verticalPadding, in: 0...5, step: 1)
+                            Text(verticalPadding.formatted(.number) + " pt")
+                            Stepper("", value: $verticalPadding, in: 0...5, step: 1)
+                                .labelsHidden()
                         }
                     } label: {
                         Text("settings_item_verticalpadding")
                     }
                     LabeledContent {
                         HStack {
-                            Text(cornerRadius.formatted(.number))
-                            Slider(value: $cornerRadius, in: 0...12, step: 1)
+                            Text(cornerRadius.formatted(.number) + " pt")
+                            Stepper("", value: $cornerRadius, in: 0...12, step: 1)
+                                .labelsHidden()
                         }
                     } label: {
                         Text("settings_item_cornerradius")
@@ -155,8 +158,9 @@ struct SettingsView: View {
                 if showStatus {
                     LabeledContent {
                         HStack {
-                            Text(spacing.formatted(.number))
-                            Slider(value: $spacing, in: 2...12, step: 1)
+                            Text(spacing.formatted(.number) + " pt")
+                            Stepper("", value: $spacing, in: 2...12, step: 1)
+                                .labelsHidden()
                         }
                     } label: {
                         Text("settings_item_spacing")
@@ -164,18 +168,18 @@ struct SettingsView: View {
                 }
             }
             Section {
-                Button("settings_button_resettodefault") {
-                    horizontalPadding = StorageKeys.horizontalPadding.default
-                    verticalPadding = StorageKeys.verticalPadding.default
-                    boldFont = StorageKeys.boldFont.default
-                    showStatus = StorageKeys.showStatus.default
-                    spacing = StorageKeys.spacing.default
-                    bgColor = StorageKeys.backgroundColor.default
-                    cornerRadius = StorageKeys.cornerRadius.default
+                HStack {
+                    Spacer()
+                    Button("settings_button_resettodefault", role: .destructive) {
+                        horizontalPadding = StorageKeys.horizontalPadding.default
+                        verticalPadding = StorageKeys.verticalPadding.default
+                        boldFont = StorageKeys.boldFont.default
+                        showStatus = StorageKeys.showStatus.default
+                        spacing = StorageKeys.spacing.default
+                        bgColor = StorageKeys.backgroundColor.default
+                        cornerRadius = StorageKeys.cornerRadius.default
+                    }
                 }
-                .buttonStyle(.link)
-                .foregroundStyle(.red)
-                .font(.body.weight(.semibold))
             }
         }
         .formStyle(.grouped)
@@ -187,11 +191,11 @@ struct SettingsView: View {
 
     private var aboutTab: some View {
         VStack(spacing: 20) {
-            Image(.icon)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 128)
             VStack(spacing: 8) {
+                Image(.icon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 128)
                 Text(Bundle.appName)
                     .font(.title)
                     .fontWeight(.bold)
