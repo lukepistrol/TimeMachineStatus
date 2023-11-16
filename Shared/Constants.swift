@@ -13,6 +13,10 @@ import Foundation
 
 // swiftlint:disable line_length force_unwrapping
 enum Constants {
+    enum Sizes {
+        static let popoverWidth: CGFloat = 360
+    }
+
     enum URLs {
         static let timeMachinePreferencesPlist = URL(fileURLWithPath: "/Library/Preferences/com.apple.TimeMachine.plist")
         static let settingsFullDiskAccess: URL = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles")!

@@ -82,6 +82,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             popover.performClose(sender)
         } else {
             popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
+            // fixes popover not being fully visible on the right side of the screen
+            if let popoverFrame = popover.contentViewController?.view.window?.frame,
+               let screenFrame = popover.contentViewController?.view.window?.screen?.frame,
+               (popoverFrame.origin.x + Constants.Sizes.popoverWidth + 25) > screenFrame.width {
+                popover.contentViewController?.view.window?.setFrameOrigin(
+                    NSPoint(x: screenFrame.width - Constants.Sizes.popoverWidth - 25, y: popoverFrame.origin.y)
+                )
+            }
             popover.contentViewController?.view.window?.becomeKey()
         }
     }

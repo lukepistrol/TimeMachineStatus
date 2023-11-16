@@ -36,7 +36,7 @@ struct MenuView: View {
             .padding()
             bottomToolbar
         }
-        .frame(width: 360)
+        .frame(width: Constants.Sizes.popoverWidth)
         .fixedSize()
     }
 
