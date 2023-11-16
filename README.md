@@ -1,3 +1,7 @@
+![Static Badge](https://img.shields.io/badge/14.0_Sonoma-orange?label=macOS)
+![GitHub release (with filter)](https://img.shields.io/github/v/release/lukepistrol/TimeMachineStatus?style=flat-square)
+![Downloads](https://img.shields.io/github/downloads/lukepistrol/TimeMachineStatus/TimeMachineStatus.dmg?style=flat-square&logo=github&label=Downloads&color=green)
+
 # TimeMachineStatus
 
 This app is a simple status bar app that shows the status of Time Machine backups. It is still in early development and I'm open for suggestions and contributions.
