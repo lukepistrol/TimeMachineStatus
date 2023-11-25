@@ -6,8 +6,8 @@
 
 This app is a simple status bar app that shows the status of Time Machine backups. It is still in early development and I'm open for suggestions and contributions.
 
-> **Info**
-> It can be downloaded from the [Releases Section](https://github.com/lukepistrol/TimeMachineStatus/releases/latest)
+> **Info**:
+> It can be downloaded from the [Releases Section](https://github.com/lukepistrol/TimeMachineStatus/releases/latest) or from [homebrew](#homebrew)
 
 ![Header](https://github.com/lukepistrol/TimeMachineStatus/assets/9460130/cea44ed3-21ea-4f06-9916-69b76584c313)
 
@@ -17,7 +17,13 @@ TimeMachineStatus is currently available for download in the [Releases Section](
 
 After downloading it once it can be updated from within the app.
 
-A download using homebrew is [planned](https://github.com/lukepistrol/TimeMachineStatus/issues/10) (hit me up if you want to set this up).
+### Homebrew
+
+You can also download TimeMachineStatus using the `brew` command:
+
+```sh
+brew install --cask timemachinestatus
+```
 
 ## Features
 
