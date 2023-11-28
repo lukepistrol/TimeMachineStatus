@@ -33,8 +33,14 @@ struct StatusBarItem: View {
     @AppStorage(StorageKeys.boldFont.id)
     private var boldFont: Bool = StorageKeys.boldFont.default
 
+    @AppStorage(StorageKeys.boldIcon.id)
+    private var boldIcon: Bool = StorageKeys.boldIcon.default
+
     @AppStorage(StorageKeys.showStatus.id)
     private var showStatus: Bool = StorageKeys.showStatus.default
+
+    @AppStorage(StorageKeys.showPercentage.id)
+    private var showPercentage: Bool = StorageKeys.showPercentage.default
 
     @AppStorage(StorageKeys.spacing.id)
     private var spacing: Double = StorageKeys.spacing.default
@@ -48,13 +54,24 @@ struct StatusBarItem: View {
     var sizePassthrough: PassthroughSubject<CGSize, Never>
     @ObservedObject var utility: TMUtility
 
+
     private var mainContent: some View {
         HStack(spacing: spacing) {
-            Symbols.timeMachine.image
-                .font(.body.weight(boldFont ? .bold : .medium))
-            if showStatus {
-                Text(utility.status.statusString)
+            if utility.isIdle {
+                Symbols.timeMachine.image
+                    .font(.body.weight(boldIcon ? .bold : .medium))
+            } else {
+                AnimatedIcon()
+                    .font(.body.weight(boldIcon ? .bold : .medium))
+            }
+            if showStatus, !utility.isIdle {
+                Text(utility.status.shortStatusString)
                     .font(.caption2.weight(boldFont ? .bold : .medium))
+            }
+            if let percentage = utility.status.progessPercentage, showPercentage {
+                Text(percentage, format: .percent.precision(.fractionLength(0)))
+                    .font(.caption2.weight(boldFont ? .bold : .medium))
+                    .monospacedDigit()
             }
         }
         .foregroundStyle(.primary)
@@ -77,6 +94,24 @@ struct StatusBarItem: View {
                 sizePassthrough.send(size)
             }
             .offset(y: -1)
+    }
+
+    struct AnimatedIcon: View {
+        @State private var isAnimating = false
+
+        private var rotationAnimation: Animation { .linear(duration: 2).repeatForever(autoreverses: false) }
+        
+        var body: some View {
+            Symbols.arrowTriangleCirclepath.image
+                .rotationEffect(Angle(degrees: isAnimating ? 360 : 0), anchor: .center)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        withAnimation(rotationAnimation) {
+                            isAnimating = true
+                        }
+                    }
+                }
+        }
     }
 }
 

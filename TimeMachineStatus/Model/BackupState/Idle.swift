@@ -27,5 +27,9 @@ extension BackupState {
         override var statusString: String {
             "Idle"
         }
+
+        override var shortStatusString: String {
+            "Idle"
+        }
     }
 }

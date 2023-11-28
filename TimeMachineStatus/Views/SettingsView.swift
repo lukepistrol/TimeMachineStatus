@@ -22,10 +22,12 @@ enum StorageKeys {
     static let horizontalPadding = Key(id: "horizontalPadding", default: 0.0)
     static let verticalPadding = Key(id: "verticalPadding", default: 0.0)
     static let boldFont = Key(id: "boldFont", default: false)
-    static let showStatus = Key(id: "showStatus", default: false)
+    static let boldIcon = Key(id: "boldIcon", default: false)
+    static let showStatus = Key(id: "showStatus", default: true)
     static let spacing = Key(id: "spacing", default: 4.0)
     static let backgroundColor = Key(id: "backgroundColor", default: Color.clear)
     static let cornerRadius = Key(id: "cornerRadius", default: 5.0)
+    static let showPercentage = Key(id: "showPercentage", default: true)
 }
 
 struct SettingsView: View {
@@ -39,8 +41,14 @@ struct SettingsView: View {
     @AppStorage(StorageKeys.boldFont.id)
     private var boldFont: Bool = StorageKeys.boldFont.default
 
+    @AppStorage(StorageKeys.boldIcon.id)
+    private var boldIcon: Bool = StorageKeys.boldIcon.default
+
     @AppStorage(StorageKeys.showStatus.id)
     private var showStatus: Bool = StorageKeys.showStatus.default
+
+    @AppStorage(StorageKeys.showPercentage.id)
+    private var showPercentage: Bool = StorageKeys.showPercentage.default
 
     @AppStorage(StorageKeys.spacing.id)
     private var spacing: Double = StorageKeys.spacing.default
@@ -73,7 +81,7 @@ struct SettingsView: View {
             appearandeTab
             aboutTab
         }
-        .frame(width: 375, height: 420)
+        .frame(width: 375, height: 350)
     }
 
     private var generalTab: some View {
@@ -127,6 +135,8 @@ struct SettingsView: View {
                 } label: {
                     Text("settings_item_horizontalpadding")
                 }
+            }
+            Section {
                 HStack {
                     ColorPicker("settings_item_backgroundcolor", selection: $bgColor)
                     Button("settings_button_default") {
@@ -153,9 +163,15 @@ struct SettingsView: View {
                         Text("settings_item_cornerradius")
                     }
                 }
+            }
+            Section {
                 Toggle("settings_item_boldfont", isOn: $boldFont)
+                Toggle("settings_item_boldicon", isOn: $boldIcon)
+            }
+            Section {
                 Toggle("settings_item_showstatus", isOn: $showStatus)
-                if showStatus {
+                Toggle("settings_item_showpercentage", isOn: $showPercentage)
+                if showStatus || showPercentage {
                     LabeledContent {
                         HStack {
                             Text(spacing.formatted(.number) + " pt")
@@ -174,7 +190,9 @@ struct SettingsView: View {
                         horizontalPadding = StorageKeys.horizontalPadding.default
                         verticalPadding = StorageKeys.verticalPadding.default
                         boldFont = StorageKeys.boldFont.default
+                        boldIcon = StorageKeys.boldIcon.default
                         showStatus = StorageKeys.showStatus.default
+                        showPercentage = StorageKeys.showPercentage.default
                         spacing = StorageKeys.spacing.default
                         bgColor = StorageKeys.backgroundColor.default
                         cornerRadius = StorageKeys.cornerRadius.default

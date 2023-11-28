@@ -833,6 +833,22 @@
         }
       }
     },
+    "settings_item_boldicon" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fettes Symbol"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bold Icon"
+          }
+        }
+      }
+    },
     "settings_item_cornerradius" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -929,6 +945,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "TimeMachineStatus must be enabled in System Settings > General > Login Items"
+          }
+        }
+      }
+    },
+    "settings_item_showpercentage" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prozent anzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Percentage"
           }
         }
       }

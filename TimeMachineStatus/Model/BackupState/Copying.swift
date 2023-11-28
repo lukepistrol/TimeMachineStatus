@@ -39,6 +39,10 @@ extension BackupState {
         override var statusString: String {
             "Copying Data"
         }
+
+        override var shortStatusString: String {
+            "Copying"
+        }
     }
 }
 

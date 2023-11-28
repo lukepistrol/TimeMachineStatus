@@ -21,5 +21,9 @@ extension BackupState {
         override var statusString: String {
             "Finding Backup Volume"
         }
+
+        override var shortStatusString: String {
+            "Finding"
+        }
     }
 }

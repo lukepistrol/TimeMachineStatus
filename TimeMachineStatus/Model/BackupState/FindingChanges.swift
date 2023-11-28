@@ -38,5 +38,9 @@ extension BackupState {
         override var statusString: String {
             "Finding Changes"
         }
+
+        override var shortStatusString: String {
+            "Changes"
+        }
     }
 }

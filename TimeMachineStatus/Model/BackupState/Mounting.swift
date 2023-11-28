@@ -20,5 +20,9 @@ extension BackupState {
         override var statusString: String {
             "Mounting Disk Image"
         }
+
+        override var shortStatusString: String {
+            "Mounting"
+        }
     }
 }

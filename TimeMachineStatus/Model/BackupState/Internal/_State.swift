@@ -42,6 +42,10 @@ extension BackupState {
             fatalError("Implement!")
         }
 
+        var shortStatusString: String {
+            fatalError("Implement!")
+        }
+
         var state: _BState {
             if let phase, running {
                 switch phase {

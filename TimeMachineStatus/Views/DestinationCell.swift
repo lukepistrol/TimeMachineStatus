@@ -133,9 +133,18 @@ struct DestinationCell: View {
                 utility.startBackup(id: dest.destinationID)
             }
         } label: {
-            utility.status.activeDestinationID == dest.destinationID ? Symbols.stopFill.image : Symbols.playFill.image
+            if utility.status.activeDestinationID == dest.destinationID {
+                Symbols.stopFill.image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 13)
+            } else {
+                Symbols.playFill.image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 13)
+            }
         }
-        .imageScale(.large)
         .buttonStyle(.custom)
         .focusable(false)
     }

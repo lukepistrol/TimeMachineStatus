@@ -20,5 +20,9 @@ extension BackupState {
         override var statusString: String {
             "Starting"
         }
+
+        override var shortStatusString: String {
+            statusString
+        }
     }
 }

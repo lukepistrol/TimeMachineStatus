@@ -12,6 +12,7 @@
 import SwiftUI
 
 enum Symbols: String {
+    case arrowTriangleCirclepath = "arrow.triangle.2.circlepath"
     case checkmarkCircleFill = "checkmark.circle.fill"
     case exclamationMarkTriangleFill = "exclamationmark.triangle.fill"
     case externalDrive = "externaldrive.fill.badge.timemachine"

@@ -20,5 +20,9 @@ extension BackupState {
         override var statusString: String {
             "Thinning Backup Image"
         }
+
+        override var shortStatusString: String {
+            "Thinning"
+        }
     }
 }
