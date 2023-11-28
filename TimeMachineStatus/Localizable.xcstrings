@@ -666,6 +666,22 @@
         }
       }
     },
+    "label_nextbackup_issue" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letztes automatisches Backup fehlgeschlagen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last automatic backup failed"
+          }
+        }
+      }
+    },
     "section_destinations" : {
       "extractionState" : "manual",
       "localizations" : {

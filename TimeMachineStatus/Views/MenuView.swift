@@ -167,8 +167,13 @@ struct MenuView: View {
                     Text("label_lastbackup_\(latestDate.formatted(.relativeDate))_on_\(latestVolume)")
                     if let interval = utility.preferences?.autoBackupInterval, utility.preferences?.autoBackup == true {
                         let nextDate = latestDate.addingTimeInterval(.init(interval))
-                        Text("label_nextbackup_\(nextDate.formatted(.relativeDate))")
-                            .font(.caption)
+                        if nextDate < .now {
+                            Text("label_nextbackup_issue")
+                                .font(.caption)
+                        } else {
+                            Text("label_nextbackup_\(nextDate.formatted(.relativeDate))")
+                                .font(.caption)
+                        }
                     } else {
                         Text("label_autobackupdisabled")
                             .font(.caption)
