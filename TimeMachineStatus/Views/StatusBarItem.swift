@@ -54,7 +54,6 @@ struct StatusBarItem: View {
     var sizePassthrough: PassthroughSubject<CGSize, Never>
     @ObservedObject var utility: TMUtility
 
-
     private var mainContent: some View {
         HStack(spacing: spacing) {
             if utility.isIdle {
@@ -100,7 +99,7 @@ struct StatusBarItem: View {
         @State private var isAnimating = false
 
         private var rotationAnimation: Animation { .linear(duration: 2).repeatForever(autoreverses: false) }
-        
+
         var body: some View {
             Symbols.arrowTriangleCirclepath.image
                 .rotationEffect(Angle(degrees: isAnimating ? 360 : 0), anchor: .center)
