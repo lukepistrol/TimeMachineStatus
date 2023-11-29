@@ -73,7 +73,7 @@ struct StatusBarItem: View {
                     .monospacedDigit()
             }
         }
-        .foregroundStyle(.primary)
+        .foregroundStyle(Color.menuBarForeground)
     }
 
     var body: some View {
