@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/14.0_Sonoma-orange?label=macOS)
+![Static Badge](https://img.shields.io/badge/14.0_Sonoma-orange?label=macOS&style=flat-square)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/lukepistrol/TimeMachineStatus?style=flat-square)
 ![Downloads](https://img.shields.io/github/downloads/lukepistrol/TimeMachineStatus/TimeMachineStatus.dmg?style=flat-square&logo=github&label=Downloads&color=green)
 
@@ -6,16 +6,19 @@
 
 This app is a simple status bar app that shows the status of Time Machine backups. It is still in early development and I'm open for suggestions and contributions.
 
-> **Info**:
-> It can be downloaded from the [Releases Section](https://github.com/lukepistrol/TimeMachineStatus/releases/latest) or from [homebrew](#homebrew)
+> ⬇️ You can download TimeMachineStatus from [releases](https://github.com/lukepistrol/TimeMachineStatus/releases/latest) or using [homebrew](#homebrew).
 
 ![Header](https://github.com/lukepistrol/TimeMachineStatus/assets/9460130/cea44ed3-21ea-4f06-9916-69b76584c313)
 
 ## Download
 
-TimeMachineStatus is currently available for download in the [Releases Section](https://github.com/lukepistrol/TimeMachineStatus/releases/latest).
+There are multiple ways to download TimeMachineStatus listed below.
 
-After downloading it once it can be updated from within the app.
+> Once installed the app can be updated by itself by selecting the _Check for uptades..._ button or by pressing `⌘ + U` while the popover is active.
+
+### GitHub Releases
+
+TimeMachineStatus is currently available for download in the [Releases Section](https://github.com/lukepistrol/TimeMachineStatus/releases/latest).
 
 ### Homebrew
 
@@ -34,7 +37,6 @@ brew install --cask timemachinestatus
 
 ## Roadmap
 
-- [ ] Improve displayed information in menu bar
 - [ ] Schedule backups (instead of hourly backups)
 - [ ] Schedule backups on a per volume basis
 
@@ -59,3 +61,9 @@ Then simply run the app using the `Run` button in Xcode.
 ## License
 
 See LICENSE.md file in the root of the file tree.
+
+## Support Development
+
+I develop this app in my free time and I would highly appreciate a donation to help me maintaining this project if you are able ❤️
+
+You can either [buy me a coffee](http://buymeacoffee.com/lukeeep) or [sponsor me on GitHub](https://github.com/sponsors/lukepistrol)!

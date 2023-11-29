@@ -22,6 +22,12 @@ enum Constants {
         static let settingsFullDiskAccess: URL = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles")!
         static let authorURL: URL = URL(string: "https://lukaspistrol.com")!
 
+        static let bugReport: URL = URL(string: "https://github.com/lukepistrol/TimeMachineStatus/issues/new/choose")!
+        static let issues: URL = URL(string: "https://github.com/lukepistrol/TimeMachineStatus/issues")!
+
+        static let githubSponsor: URL = URL(string: "https://github.com/sponsors/lukepistrol")!
+        static let buymeacoffee: URL = URL(string: "http://buymeacoffee.com/lukeeep")!
+
         static var timeMachineApp: URL? {
             URL(filePath: "/Applications/Time Machine.app")
         }

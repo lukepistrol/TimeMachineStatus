@@ -79,6 +79,70 @@
         }
       }
     },
+    "button_bug_report_feature_request" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neues Feedback senden..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Submit New Feedback..."
+          }
+        }
+      }
+    },
+    "button_buymeacoffee" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buy Me a Coffee..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buy Me a Coffee..."
+          }
+        }
+      }
+    },
+    "button_feedback" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback senden..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send Feedback..."
+          }
+        }
+      }
+    },
+    "button_github_sponsor" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub Sponsors..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub Sponsors..."
+          }
+        }
+      }
+    },
     "button_opensystemsettings" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -143,6 +207,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Start Backup"
+          }
+        }
+      }
+    },
+    "button_support_project" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstütze den Entwickler..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support the Developer..."
+          }
+        }
+      }
+    },
+    "button_view_issues" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Offene Tickets durchsuchen..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browse Open Tickets..."
           }
         }
       }
