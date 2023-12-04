@@ -17,7 +17,7 @@ struct UserfacingErrorView: View {
     @ViewBuilder
     var body: some View {
         if let error {
-            VStack(alignment: .trailing, spacing: 8) {
+            VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 4) {
                     Symbols.exclamationMarkTriangleFill.image
                         .foregroundStyle(.red)
@@ -31,15 +31,17 @@ struct UserfacingErrorView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.caption2)
                         .foregroundStyle(.secondary)
+                        .lineLimit(5)
                 }
                 if let action = error.action {
+                    Divider()
                     Button(action.title) {
                         NSWorkspace.shared.open(action.url)
                     }
                 }
             }
             .padding(8)
-            .card(.fill)
+            .card(.bar)
             .padding()
         }
     }

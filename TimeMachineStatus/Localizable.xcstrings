@@ -565,13 +565,13 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TimeMachineStatus benötigt Vollzugriff auf die Festplatte um Time Machine Einstellungen zu lesen.\\n\\nBitte erlauben Sie den Zugriff in System Einstellungen > Datenshutz & Sicherheit > Festplattenvollzugriff."
+            "value" : "TimeMachineStatus benötigt Vollzugriff auf die Festplatte um Time Machine Einstellungen zu lesen.\n\nBitte erlauben Sie den Zugriff in _System Einstellungen > Datenshutz & Sicherheit > Festplattenvollzugriff_."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TimeMachineStatus needs full disk access to read Time Machine preferences.\\n\\nPlease grant TimeMachineStatus full disk access in System Settings > Privacy & Security > Full Disk Access."
+            "value" : "TimeMachineStatus needs full disk access to read Time Machine preferences.\n\nPlease grant TimeMachineStatus full disk access in _System Settings > Privacy & Security > Full Disk Access_."
           }
         }
       }

@@ -31,22 +31,23 @@ struct ExpandableSection<C: View, H: View>: View {
         Section(isExpanded: $expanded) {
             content()
         } header: {
-            HStack {
-                header()
-                Spacer()
-                Button {
-                    expanded.toggle()
-                } label: {
+            Button {
+                expanded.toggle()
+            } label: {
+                HStack {
+                    header()
+                    Spacer()
                     Image(systemName: "chevron.right")
                         .rotationEffect(expanded ? .degrees(90) : .zero)
                         .padding(.horizontal, 12)
                         .contentShape(.rect)
                 }
-                .buttonStyle(.plain)
-                .focusable(false)
+                .foregroundStyle(.secondary)
+                .font(.headline)
+                .contentShape(.rect)
             }
-            .foregroundStyle(.secondary)
-            .font(.headline)
+            .buttonStyle(.plain)
+            .focusable(false)
         }
     }
 }
