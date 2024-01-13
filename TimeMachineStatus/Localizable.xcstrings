@@ -25,6 +25,12 @@
             "state" : "translated",
             "value" : "© 2023 Lukas Pistrol"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "© 2023 Lukas Pistrol"
+          }
         }
       }
     },
@@ -38,6 +44,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lukaspistrol.com"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "lukaspistrol.com"
@@ -59,6 +71,12 @@
             "state" : "translated",
             "value" : "Backup to \"%@\" now"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esegui il backup su \"%S\" adesso"
+          }
         }
       }
     },
@@ -76,6 +94,12 @@
             "state" : "translated",
             "value" : "Browse Time Machine Backups"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sfoglia i backup di Time Machine"
+          }
         }
       }
     },
@@ -91,6 +115,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Submit New Feedback..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invia un nuovo feedback..."
           }
         }
       }
@@ -108,6 +138,12 @@
             "state" : "translated",
             "value" : "Buy Me a Coffee..."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Offrimi un caffè..."
+          }
         }
       }
     },
@@ -124,6 +160,12 @@
             "state" : "translated",
             "value" : "Send Feedback..."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invia un feedback..."
+          }
         }
       }
     },
@@ -139,6 +181,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "GitHub Sponsors..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gli sponsor di GitHub..."
           }
         }
       }
@@ -157,6 +205,12 @@
             "state" : "translated",
             "value" : "Open System Settings"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aprire le Impostazioni di sistema"
+          }
         }
       }
     },
@@ -173,6 +227,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quit"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiudi"
           }
         }
       }
@@ -191,6 +251,12 @@
             "state" : "translated",
             "value" : "Show Info"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra informazioni"
+          }
         }
       }
     },
@@ -208,6 +274,12 @@
             "state" : "translated",
             "value" : "Start Backup"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avvia il backup"
+          }
         }
       }
     },
@@ -224,6 +296,12 @@
             "state" : "translated",
             "value" : "Support the Developer..."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supporta lo sviluppatore..."
+          }
         }
       }
     },
@@ -239,6 +317,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Browse Open Tickets..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sfoglia i ticket aperti..."
           }
         }
       }
@@ -257,6 +341,12 @@
             "state" : "translated",
             "value" : "Encrypted"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crittografato"
+          }
         }
       }
     },
@@ -273,6 +363,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Filesystem"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "File System"
           }
         }
       }
@@ -291,6 +387,12 @@
             "state" : "translated",
             "value" : "Free Space"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spazio libero"
+          }
         }
       }
     },
@@ -307,6 +409,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Last Attempt"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultimo tentativo"
           }
         }
       }
@@ -325,6 +433,12 @@
             "state" : "translated",
             "value" : "Last Backup"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultimo backup"
+          }
         }
       }
     },
@@ -341,6 +455,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Name"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome"
           }
         }
       }
@@ -359,6 +479,12 @@
             "state" : "translated",
             "value" : "Quota"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi"
+          }
         }
       }
     },
@@ -372,6 +498,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "URL"
@@ -393,6 +525,12 @@
             "state" : "translated",
             "value" : "Used Space"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spazio usato"
+          }
         }
       }
     },
@@ -410,6 +548,12 @@
             "state" : "translated",
             "value" : "%1$@ used, %2$@ free"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ usati, %2$@ liberi"
+          }
         }
       }
     },
@@ -425,6 +569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No storage info available"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna informazione sulla memoria"
           }
         }
       }
@@ -442,6 +592,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unknown"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sconosciuto"
           }
         }
       }
@@ -474,6 +630,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld File (%2$@)"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Files (%2$@)"
+                }
+              }
+            }
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld file (%2$@)"
                 }
               },
               "other" : {
@@ -524,6 +698,24 @@
               }
             }
           }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld cambiamento trovato"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld cambiamenti trovati"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -539,6 +731,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Error Description: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descrizione errore: %@"
           }
         }
       }
@@ -556,6 +754,12 @@
             "state" : "translated",
             "value" : "Unknown Error"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Errore sconosciuto"
+          }
         }
       }
     },
@@ -569,6 +773,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TimeMachineStatus needs full disk access to read Time Machine preferences.\n\nPlease grant TimeMachineStatus full disk access in _System Settings > Privacy & Security > Full Disk Access_."
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TimeMachineStatus needs full disk access to read Time Machine preferences.\n\nPlease grant TimeMachineStatus full disk access in _System Settings > Privacy & Security > Full Disk Access_."
@@ -590,6 +800,12 @@
             "state" : "translated",
             "value" : "Full Disk Access permission denied"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorizzazione di accesso all'intero disco negata"
+          }
         }
       }
     },
@@ -606,6 +822,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Auto Backup"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto backup"
           }
         }
       }
@@ -624,6 +846,12 @@
             "state" : "translated",
             "value" : "Backup Interval"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intervallo dei backup"
+          }
         }
       }
     },
@@ -640,6 +868,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Requires Power"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E' richiesta l'alimentazione"
           }
         }
       }
@@ -658,6 +892,12 @@
             "state" : "translated",
             "value" : "Skip Paths"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salta i percorsi"
+          }
         }
       }
     },
@@ -674,6 +914,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Empty"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vuoto"
           }
         }
       }
@@ -692,6 +938,12 @@
             "state" : "translated",
             "value" : "Image Volume Name"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome del volume"
+          }
         }
       }
     },
@@ -709,6 +961,12 @@
             "state" : "translated",
             "value" : "Automatic backups are disabled"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I backup automatici sono disabilitati"
+          }
         }
       }
     },
@@ -724,6 +982,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Backing up to \"%@\"..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backup su \"%@\"..."
           }
         }
       }
@@ -742,6 +1006,12 @@
             "state" : "translated",
             "value" : "%1$@ on \"%2$@\""
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ su \"%2$@\""
+          }
         }
       }
     },
@@ -759,6 +1029,12 @@
             "state" : "translated",
             "value" : "Next automatic backup in %@"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prossimo backup automatico in %@"
+          }
         }
       }
     },
@@ -774,6 +1050,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Last automatic backup failed"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'ultimo backup automatico non è riuscito"
           }
         }
       }
@@ -792,6 +1074,12 @@
             "state" : "translated",
             "value" : "Destinations"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destinazioni"
+          }
         }
       }
     },
@@ -809,6 +1097,12 @@
             "state" : "translated",
             "value" : "General Info"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni generali"
+          }
         }
       }
     },
@@ -824,6 +1118,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Check for updates..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controlla gli aggiornamenti..."
           }
         }
       }
@@ -842,6 +1142,12 @@
             "state" : "translated",
             "value" : "Default"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinito"
+          }
         }
       }
     },
@@ -858,6 +1164,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reset To Default"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ripristino delle impostazioni predefinite"
           }
         }
       }
@@ -876,6 +1188,12 @@
             "state" : "translated",
             "value" : "Settings"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
+          }
         }
       }
     },
@@ -891,6 +1209,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Automatically check for updates"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verifica automatica degli aggiornamenti"
           }
         }
       }
@@ -909,6 +1233,12 @@
             "state" : "translated",
             "value" : "Background Color"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colore di sfondo"
+          }
         }
       }
     },
@@ -926,6 +1256,12 @@
             "state" : "translated",
             "value" : "Bold Font"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testo in grassetto"
+          }
         }
       }
     },
@@ -941,6 +1277,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bold Icon"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icona in grassetto"
           }
         }
       }
@@ -959,6 +1301,12 @@
             "state" : "translated",
             "value" : "Corner Radius"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raggio di curvatura"
+          }
         }
       }
     },
@@ -975,6 +1323,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Full Disk Access is required to read Time Machine preferences."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per leggere le preferenze di Time Machine è necessario l'accesso completo al disco."
           }
         }
       }
@@ -993,6 +1347,12 @@
             "state" : "translated",
             "value" : "Full Disk Access"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accesso completo al disco"
+          }
         }
       }
     },
@@ -1010,6 +1370,12 @@
             "state" : "translated",
             "value" : "Horizontal Padding"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spaziatura orizzontale"
+          }
         }
       }
     },
@@ -1025,6 +1391,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Launch at Login"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lancia all'avvio"
           }
         }
       }
@@ -1042,6 +1414,12 @@
             "state" : "translated",
             "value" : "TimeMachineStatus must be enabled in System Settings > General > Login Items"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TimeMachineStatus deve essere abilitato in Impostazioni di sistema > Generali > Elementi di login"
+          }
         }
       }
     },
@@ -1057,6 +1435,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Show Percentage"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra percentuale"
           }
         }
       }
@@ -1075,6 +1459,12 @@
             "state" : "translated",
             "value" : "Show Status"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra stato"
+          }
         }
       }
     },
@@ -1091,6 +1481,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Spacing"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spaziatura"
           }
         }
       }
@@ -1109,6 +1505,12 @@
             "state" : "translated",
             "value" : "Vertical Padding"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spaziatura verticale"
+          }
         }
       }
     },
@@ -1125,6 +1527,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menu Bar Item"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barra dei menu"
           }
         }
       }
@@ -1143,6 +1551,12 @@
             "state" : "translated",
             "value" : "Permissions"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permessi"
+          }
         }
       }
     },
@@ -1159,6 +1573,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "About"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni"
           }
         }
       }
@@ -1177,6 +1597,12 @@
             "state" : "translated",
             "value" : "Appearance"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aspetto"
+          }
         }
       }
     },
@@ -1193,6 +1619,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "General"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generale"
           }
         }
       }
