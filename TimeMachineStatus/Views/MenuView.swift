@@ -69,9 +69,12 @@ struct MenuView: View {
                             .card(.background.secondary)
                     }
                     if let autoBackup = preferences.autoBackup {
-                        LabeledContent("general_info_autobackup", value: autoBackup ? "Enabled" : "Disabled")
-                            .padding(10)
-                            .card(.background.secondary)
+                        LabeledContent("general_info_autobackup", content: {
+                            let value = autoBackup ? "enabled" : "disabled"
+                            Text("general_info_autobackup_\(value)")
+                        })
+                        .padding(10)
+                        .card(.background.secondary)
                         if let interval = preferences.autoBackupInterval, autoBackup {
                             let measurement = Measurement(
                                 value: Double(interval),
@@ -86,9 +89,12 @@ struct MenuView: View {
                         }
                     }
                     if let requiresACPower = preferences.requiresACPower {
-                        LabeledContent("general_info_requirespower", value: requiresACPower ? "Yes" : "No")
-                            .padding(10)
-                            .card(.background.secondary)
+                        LabeledContent("general_info_requirespower", content: {
+                            let value = requiresACPower ? "yes" : "false"
+                            Text("general_info_requirespower_\(value)")
+                        })
+                        .padding(10)
+                        .card(.background.secondary)
                     }
                     LabeledContent("general_info_skippaths") {
                         VStack(alignment: .trailing, spacing: 4) {
