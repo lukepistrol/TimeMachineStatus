@@ -105,7 +105,10 @@ extension BackupState._State {
             if let state = state as? BackupState.FindingChanges {
                 return state.fractionOfProgressBar * state.fractionDone
             } else if let state = state as? BackupState.Copying {
-                return 0.1 + (state.progress.percent ?? 0) * state.fractionOfProgressBar
+                return min(
+                    (1 - state.fractionOfProgressBar) + (state.progress.percent ?? 0) * state.fractionOfProgressBar,
+                    state.fractionOfProgressBar
+                )
             } else if state is BackupState.Finishing || state is BackupState.Stopping {
                 return 0.95
             } else if state is BackupState.Thinning {
