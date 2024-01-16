@@ -81,7 +81,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Esegui il backup su \"%S\" adesso"
+            "value" : "Esegui il backup su \"%@\" adesso"
           }
         }
       }
@@ -114,19 +114,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Neues Feedback senden..."
+            "value" : "Neues Feedback senden"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Submit New Feedback..."
+            "value" : "Submit New Feedback"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Invia un nuovo feedback..."
+            "value" : "Invia un nuovo feedback"
           }
         }
       }
@@ -136,19 +136,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buy Me a Coffee..."
+            "value" : "Buy Me a Coffee"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buy Me a Coffee..."
+            "value" : "Buy Me a Coffee"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Offrimi un caffè..."
+            "value" : "Offrimi un caffè"
           }
         }
       }
@@ -158,19 +158,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Feedback senden..."
+            "value" : "Feedback senden"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Send Feedback..."
+            "value" : "Send Feedback"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Invia un feedback..."
+            "value" : "Invia un feedback"
           }
         }
       }
@@ -180,19 +180,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GitHub Sponsors..."
+            "value" : "GitHub Sponsors"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GitHub Sponsors..."
+            "value" : "GitHub Sponsors"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gli sponsor di GitHub..."
+            "value" : "Gli sponsor di GitHub"
           }
         }
       }
@@ -294,19 +294,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unterstütze den Entwickler..."
+            "value" : "Unterstütze den Entwickler"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Support the Developer..."
+            "value" : "Support the Developer"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Supporta lo sviluppatore..."
+            "value" : "Supporta lo sviluppatore"
           }
         }
       }
@@ -316,19 +316,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Offene Tickets durchsuchen..."
+            "value" : "Offene Tickets durchsuchen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Browse Open Tickets..."
+            "value" : "Browse Open Tickets"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sfoglia i ticket aperti..."
+            "value" : "Sfoglia i ticket aperti"
           }
         }
       }
@@ -879,7 +879,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "E' richiesta l'alimentazione"
+            "value" : "Alimentazione richiesta"
           }
         }
       }
@@ -902,7 +902,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Salta i percorsi"
+            "value" : "Percorsi saltati"
           }
         }
       }
@@ -981,19 +981,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Backup auf \"%@\" läuft..."
+            "value" : "Backup auf \"%@\" läuft"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Backing up to \"%@\"..."
+            "value" : "Backing up to \"%@\""
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Backup su \"%@\"..."
+            "value" : "Backup su \"%@\""
           }
         }
       }
@@ -1117,19 +1117,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nach Updates suchen..."
+            "value" : "Nach Updates suchen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Check for updates..."
+            "value" : "Check for updates"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Controlla gli aggiornamenti..."
+            "value" : "Controlla gli aggiornamenti"
           }
         }
       }
@@ -1402,7 +1402,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lancia all'avvio"
+            "value" : "Esegui all'avvio"
           }
         }
       }
