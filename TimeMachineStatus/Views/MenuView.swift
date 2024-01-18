@@ -69,10 +69,13 @@ struct MenuView: View {
                             .card(.background.secondary)
                     }
                     if let autoBackup = preferences.autoBackup {
-                        LabeledContent("general_info_autobackup", content: {
-                            let value = autoBackup ? "enabled" : "disabled"
-                            Text("general_info_autobackup_\(value)")
-                        })
+                        LabeledContent("general_info_autobackup") {
+                            if autoBackup {
+                                Text("general_info_autobackup_enabled")
+                            } else {
+                                Text("general_info_autobackup_disabled")
+                            }
+                        }
                         .padding(10)
                         .card(.background.secondary)
                         if let interval = preferences.autoBackupInterval, autoBackup {
@@ -89,10 +92,13 @@ struct MenuView: View {
                         }
                     }
                     if let requiresACPower = preferences.requiresACPower {
-                        LabeledContent("general_info_requirespower", content: {
-                            let value = requiresACPower ? "yes" : "false"
-                            Text("general_info_requirespower_\(value)")
-                        })
+                        LabeledContent("general_info_requirespower") {
+                            if requiresACPower {
+                                Text("general_info_requirespower_true")
+                            } else {
+                                Text("general_info_requirespower_false")
+                            }
+                        }
                         .padding(10)
                         .card(.background.secondary)
                     }
