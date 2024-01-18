@@ -47,6 +47,8 @@ work on. If you have an idea for additional features, please open a [new issue](
 
 > Please do not create pull requests for new features without discussing it first.
 
+When submitting a pull request make sure you are on a feature branch in your fork. Pull requests from your main branch will be closed.
+
 ## Development Setup
 
 Currently it is only possible to run the app by building it from source using `Xcode 15`. To do so, clone the repository
