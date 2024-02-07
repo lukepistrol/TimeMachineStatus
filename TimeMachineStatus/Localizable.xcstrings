@@ -1119,19 +1119,19 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nächstes automatische Backup in %@"
+            "value" : "Nächstes automatische Backup %@"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Next automatic backup in %@"
+            "value" : "Next automatic backup %@"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Prossimo backup automatico in %@"
+            "value" : "Prossimo backup automatico %@"
           }
         }
       }
