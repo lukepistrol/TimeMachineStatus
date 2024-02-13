@@ -1726,6 +1726,29 @@
           }
         }
       }
+    },
+    "window_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TimeMachineStatus"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TimeMachineStatus"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TimeMachineStatus"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

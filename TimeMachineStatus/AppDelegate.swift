@@ -23,6 +23,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var hostingView: NSHostingView<StatusBarItem>?
     var popover: NSPopover?
 
+    lazy var detachedWindowController: DetachedWindowController = {
+        let menuView = MenuView(utility: utility, updater: updaterController.updater)
+        let windowController = DetachedWindowController(
+            window: .init(contentViewController: NSHostingController(
+                rootView: menuView
+            ))
+        )
+        return windowController
+    }()
+
     let utility: TMUtility = .init()
 
     var updaterController: SPUStandardUpdaterController!
@@ -81,26 +91,41 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if popover.isShown {
             popover.performClose(sender)
         } else {
-            popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
-            // fixes popover not being fully visible on the right side of the screen
-            if let popoverFrame = popover.contentViewController?.view.window?.frame,
-               let screenFrame = popover.contentViewController?.view.window?.screen?.frame,
-               (popoverFrame.origin.x + Constants.Sizes.popoverWidth + 25) > screenFrame.width {
-                popover.contentViewController?.view.window?.setFrameOrigin(
-                    NSPoint(x: screenFrame.width - Constants.Sizes.popoverWidth - 25, y: popoverFrame.origin.y)
-                )
+            if let detachedWindow = detachedWindowController.window, detachedWindow.isVisible {
+                detachedWindow.orderFrontRegardless()
+            } else {
+                popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
+                // fixes popover not being fully visible on the right side of the screen
+                if let popoverFrame = popover.contentViewController?.view.window?.frame,
+                   let screenFrame = popover.contentViewController?.view.window?.screen?.frame,
+                   (popoverFrame.origin.x + Constants.Sizes.popoverWidth + 25) > screenFrame.width {
+                    popover.contentViewController?.view.window?.setFrameOrigin(
+                        NSPoint(x: screenFrame.width - Constants.Sizes.popoverWidth - 25, y: popoverFrame.origin.y)
+                    )
+                }
+                popover.contentViewController?.view.window?.becomeKey()
             }
-            popover.contentViewController?.view.window?.becomeKey()
         }
     }
 
     private func setupPopover() {
         let menuView = MenuView(utility: utility, updater: updaterController.updater)
         popover = NSPopover()
+        popover?.delegate = self
         popover?.contentViewController = NSHostingController(rootView: menuView)
         popover?.animates = false
-        popover?.behavior = .applicationDefined
+        popover?.behavior = .semitransient
         popover?.setValue(true, forKeyPath: "shouldHideAnchor") // hide arrow
+    }
+}
+
+extension AppDelegate: NSPopoverDelegate {
+    func popoverShouldDetach(_ popover: NSPopover) -> Bool {
+        return true
+    }
+
+    func detachableWindow(for popover: NSPopover) -> NSWindow? {
+        return detachedWindowController.window
     }
 }
 
@@ -114,5 +139,24 @@ extension AppDelegate: SPUStandardUserDriverDelegate {
         andInImmediateFocus immediateFocus: Bool
     ) -> Bool {
         return true
+    }
+}
+
+class DetachedWindowController: NSWindowController {
+    init(window: NSWindow) {
+        super.init(window: window)
+
+        window.styleMask = [
+            .closable,
+            .titled,
+            .fullSizeContentView
+        ]
+        window.titlebarAppearsTransparent = true
+        window.standardWindowButton(.miniaturizeButton)?.isHidden = true
+        window.standardWindowButton(.zoomButton)?.isHidden = true
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
