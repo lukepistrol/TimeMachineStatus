@@ -38,6 +38,8 @@ struct MenuView: View {
         }
         .frame(width: Constants.Sizes.popoverWidth)
         .fixedSize()
+        .navigationTitle("window_title")
+        .background(.regularMaterial, in: .rect)
     }
 
     @ViewBuilder
@@ -207,18 +209,15 @@ struct MenuView: View {
             Button("settings_button_checkforupdates") {
                 updater.checkForUpdates()
             }
-            .keyboardShortcut("u", modifiers: .command)
             .disabled(!updaterViewModel.canCheckForUpdates)
             Button("button_browsebackups") {
                 utility.launchTimeMachine()
             }
-            .keyboardShortcut("b", modifiers: .command)
             Divider()
             Menu("button_feedback") {
                 Button("button_bug_report_feature_request") {
                     NSWorkspace.shared.open(Constants.URLs.bugReport)
                 }
-                .keyboardShortcut("f", modifiers: .command)
                 Divider()
                 Button("button_view_issues") {
                     NSWorkspace.shared.open(Constants.URLs.issues)
