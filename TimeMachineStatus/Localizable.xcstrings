@@ -311,6 +311,29 @@
         }
       }
     },
+    "button_time_machine_system_settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine Einstellungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine Settings"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni di Time Machine"
+          }
+        }
+      }
+    },
     "button_view_issues" : {
       "localizations" : {
         "de" : {

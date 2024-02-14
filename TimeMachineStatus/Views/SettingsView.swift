@@ -59,10 +59,22 @@ struct SettingsView: View {
     @AppStorage(StorageKeys.cornerRadius.id)
     private var cornerRadius: Double = StorageKeys.cornerRadius.default
 
-    private enum Tabs: Hashable {
+    private enum Tabs: Hashable, CaseIterable {
         case general
         case appearance
         case about
+
+        var height: Double {
+            switch self {
+            case .about: 350
+            case .appearance: 410
+            case .general: 250
+            }
+        }
+
+        static var largestHeight: Double {
+            Self.allCases.map(\.height).max() ?? 100
+        }
     }
 
     @State private var selection: Tabs = .general
@@ -81,7 +93,10 @@ struct SettingsView: View {
             appearandeTab
             aboutTab
         }
-        .frame(width: 375, height: 350)
+        .frame(
+            width: Constants.Sizes.settingsWidth,
+            height: isPreview ? Tabs.largestHeight : selection.height
+        )
     }
 
     private var generalTab: some View {
@@ -95,7 +110,7 @@ struct SettingsView: View {
                 }
                 HStack {
                     Spacer()
-                    Button("settings_button_settings") {
+                    Button("button_opensystemsettings") {
                         NSWorkspace.shared.open(Constants.URLs.settingsFullDiskAccess)
                     }
                 }

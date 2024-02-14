@@ -13,7 +13,7 @@ import Combine
 import Sparkle
 import SwiftUI
 
-private var isPreview: Bool {
+var isPreview: Bool {
     return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
 }
 
@@ -21,9 +21,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusItem: NSStatusItem?
     var hostingView: NSHostingView<StatusBarItem>?
-    var popover: NSPopover?
 
-    lazy var detachedWindowController: DetachedWindowController = {
+    private lazy var popover: NSPopover = {
+        let menuView = MenuView(utility: utility, updater: updaterController.updater)
+        let popover = NSPopover()
+        popover.delegate = self
+        popover.contentViewController = NSHostingController(rootView: menuView)
+        popover.animates = false
+        popover.behavior = .semitransient
+        popover.setValue(true, forKeyPath: "shouldHideAnchor") // hide arrow
+        return popover
+    }()
+
+    private lazy var detachedWindowController: DetachedWindowController = {
         let menuView = MenuView(utility: utility, updater: updaterController.updater)
         let windowController = DetachedWindowController(
             window: .init(contentViewController: NSHostingController(
@@ -53,7 +63,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // dont launch an extra instance of the menu bar item when in Xcode SwiftUI Preview
         if !isPreview {
             setupStatusItem()
-            setupPopover()
         }
 
         // subscribe to size changes of the menu bar item
@@ -66,7 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // dismiss the popover when mouse clicks anywhere outside the app
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
-            self?.popover?.performClose(event)
+            self?.popover.performClose(event)
         }
     }
 
@@ -87,13 +96,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc
     private func openPopover(_ sender: NSButton) {
-        guard let popover else { return }
         if popover.isShown {
             popover.performClose(sender)
         } else {
             if let detachedWindow = detachedWindowController.window, detachedWindow.isVisible {
                 detachedWindow.orderFrontRegardless()
             } else {
+                utility.start(force: true) // update model data
                 popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
                 // fixes popover not being fully visible on the right side of the screen
                 if let popoverFrame = popover.contentViewController?.view.window?.frame,
@@ -107,27 +116,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-
-    private func setupPopover() {
-        let menuView = MenuView(utility: utility, updater: updaterController.updater)
-        popover = NSPopover()
-        popover?.delegate = self
-        popover?.contentViewController = NSHostingController(rootView: menuView)
-        popover?.animates = false
-        popover?.behavior = .semitransient
-        popover?.setValue(true, forKeyPath: "shouldHideAnchor") // hide arrow
-    }
 }
 
-extension AppDelegate: NSPopoverDelegate {
-    func popoverShouldDetach(_ popover: NSPopover) -> Bool {
-        return true
-    }
-
-    func detachableWindow(for popover: NSPopover) -> NSWindow? {
-        return detachedWindowController.window
-    }
-}
+// MARK: - Sparkle
 
 extension AppDelegate: SPUStandardUserDriverDelegate {
     var supportsGentleScheduledUpdateReminders: Bool {
@@ -139,6 +130,18 @@ extension AppDelegate: SPUStandardUserDriverDelegate {
         andInImmediateFocus immediateFocus: Bool
     ) -> Bool {
         return true
+    }
+}
+
+// MARK: - PopoverDelegate
+
+extension AppDelegate: NSPopoverDelegate {
+    func popoverShouldDetach(_ popover: NSPopover) -> Bool {
+        return true
+    }
+
+    func detachableWindow(for popover: NSPopover) -> NSWindow? {
+        return detachedWindowController.window
     }
 }
 

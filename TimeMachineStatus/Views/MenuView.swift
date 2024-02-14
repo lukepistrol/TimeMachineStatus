@@ -210,8 +210,12 @@ struct MenuView: View {
                 updater.checkForUpdates()
             }
             .disabled(!updaterViewModel.canCheckForUpdates)
+            Divider()
             Button("button_browsebackups") {
                 utility.launchTimeMachine()
+            }
+            Button("button_time_machine_system_settings") {
+                NSWorkspace.shared.open(Constants.URLs.timeMachineSystemSettings)
             }
             Divider()
             Menu("button_feedback") {
