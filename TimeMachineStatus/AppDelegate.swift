@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return windowController
     }()
 
-    let utility: TMUtility = .init()
+    @MainActor let utility: TMUtility = .init()
 
     var updaterController: SPUStandardUpdaterController!
 
@@ -94,7 +94,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusItem?.button?.action = #selector(openPopover)
     }
 
-    @objc
+    @MainActor @objc
     private func openPopover(_ sender: NSButton) {
         if popover.isShown {
             popover.performClose(sender)

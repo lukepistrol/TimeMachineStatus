@@ -1318,6 +1318,28 @@
         }
       }
     },
+    "settings_item_animateicon" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symbol animieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Animate Icon"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icona animata"
+          }
+        }
+      }
+    },
     "settings_item_autocheckupdates" : {
       "localizations" : {
         "de" : {

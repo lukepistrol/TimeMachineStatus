@@ -51,6 +51,9 @@ struct StatusBarItem: View {
     @AppStorage(StorageKeys.cornerRadius.id)
     private var cornerRadius: Double = StorageKeys.cornerRadius.default
 
+    @AppStorage(StorageKeys.animateIcon.id)
+    private var animateIcon: Bool = StorageKeys.animateIcon.default
+
     var sizePassthrough: PassthroughSubject<CGSize, Never>
     @ObservedObject var utility: TMUtility
 
@@ -60,8 +63,13 @@ struct StatusBarItem: View {
                 Symbols.timeMachine.image
                     .font(.body.weight(boldIcon ? .bold : .medium))
             } else {
-                AnimatedIcon()
-                    .font(.body.weight(boldIcon ? .bold : .medium))
+                if animateIcon {
+                    AnimatedIcon()
+                        .font(.body.weight(boldIcon ? .bold : .medium))
+                } else {
+                    Symbols.arrowTriangleCirclepath.image
+                        .font(.body.weight(boldIcon ? .bold : .medium))
+                }
             }
             if showStatus, !utility.isIdle {
                 Text(utility.status.shortStatusString)
@@ -90,25 +98,26 @@ struct StatusBarItem: View {
                 }
             )
             .onPreferenceChange(ItemSizePreferenceKey.self) { size in
+                print("Size: \(size)")
                 sizePassthrough.send(size)
             }
             .offset(y: -1)
+            .onChange(of: utility.isIdle) { oldValue, newValue in
+                print("Changed: \(oldValue) -> \(newValue)")
+            }
     }
 
     struct AnimatedIcon: View {
         @State private var isAnimating = false
 
-        private var rotationAnimation: Animation { .linear(duration: 2).repeatForever(autoreverses: false) }
+        private var rotationAnimation: Animation = .linear(duration: 2).repeatForever(autoreverses: false)
 
         var body: some View {
             Symbols.arrowTriangleCirclepath.image
                 .rotationEffect(Angle(degrees: isAnimating ? 360 : 0), anchor: .center)
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        withAnimation(rotationAnimation) {
-                            isAnimating = true
-                        }
-                    }
+                .animation(rotationAnimation, value: isAnimating)
+                .task {
+                    isAnimating = true
                 }
         }
     }

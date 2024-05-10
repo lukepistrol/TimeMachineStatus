@@ -28,6 +28,7 @@ enum StorageKeys {
     static let backgroundColor = Key(id: "backgroundColor", default: Color.clear)
     static let cornerRadius = Key(id: "cornerRadius", default: 5.0)
     static let showPercentage = Key(id: "showPercentage", default: true)
+    static let animateIcon = Key(id: "animateIcon", default: true)
 }
 
 struct SettingsView: View {
@@ -58,6 +59,9 @@ struct SettingsView: View {
 
     @AppStorage(StorageKeys.cornerRadius.id)
     private var cornerRadius: Double = StorageKeys.cornerRadius.default
+
+    @AppStorage(StorageKeys.animateIcon.id)
+    private var animateIcon: Bool = StorageKeys.animateIcon.default
 
     private enum Tabs: Hashable, CaseIterable {
         case general
@@ -184,6 +188,7 @@ struct SettingsView: View {
                 Toggle("settings_item_boldicon", isOn: $boldIcon)
             }
             Section {
+                Toggle("settings_item_animateicon", isOn: $animateIcon)
                 Toggle("settings_item_showstatus", isOn: $showStatus)
                 Toggle("settings_item_showpercentage", isOn: $showPercentage)
                 if showStatus || showPercentage {

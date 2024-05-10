@@ -13,6 +13,7 @@ import Foundation
 import Logging
 import ShellOut
 
+@MainActor
 class TMUtility: ObservableObject {
     @Published var status: BackupState._State = BackupState.None()
     @Published var preferences: Preferences?
@@ -30,13 +31,21 @@ class TMUtility: ObservableObject {
         start(force: true)
     }
 
+    deinit {
+        timer?.invalidate()
+    }
+
     func start(force: Bool = false) {
         timer?.invalidate()
         let timeInterval: TimeInterval = isIdle && !force ? 15 : force ? 0 : 2
         timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false) { [weak self] _ in
             guard let self else { return }
-            self.updateStatus()
-            self.readPreferences()
+            Task {
+                async let update: Void = self.updateStatus()
+                async let read: Void = self.readPreferences()
+
+                _ = await [update, read]
+            }
         }
     }
 
