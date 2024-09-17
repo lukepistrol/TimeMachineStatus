@@ -22,7 +22,7 @@ struct TimeMachineStatusApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     init() {
-        LoggingSystem.bootstrap { id in
+        LoggingSystem.bootstrap { [logLevel] id in
             var mpx = MultiplexLogHandler([
                 LoggingOSLog(label: id)
             ])
