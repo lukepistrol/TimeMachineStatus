@@ -25,6 +25,20 @@ struct Preferences: Decodable {
         case skipPaths = "SkipPaths"
     }
 
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.autoBackup = try container.decodeBoolOrIntIfPresent(for: .autoBackup)
+        self.autoBackupInterval = try container.decodeIfPresent(Int.self, forKey: .autoBackupInterval)
+        self.excludedVolumeUUIDs = try container.decodeIfPresent([UUID].self, forKey: .excludedVolumeUUIDs)
+        self.preferencesVersion = try container.decode(Int.self, forKey: .preferencesVersion)
+        self.requiresACPower = try container.decodeBoolOrIntIfPresent(for: .requiresACPower)
+        self.lastConfigurationTraceDate = try container.decodeIfPresent(Date.self, forKey: .lastConfigurationTraceDate)
+        self.lastDestinationID = try container.decodeIfPresent(UUID.self, forKey: .lastDestinationID)
+        self.localizedDiskImageVolumeName = try container.decodeIfPresent(String.self, forKey: .localizedDiskImageVolumeName)
+        self.destinations = try container.decodeIfPresent([Destination].self, forKey: .destinations)
+        self.skipPaths = try container.decodeIfPresent([String].self, forKey: .skipPaths)
+    }
+
     let autoBackup: Bool?
     let autoBackupInterval: Int?
     let excludedVolumeUUIDs: [UUID]?

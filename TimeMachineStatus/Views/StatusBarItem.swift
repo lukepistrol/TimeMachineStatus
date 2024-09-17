@@ -10,6 +10,7 @@
 //  
 
 import Combine
+import Logging
 import SwiftUI
 
 struct ItemSizePreferenceKey: PreferenceKey {
@@ -57,6 +58,8 @@ struct StatusBarItem: View {
     var sizePassthrough: PassthroughSubject<CGSize, Never>
     @ObservedObject var utility: TMUtility
 
+    private let log = Logger(label: "\(Bundle.identifier).StatusBarItem")
+
     private var mainContent: some View {
         HStack(spacing: spacing) {
             if utility.isIdle {
@@ -98,12 +101,12 @@ struct StatusBarItem: View {
                 }
             )
             .onPreferenceChange(ItemSizePreferenceKey.self) { size in
-                print("Size: \(size)")
+                log.trace("Size: \(size)")
                 sizePassthrough.send(size)
             }
             .offset(y: -1)
             .onChange(of: utility.isIdle) { oldValue, newValue in
-                print("Changed: \(oldValue) -> \(newValue)")
+                log.trace("Changed: \(oldValue) -> \(newValue)")
             }
     }
 

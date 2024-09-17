@@ -81,10 +81,14 @@ class TMUtility: ObservableObject {
 
     func startBackup(id: UUID? = nil) {
         do {
-            _ = if let id {
-                try shellOut(to: Constants.Commands.startBackup(id: id))
+            if let id {
+                log.info("Starting backup with id: \(id)")
+                let result = try shellOut(to: Constants.Commands.startBackup(id: id))
+                log.trace("Started backup: \(result)")
             } else {
-                try shellOut(to: Constants.Commands.startBackup())
+                log.info("Starting backup")
+                let result = try shellOut(to: Constants.Commands.startBackup())
+                log.trace("Started backup: \(result)")
             }
             start(force: true)
         } catch {
@@ -94,8 +98,9 @@ class TMUtility: ObservableObject {
 
     func stopBackup() {
         do {
-            let response = try shellOut(to: Constants.Commands.stopBackup)
-            print(response)
+            log.info("Stopping backup")
+            let result = try shellOut(to: Constants.Commands.stopBackup)
+            log.trace("Stopped backup: \(result)")
             start(force: true)
         } catch {
             log.error("Error stopping backup: \(error)")
@@ -104,7 +109,9 @@ class TMUtility: ObservableObject {
 
     func launchTimeMachine() {
         do {
-            _ = try shellOut(to: Constants.Commands.launchTimeMachine)
+            log.info("Launching time machine")
+            let result = try shellOut(to: Constants.Commands.launchTimeMachine)
+            log.trace("Launched time machine: \(result)")
         } catch {
             log.error("Error launching time machine: \(error)")
         }
