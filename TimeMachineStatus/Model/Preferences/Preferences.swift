@@ -34,7 +34,10 @@ struct Preferences: Decodable {
         self.requiresACPower = try container.decodeBoolOrIntIfPresent(for: .requiresACPower)
         self.lastConfigurationTraceDate = try container.decodeIfPresent(Date.self, forKey: .lastConfigurationTraceDate)
         self.lastDestinationID = try container.decodeIfPresent(UUID.self, forKey: .lastDestinationID)
-        self.localizedDiskImageVolumeName = try container.decodeIfPresent(String.self, forKey: .localizedDiskImageVolumeName)
+        self.localizedDiskImageVolumeName = try container.decodeIfPresent(
+            String.self,
+            forKey: .localizedDiskImageVolumeName
+        )
         self.destinations = try container.decodeIfPresent([Destination].self, forKey: .destinations)
         self.skipPaths = try container.decodeIfPresent([String].self, forKey: .skipPaths)
     }

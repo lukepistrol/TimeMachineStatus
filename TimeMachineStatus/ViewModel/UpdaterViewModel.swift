@@ -18,7 +18,7 @@ class UpdaterViewModel: ObservableObject {
 
     private let log = Logger(label: "\(Bundle.identifier).UpdaterViewModel")
 
-    @Published private (set) var canCheckForUpdates = false
+    @Published private(set) var canCheckForUpdates = false
     @Published var automaticallyChecksForUpdates: Bool {
         didSet {
             log.debug("Automatically checks for update changed: \(automaticallyChecksForUpdates)")
