@@ -11,13 +11,17 @@
 
 import Combine
 import Foundation
+import Logging
 import Sparkle
 
 class UpdaterViewModel: ObservableObject {
-    @Published private (set) var canCheckForUpdates = false
+
+    private let log = Logger(label: "\(Bundle.identifier).UpdaterViewModel")
+
+    @Published private(set) var canCheckForUpdates = false
     @Published var automaticallyChecksForUpdates: Bool {
         didSet {
-            print(automaticallyChecksForUpdates)
+            log.debug("Automatically checks for update changed: \(automaticallyChecksForUpdates)")
             updater.automaticallyChecksForUpdates = automaticallyChecksForUpdates
         }
     }

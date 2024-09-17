@@ -28,6 +28,7 @@
 		28263FA02B023FD100F74655 /* TimeMachineStatusHelper.app in Copy Helper */ = {isa = PBXBuildFile; fileRef = 28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		28263FA32B023FFE00F74655 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28263FA22B023FFE00F74655 /* ServiceManagement.framework */; };
 		2885D6652B024D0B00C260DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885D6642B024D0B00C260DB /* main.swift */; };
+		2888D17C2C99B3E80081FBBB /* KeyedDecodingContainer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888D17B2C99B3E80081FBBB /* KeyedDecodingContainer+.swift */; };
 		288F12FB2B011A9300678FAD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 288F12FA2B011A9300678FAD /* Localizable.xcstrings */; };
 		28A0021B2AFBBFC300E2A01E /* TimeMachineStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */; };
 		28A0021D2AFBBFC300E2A01E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0021C2AFBBFC300E2A01E /* SettingsView.swift */; };
@@ -96,6 +97,7 @@
 		28263FA22B023FFE00F74655 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		28263FA42B0241E200F74655 /* TimeMachineStatusHelper.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TimeMachineStatusHelper.entitlements; sourceTree = "<group>"; };
 		2885D6642B024D0B00C260DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2888D17B2C99B3E80081FBBB /* KeyedDecodingContainer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+.swift"; sourceTree = "<group>"; };
 		288F12FA2B011A9300678FAD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMachineStatusApp.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				2818227D2AFE36780067E564 /* Bundle+.swift */,
 				281822522AFCF97C0067E564 /* FormatStyle+.swift */,
 				281822662AFD86AC0067E564 /* Color+RawRepresentable.swift */,
+				2888D17B2C99B3E80081FBBB /* KeyedDecodingContainer+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				2818227E2AFE36780067E564 /* Bundle+.swift in Sources */,
 				28FAD5AD2AFF0D7200F642E7 /* ExpandableSection.swift in Sources */,
 				2818225F2AFD3FF20067E564 /* Stopping.swift in Sources */,
+				2888D17C2C99B3E80081FBBB /* KeyedDecodingContainer+.swift in Sources */,
 				28A0024F2AFC030500E2A01E /* Symbols.swift in Sources */,
 				28A0025E2AFC04D300E2A01E /* Mounting.swift in Sources */,
 				28FAD5AF2AFF0D9600F642E7 /* UserfacingErrorView.swift in Sources */,

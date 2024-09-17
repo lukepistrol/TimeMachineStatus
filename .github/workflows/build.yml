@@ -46,7 +46,7 @@ jobs:
             -scheme "TimeMachineStatus" \
             -configuration "Release" \
             -derivedDataPath "$RUNNER_TEMP/DerivedData" \
-            DEVELOPMENT_TEAM=$APPLE_TEAM_ID
+            DEVELOPMENT_TEAM=$APPLE_TEAM_ID | xcbeautify
 
       - name: Clean up keychain and provisioning profile
         if: ${{ always() }}

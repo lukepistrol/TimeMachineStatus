@@ -16,17 +16,20 @@ import SwiftUI
 @main
 struct TimeMachineStatusApp: App {
 
+    @AppStorage(StorageKeys.logLevel.id)
+    private var logLevel: Logging.Logger.Level = StorageKeys.logLevel.default
+
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     init() {
-        LoggingSystem.bootstrap { id in
+        LoggingSystem.bootstrap { [logLevel] id in
             var mpx = MultiplexLogHandler([
                 LoggingOSLog(label: id)
             ])
             #if DEBUG
             mpx.logLevel = .trace
             #else
-            mpx.logLevel = .info
+            mpx.logLevel = logLevel
             #endif
             return mpx
         }

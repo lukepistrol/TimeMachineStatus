@@ -52,3 +52,7 @@ identifier_name:
 
 nesting:
   type_level: 2
+
+excluded:
+  - DerivedData
+  - build

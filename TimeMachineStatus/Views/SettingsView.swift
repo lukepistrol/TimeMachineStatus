@@ -9,6 +9,7 @@
 //  See LICENSE.md for license information.
 //  
 
+import Logging
 import Sparkle
 import SwiftUI
 
@@ -29,6 +30,8 @@ enum StorageKeys {
     static let cornerRadius = Key(id: "cornerRadius", default: 5.0)
     static let showPercentage = Key(id: "showPercentage", default: true)
     static let animateIcon = Key(id: "animateIcon", default: true)
+
+    static let logLevel = Key(id: "logLevel", default: Logger.Level.info)
 }
 
 struct SettingsView: View {
@@ -63,6 +66,9 @@ struct SettingsView: View {
     @AppStorage(StorageKeys.animateIcon.id)
     private var animateIcon: Bool = StorageKeys.animateIcon.default
 
+    @AppStorage(StorageKeys.logLevel.id)
+    private var logLevel: Logger.Level = StorageKeys.logLevel.default
+
     private enum Tabs: Hashable, CaseIterable {
         case general
         case appearance
@@ -71,8 +77,8 @@ struct SettingsView: View {
         var height: Double {
             switch self {
             case .about: 350
-            case .appearance: 410
-            case .general: 250
+            case .appearance: 450
+            case .general: 320
             }
         }
 
@@ -133,6 +139,17 @@ struct SettingsView: View {
                     "settings_item_autocheckupdates",
                     isOn: $updaterViewModel.automaticallyChecksForUpdates
                 )
+            }
+            Section {
+                Picker("settings_item_loglevel", selection: $logLevel) {
+                    Text("settings_item_loglevel_debug").tag(Logger.Level.trace)
+                    Text("settings_item_loglevel_info").tag(Logger.Level.info)
+                }
+            } footer: {
+                Text("settings_item_loglevel_footer")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .formStyle(.grouped)

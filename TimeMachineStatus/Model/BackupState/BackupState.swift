@@ -19,7 +19,7 @@ enum BackupState {
     static func getState() throws -> _State {
         let result = try shellOut(to: Constants.Commands.status)
 
-        log.trace("Raw State: \(result)")
+        log.trace("Raw State: \"\(result)\"")
 
         guard let data = result.data(using: .utf8) else {
             throw BackupStateError.couldNotConvertStringToData(string: result)
