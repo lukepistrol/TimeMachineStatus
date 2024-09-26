@@ -11,7 +11,7 @@
 
 import SwiftUI
 
-extension Color: @retroactive RawRepresentable {
+extension Color: RawRepresentable {
     public init?(rawValue: String) {
         guard let data = Data(base64Encoded: rawValue) else {
             self = .black
