@@ -20,17 +20,20 @@ extension BackupState {
 
         required init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
-            let stateChangeString = try container.decode(String.self, forKey: .stateChange)
-            self.stateChange = if let date = _dateFormatter.date(from: stateChangeString) {
-                date
+            if let stateChangeString = try container.decodeIfPresent(String.self, forKey: .stateChange) {
+                self.stateChange = if let date = _dateFormatter.date(from: stateChangeString) {
+                    date
+                } else {
+                    throw BackupStateError.couldNotConvertStringToDate(string: stateChangeString)
+                }
             } else {
-                throw BackupStateError.couldNotConvertStringToDate(string: stateChangeString)
+                self.stateChange = nil
             }
             self.destinationMountPoint = try container.decode(String.self, forKey: .destinationMountPoint)
             try super.init(from: decoder)
         }
 
-        let stateChange: Date
+        let stateChange: Date?
         let destinationMountPoint: String
     }
 }

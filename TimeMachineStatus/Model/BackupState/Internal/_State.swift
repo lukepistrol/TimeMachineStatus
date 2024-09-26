@@ -65,9 +65,10 @@ extension BackupState {
                     return ._finishing
                 case "Stopping":
                     return ._stopping
-                case "ThinningPostBackup":
+                case "ThinningPostBackup", "LazyThinning":
                     return ._thinning
                 default:
+                    log.error("Unknown phase: \(phase)")
                     fatalError("Unknown phase: \(phase)")
                 }
             } else {
