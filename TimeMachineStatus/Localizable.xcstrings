@@ -640,13 +640,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%1$@ Datei (%2$@)"
+                  "value" : "%1$lld Datei (%2$@)"
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%1$@ Dateien (%2$@)"
+                  "value" : "%1$lld Dateien (%2$@)"
                 }
               }
             }
@@ -658,13 +658,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld File (%2$@)"
+                  "value" : "%1$lld File (%2$@)"
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld Files (%2$@)"
+                  "value" : "%1$lld Files (%2$@)"
                 }
               }
             }
@@ -676,13 +676,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld file (%2$@)"
+                  "value" : "%1$lld file (%2$@)"
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld Files (%2$@)"
+                  "value" : "%1$lld Files (%2$@)"
                 }
               }
             }
