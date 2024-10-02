@@ -38,7 +38,9 @@ struct Preferences: Decodable {
             String.self,
             forKey: .localizedDiskImageVolumeName
         )
-        self.destinations = try container.decodeIfPresent([Destination].self, forKey: .destinations)
+        self.destinations = try container
+            .decodeIfPresent([Destination].self, forKey: .destinations)?
+            .sorted {$0.lastKnownVolumeName ?? "" < $1.lastKnownVolumeName ?? "" }
         self.skipPaths = try container.decodeIfPresent([String].self, forKey: .skipPaths)
     }
 

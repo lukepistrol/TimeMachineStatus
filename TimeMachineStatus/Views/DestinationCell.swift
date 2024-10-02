@@ -60,7 +60,9 @@ struct DestinationCell: View {
         .contextMenu { contextMenuActions }
         .card(.background.secondary)
         .onHover { hovering in
-            self.hovering = hovering
+            withAnimation(.snappy) {
+                self.hovering = hovering
+            }
         }
         .popover(isPresented: $showInfo) {
             DestinationInfoView(dest: dest)
@@ -71,7 +73,7 @@ struct DestinationCell: View {
     private var hoverOverlay: some View {
         if hovering {
             Rectangle()
-                .fill(.fill.secondary)
+                .fill(.fill.secondary.opacity(0.5))
                 .allowsHitTesting(false)
         }
     }
