@@ -66,6 +66,7 @@ struct InitializeView: View {
             }
         }
         .padding()
+        .padding(.top, -26)
         .frame(width: 300)
         .backgroundVisualEffect(.hudWindow)
         .task {

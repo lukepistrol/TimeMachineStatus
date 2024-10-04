@@ -9,13 +9,10 @@
 //  See LICENSE.md for license information.
 //  
 
-import Combine
 import Sparkle
 import SwiftUI
 
 struct MenuView: View {
-    @Environment(\.openWindow) private var openWindow
-
     @State private var utility: any TMUtility
     @ObservedObject private var updaterViewModel: UpdaterViewModel
     private let updater: SPUUpdater
