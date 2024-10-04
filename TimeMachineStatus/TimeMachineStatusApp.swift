@@ -12,6 +12,7 @@
 import Logging
 import LoggingOSLog
 import SwiftUI
+@_exported import SFSafeSymbols
 
 @main
 struct TimeMachineStatusApp: App {
@@ -36,12 +37,26 @@ struct TimeMachineStatusApp: App {
     }
 
     var body: some Scene {
+        initializeScene
+        settingsScene
+    }
 
-        /* The menu bar item and menu view are set up in AppDelegate */
+    private var initializeScene: some Scene {
+        WindowGroup {
+            InitializeView(utility: appDelegate.utility)
+        }
+        .defaultSize(width: 300, height: 200)
+        .windowResizability(.contentSize)
+        .windowStyle(.hiddenTitleBar)
+        .windowToolbarStyle(.unifiedCompact)
+    }
 
+    private var settingsScene: some Scene {
         Settings {
-            SettingsView(updater: appDelegate.updaterController.updater)
-                .environmentObject(appDelegate.utility)
+            SettingsView(
+                updater: appDelegate.updaterController.updater,
+                utility: appDelegate.utility
+            )
         }
     }
 }

@@ -56,21 +56,21 @@ struct StatusBarItem: View {
     private var animateIcon: Bool = StorageKeys.animateIcon.default
 
     var sizePassthrough: PassthroughSubject<CGSize, Never>
-    @ObservedObject var utility: TMUtility
+    @State var utility: TMUtilityImpl
 
     private let log = Logger(label: "\(Bundle.identifier).StatusBarItem")
 
     private var mainContent: some View {
         HStack(spacing: spacing) {
             if utility.isIdle {
-                Symbols.timeMachine.image
+                Image(systemSymbol: .clockArrowCirclepath)
                     .font(.body.weight(boldIcon ? .bold : .medium))
             } else {
                 if animateIcon {
                     AnimatedIcon()
                         .font(.body.weight(boldIcon ? .bold : .medium))
                 } else {
-                    Symbols.arrowTriangleCirclepath.image
+                    Image(systemSymbol: .arrowTriangle2Circlepath)
                         .font(.body.weight(boldIcon ? .bold : .medium))
                 }
             }
@@ -116,7 +116,7 @@ struct StatusBarItem: View {
         private var rotationAnimation: Animation = .linear(duration: 2).repeatForever(autoreverses: false)
 
         var body: some View {
-            Symbols.arrowTriangleCirclepath.image
+            Image(systemSymbol: .arrowTriangle2Circlepath)
                 .rotationEffect(Angle(degrees: isAnimating ? 360 : 0), anchor: .center)
                 .animation(rotationAnimation, value: isAnimating)
                 .task {

@@ -12,12 +12,13 @@
 import SwiftUI
 
 struct DestinationCell: View {
-    @EnvironmentObject private var utility: TMUtility
+    @State private var utility: any TMUtility
 
     let dest: Destination
 
-    init(_ dest: Destination) {
+    init(_ dest: Destination, utility: any TMUtility) {
         self.dest = dest
+        self.utility = utility
     }
 
     private var isActive: Bool {
@@ -60,7 +61,9 @@ struct DestinationCell: View {
         .contextMenu { contextMenuActions }
         .card(.background.secondary)
         .onHover { hovering in
-            self.hovering = hovering
+            withAnimation(.snappy) {
+                self.hovering = hovering
+            }
         }
         .popover(isPresented: $showInfo) {
             DestinationInfoView(dest: dest)
@@ -71,7 +74,7 @@ struct DestinationCell: View {
     private var hoverOverlay: some View {
         if hovering {
             Rectangle()
-                .fill(.fill.secondary)
+                .fill(.fill.secondary.opacity(0.5))
                 .allowsHitTesting(false)
         }
     }
@@ -79,9 +82,9 @@ struct DestinationCell: View {
     private var symbol: some View {
         Group {
             if dest.networkURL != nil {
-                Symbols.nasDrive.image
+                Image(systemSymbol: .externaldriveFillBadgeWifi)
             } else {
-                Symbols.externalDrive.image
+                Image(systemSymbol: .externaldriveFillBadgeTimemachine)
             }
         }
         .imageScale(.large)
@@ -134,12 +137,12 @@ struct DestinationCell: View {
             }
         } label: {
             if utility.status.activeDestinationID == dest.destinationID {
-                Symbols.stopFill.image
+                Image(systemSymbol: .stopFill)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 13)
             } else {
-                Symbols.playFill.image
+                Image(systemSymbol: .playFill)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 13)
@@ -206,7 +209,7 @@ import Sparkle
 
 #Preview("Light") {
     MenuView(
-        utility: .init(),
+        utility: TMUtilityMock(preferences: .mock),
         updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
     )
     .preferredColorScheme(.light)
@@ -214,7 +217,7 @@ import Sparkle
 
 #Preview("Dark") {
     MenuView(
-        utility: .init(),
+        utility: TMUtilityMock(preferences: .mock),
         updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
     )
     .preferredColorScheme(.dark)

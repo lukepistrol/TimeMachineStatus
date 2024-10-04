@@ -14,12 +14,14 @@ import SwiftUI
 struct UserfacingErrorView: View {
     let error: UserfacingError?
 
+    @State private var openPreferencesFile: Bool = false
+
     @ViewBuilder
     var body: some View {
         if let error {
             VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 4) {
-                    Symbols.exclamationMarkTriangleFill.image
+                    Image(systemSymbol: .exclamationmarkTriangleFill)
                         .foregroundStyle(.red)
                     Text(error.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -35,14 +37,22 @@ struct UserfacingErrorView: View {
                 }
                 if let action = error.action {
                     Divider()
-                    Button(action.title) {
-                        NSWorkspace.shared.open(action.url)
+                    switch action {
+                    case .link(let title, let url):
+                        Button(title) {
+                            NSWorkspace.shared.open(url)
+                        }
+                    case .grantAccess:
+                        Button("button_grant_access") {
+                            openPreferencesFile = true
+                        }
                     }
                 }
             }
             .padding(8)
             .card(.bar)
             .padding()
+            .preferencesFileImporter($openPreferencesFile)
         }
     }
 }

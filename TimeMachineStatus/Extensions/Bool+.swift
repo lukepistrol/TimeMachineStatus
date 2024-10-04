@@ -13,7 +13,7 @@ import SwiftUI
 
 extension Bool {
     var image: some View {
-        Image(systemName: self ? Symbols.checkmarkCircleFill() : Symbols.xmarkCircleFill())
+        Image(systemSymbol: self ? .checkmarkCircleFill : .xmarkCircleFill)
             .foregroundStyle(self ? .green : .red)
     }
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280AF0D32CAC4B2C000B389B /* PreferencesFileImporterViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AF0D22CAC4B2C000B389B /* PreferencesFileImporterViewModifier.swift */; };
+		280AF0D52CAD33A1000B389B /* VisualEffectBackgroundViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AF0D42CAD33A1000B389B /* VisualEffectBackgroundViewModifier.swift */; };
+		280AF0D72CAD33D4000B389B /* HideWindowControlsViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AF0D62CAD33D4000B389B /* HideWindowControlsViewModifier.swift */; };
+		280AF0DA2CAD3409000B389B /* InitializeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AF0D92CAD3409000B389B /* InitializeView.swift */; };
 		2818224F2AFCF8500067E564 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818224E2AFCF8500067E564 /* MenuView.swift */; };
 		281822512AFCF8750067E564 /* DestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822502AFCF8750067E564 /* DestinationCell.swift */; };
 		281822532AFCF97C0067E564 /* FormatStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822522AFCF97C0067E564 /* FormatStyle+.swift */; };
@@ -25,8 +29,9 @@
 		2818227C2AFE33CA0067E564 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227B2AFE33CA0067E564 /* Constants.swift */; };
 		2818227E2AFE36780067E564 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227D2AFE36780067E564 /* Bundle+.swift */; };
 		28263F912B023D4E00F74655 /* HelperAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28263F902B023D4E00F74655 /* HelperAppDelegate.swift */; };
-		28263FA02B023FD100F74655 /* TimeMachineStatusHelper.app in Copy Helper */ = {isa = PBXBuildFile; fileRef = 28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		28263FA32B023FFE00F74655 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28263FA22B023FFE00F74655 /* ServiceManagement.framework */; };
+		28710D2F2CAF16AF00033855 /* Timer+Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28710D2E2CAF16AF00033855 /* Timer+Sendable.swift */; };
+		28710D342CAFE7BB00033855 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 28710D332CAFE7BB00033855 /* SFSafeSymbols */; };
 		2885D6652B024D0B00C260DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2885D6642B024D0B00C260DB /* main.swift */; };
 		2888D17C2C99B3E80081FBBB /* KeyedDecodingContainer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2888D17B2C99B3E80081FBBB /* KeyedDecodingContainer+.swift */; };
 		288F12FB2B011A9300678FAD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 288F12FA2B011A9300678FAD /* Localizable.xcstrings */; };
@@ -36,7 +41,6 @@
 		28A002222AFBBFC400E2A01E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A002212AFBBFC400E2A01E /* Preview Assets.xcassets */; };
 		28A0024A2AFBC91500E2A01E /* ShellOut in Frameworks */ = {isa = PBXBuildFile; productRef = 28A002492AFBC91500E2A01E /* ShellOut */; };
 		28A0024D2AFC02DA00E2A01E /* Bool+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0024C2AFC02DA00E2A01E /* Bool+.swift */; };
-		28A0024F2AFC030500E2A01E /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0024E2AFC030500E2A01E /* Symbols.swift */; };
 		28A002522AFC03A200E2A01E /* TMUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A002512AFC03A200E2A01E /* TMUtility.swift */; };
 		28A002552AFC03E300E2A01E /* BackupState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A002542AFC03E300E2A01E /* BackupState.swift */; };
 		28A002582AFC042200E2A01E /* BackupStateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A002572AFC042200E2A01E /* BackupStateError.swift */; };
@@ -67,7 +71,6 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				28263FA02B023FD100F74655 /* TimeMachineStatusHelper.app in Copy Helper */,
 			);
 			name = "Copy Helper";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +78,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		280AF0D22CAC4B2C000B389B /* PreferencesFileImporterViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesFileImporterViewModifier.swift; sourceTree = "<group>"; };
+		280AF0D42CAD33A1000B389B /* VisualEffectBackgroundViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBackgroundViewModifier.swift; sourceTree = "<group>"; };
+		280AF0D62CAD33D4000B389B /* HideWindowControlsViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideWindowControlsViewModifier.swift; sourceTree = "<group>"; };
+		280AF0D92CAD3409000B389B /* InitializeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitializeView.swift; sourceTree = "<group>"; };
 		2818224E2AFCF8500067E564 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		281822502AFCF8750067E564 /* DestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationCell.swift; sourceTree = "<group>"; };
 		281822522AFCF97C0067E564 /* FormatStyle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormatStyle+.swift"; sourceTree = "<group>"; };
@@ -92,21 +99,21 @@
 		281822792AFE292A0067E564 /* UserfacingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserfacingError.swift; sourceTree = "<group>"; };
 		2818227B2AFE33CA0067E564 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2818227D2AFE36780067E564 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
-		28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatusHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28263F902B023D4E00F74655 /* HelperAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperAppDelegate.swift; sourceTree = "<group>"; };
 		28263FA22B023FFE00F74655 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		28263FA42B0241E200F74655 /* TimeMachineStatusHelper.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TimeMachineStatusHelper.entitlements; sourceTree = "<group>"; };
+		28710D2E2CAF16AF00033855 /* Timer+Sendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Sendable.swift"; sourceTree = "<group>"; };
+		28710D302CAFE3CE00033855 /* TimeMachineStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28710D312CAFE3CE00033855 /* TimeMachineStatusHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatusHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2885D6642B024D0B00C260DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2888D17B2C99B3E80081FBBB /* KeyedDecodingContainer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+.swift"; sourceTree = "<group>"; };
 		288F12FA2B011A9300678FAD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeMachineStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMachineStatusApp.swift; sourceTree = "<group>"; };
 		28A0021C2AFBBFC300E2A01E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		28A0021E2AFBBFC400E2A01E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28A002212AFBBFC400E2A01E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		28A002232AFBBFC400E2A01E /* TimeMachineStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimeMachineStatus.entitlements; sourceTree = "<group>"; };
 		28A0024C2AFC02DA00E2A01E /* Bool+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+.swift"; sourceTree = "<group>"; };
-		28A0024E2AFC030500E2A01E /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		28A002512AFC03A200E2A01E /* TMUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMUtility.swift; sourceTree = "<group>"; };
 		28A002542AFC03E300E2A01E /* BackupState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupState.swift; sourceTree = "<group>"; };
 		28A002572AFC042200E2A01E /* BackupStateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupStateError.swift; sourceTree = "<group>"; };
@@ -141,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28710D342CAFE7BB00033855 /* SFSafeSymbols in Frameworks */,
 				28F2D4452B02F2F300B75998 /* Sparkle in Frameworks */,
 				281822622AFD40920067E564 /* Logging in Frameworks */,
 				28A0024A2AFBC91500E2A01E /* ShellOut in Frameworks */,
@@ -160,6 +168,7 @@
 				28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */,
 				28A0021C2AFBBFC300E2A01E /* SettingsView.swift */,
 				2818225A2AFD10200067E564 /* StatusBarItem.swift */,
+				280AF0D92CAD3409000B389B /* InitializeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +176,9 @@
 		281822542AFCF98E0067E564 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				280AF0D22CAC4B2C000B389B /* PreferencesFileImporterViewModifier.swift */,
+				280AF0D62CAD33D4000B389B /* HideWindowControlsViewModifier.swift */,
+				280AF0D42CAD33A1000B389B /* VisualEffectBackgroundViewModifier.swift */,
 				281822562AFCF9B20067E564 /* CustomButtonStyle.swift */,
 				28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */,
 				28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */,
@@ -220,8 +232,8 @@
 		28A002182AFBBFC300E2A01E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */,
-				28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */,
+				28710D302CAFE3CE00033855 /* TimeMachineStatus.app */,
+				28710D312CAFE3CE00033855 /* TimeMachineStatusHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,7 +244,6 @@
 				28F2D4482B03000900B75998 /* Info.plist */,
 				281822582AFCFAE50067E564 /* AppDelegate.swift */,
 				28A0021A2AFBBFC300E2A01E /* TimeMachineStatusApp.swift */,
-				28A0024E2AFC030500E2A01E /* Symbols.swift */,
 				2818224D2AFCF83D0067E564 /* Views */,
 				281822542AFCF98E0067E564 /* Components */,
 				28A002562AFC041700E2A01E /* Error */,
@@ -263,6 +274,7 @@
 				281822522AFCF97C0067E564 /* FormatStyle+.swift */,
 				281822662AFD86AC0067E564 /* Color+RawRepresentable.swift */,
 				2888D17B2C99B3E80081FBBB /* KeyedDecodingContainer+.swift */,
+				28710D2E2CAF16AF00033855 /* Timer+Sendable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -347,7 +359,7 @@
 			);
 			name = TimeMachineStatusHelper;
 			productName = TimeMachineStatusHelper;
-			productReference = 28263F8E2B023D4E00F74655 /* TimeMachineStatusHelper.app */;
+			productReference = 28710D312CAFE3CE00033855 /* TimeMachineStatusHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 		28A002162AFBBFC300E2A01E /* TimeMachineStatus */ = {
@@ -370,9 +382,10 @@
 				281822612AFD40920067E564 /* Logging */,
 				281822642AFD438B0067E564 /* LoggingOSLog */,
 				28F2D4442B02F2F300B75998 /* Sparkle */,
+				28710D332CAFE7BB00033855 /* SFSafeSymbols */,
 			);
 			productName = TimeMachineStatus;
-			productReference = 28A002172AFBBFC300E2A01E /* TimeMachineStatus.app */;
+			productReference = 28710D302CAFE3CE00033855 /* TimeMachineStatus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -383,7 +396,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				ORGANIZATIONNAME = "Lukas Pistrol";
 				TargetAttributes = {
 					28263F8D2B023D4E00F74655 = {
@@ -410,6 +423,7 @@
 				281822602AFD40920067E564 /* XCRemoteSwiftPackageReference "swift-log" */,
 				281822632AFD438B0067E564 /* XCRemoteSwiftPackageReference "swift-log-oslog" */,
 				28F2D4432B02F2F300B75998 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				28710D322CAFE7BB00033855 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = 28A002182AFBBFC300E2A01E /* Products */;
 			projectDirPath = "";
@@ -479,14 +493,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				28FAD5A72AFE3DBF00F642E7 /* CardViewModifier.swift in Sources */,
+				28710D2F2CAF16AF00033855 /* Timer+Sendable.swift in Sources */,
 				2818226E2AFD8EC30067E564 /* _InProgressState.swift in Sources */,
 				28A0021D2AFBBFC300E2A01E /* SettingsView.swift in Sources */,
 				28A0025C2AFC04B300E2A01E /* Idle.swift in Sources */,
 				28A002522AFC03A200E2A01E /* TMUtility.swift in Sources */,
+				280AF0D32CAC4B2C000B389B /* PreferencesFileImporterViewModifier.swift in Sources */,
 				281822672AFD86AC0067E564 /* Color+RawRepresentable.swift in Sources */,
 				2818224F2AFCF8500067E564 /* MenuView.swift in Sources */,
 				28A002622AFC052B00E2A01E /* FindingChanges.swift in Sources */,
 				2818226A2AFD8E670067E564 /* _State.swift in Sources */,
+				280AF0D52CAD33A1000B389B /* VisualEffectBackgroundViewModifier.swift in Sources */,
+				280AF0D72CAD33D4000B389B /* HideWindowControlsViewModifier.swift in Sources */,
 				28A002602AFC050200E2A01E /* Preparing.swift in Sources */,
 				2818227C2AFE33CA0067E564 /* Constants.swift in Sources */,
 				2818225B2AFD10200067E564 /* StatusBarItem.swift in Sources */,
@@ -496,7 +514,6 @@
 				28FAD5AD2AFF0D7200F642E7 /* ExpandableSection.swift in Sources */,
 				2818225F2AFD3FF20067E564 /* Stopping.swift in Sources */,
 				2888D17C2C99B3E80081FBBB /* KeyedDecodingContainer+.swift in Sources */,
-				28A0024F2AFC030500E2A01E /* Symbols.swift in Sources */,
 				28A0025E2AFC04D300E2A01E /* Mounting.swift in Sources */,
 				28FAD5AF2AFF0D9600F642E7 /* UserfacingErrorView.swift in Sources */,
 				2818227A2AFE292A0067E564 /* UserfacingError.swift in Sources */,
@@ -504,6 +521,7 @@
 				28A0021B2AFBBFC300E2A01E /* TimeMachineStatusApp.swift in Sources */,
 				28A002582AFC042200E2A01E /* BackupStateError.swift in Sources */,
 				28A0024D2AFC02DA00E2A01E /* Bool+.swift in Sources */,
+				280AF0DA2CAD3409000B389B /* InitializeView.swift in Sources */,
 				28A002662AFC056600E2A01E /* Copying.swift in Sources */,
 				28A002642AFC055000E2A01E /* Thinning.swift in Sources */,
 				281822572AFCF9B20067E564 /* CustomButtonStyle.swift in Sources */,
@@ -530,7 +548,8 @@
 				CODE_SIGN_ENTITLEMENTS = TimeMachineStatusHelper/TimeMachineStatusHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -543,7 +562,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.4;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatusHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -559,7 +578,8 @@
 				CODE_SIGN_ENTITLEMENTS = TimeMachineStatusHelper/TimeMachineStatusHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -572,7 +592,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.4;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatusHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -586,6 +606,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -615,6 +636,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -649,6 +671,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -678,6 +701,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -707,7 +731,8 @@
 				CODE_SIGN_ENTITLEMENTS = TimeMachineStatus/TimeMachineStatus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TimeMachineStatus/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -724,7 +749,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.4;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -741,7 +766,8 @@
 				CODE_SIGN_ENTITLEMENTS = TimeMachineStatus/TimeMachineStatus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 20;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"TimeMachineStatus/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -758,7 +784,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.4;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lukaspistrol.TimeMachineStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -816,6 +842,14 @@
 				minimumVersion = 0.2.2;
 			};
 		};
+		28710D322CAFE7BB00033855 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
 		28A002482AFBC91500E2A01E /* XCRemoteSwiftPackageReference "ShellOut" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JohnSundell/ShellOut.git";
@@ -844,6 +878,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 281822632AFD438B0067E564 /* XCRemoteSwiftPackageReference "swift-log-oslog" */;
 			productName = LoggingOSLog;
+		};
+		28710D332CAFE7BB00033855 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28710D322CAFE7BB00033855 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
 		};
 		28A002492AFBC91500E2A01E /* ShellOut */ = {
 			isa = XCSwiftPackageProductDependency;

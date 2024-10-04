@@ -12,13 +12,13 @@
 import SwiftUI
 
 enum UserfacingError: Error {
-    case fullDiskPermissionDenied
+    case preferencesFilePermissionNotGranted
     case debugError(error: Error)
 
     var title: LocalizedStringKey {
         switch self {
-        case .fullDiskPermissionDenied:
-            return "error_fulldiskpermissiondenied_title"
+        case .preferencesFilePermissionNotGranted:
+            return "button_grant_access"
         case .debugError:
             return "error_debug_title"
         }
@@ -26,8 +26,8 @@ enum UserfacingError: Error {
 
     var failureReason: LocalizedStringKey? {
         switch self {
-        case .fullDiskPermissionDenied:
-            return "error_fulldiskpermissiondenied_description"
+        case .preferencesFilePermissionNotGranted:
+            return "settings_item_preferences_file_permission"
         case .debugError(let error):
             return "error_debug_description\(String(describing: error))"
         }
@@ -35,17 +35,14 @@ enum UserfacingError: Error {
 
     var action: Action? {
         switch self {
-        case .fullDiskPermissionDenied:
-            Action(
-                title: "button_opensystemsettings",
-                url: Constants.URLs.settingsFullDiskAccess
-            )
-        default: nil
+        case .preferencesFilePermissionNotGranted:
+            return .grantAccess
+        default: return nil
         }
     }
 
-    struct Action {
-        let title: LocalizedStringKey
-        let url: URL
+    enum Action {
+        case link(title: LocalizedStringKey, url: URL)
+        case grantAccess
     }
 }

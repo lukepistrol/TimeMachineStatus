@@ -20,7 +20,6 @@ enum Constants {
 
     enum URLs {
         static let timeMachinePreferencesPlist = URL(fileURLWithPath: "/Library/Preferences/com.apple.TimeMachine.plist")
-        static let settingsFullDiskAccess: URL = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_AllFiles")!
         static let timeMachineSystemSettings: URL = URL(string: "x-apple.systempreferences:com.apple.Time-Machine-Settings.extension")!
         static let authorURL: URL = URL(string: "https://lukaspistrol.com")!
 
@@ -30,9 +29,7 @@ enum Constants {
         static let githubSponsor: URL = URL(string: "https://github.com/sponsors/lukepistrol")!
         static let buymeacoffee: URL = URL(string: "http://buymeacoffee.com/lukeeep")!
 
-        static var timeMachineApp: URL? {
-            URL(filePath: "/Applications/Time Machine.app")
-        }
+        static let timeMachineApp: URL? = URL(filePath: "/Applications/Time Machine.app")
     }
 
     enum Commands {
