@@ -266,7 +266,11 @@ struct MenuView: View {
 
 #Preview("Light Error") {
     MenuView(
-        utility: TMUtilityMock(preferences: .mock, error: .preferencesFilePermissionNotGranted, canReadPreferences: false),
+        utility: TMUtilityMock(
+            preferences: .mock,
+            error: .preferencesFilePermissionNotGranted,
+            canReadPreferences: false
+        ),
         updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
     )
     .preferredColorScheme(.light)

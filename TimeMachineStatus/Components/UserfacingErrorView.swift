@@ -38,7 +38,7 @@ struct UserfacingErrorView: View {
                 if let action = error.action {
                     Divider()
                     switch action {
-                    case .link(let title, let url):
+                    case let .link(title, url):
                         Button(title) {
                             NSWorkspace.shared.open(url)
                         }

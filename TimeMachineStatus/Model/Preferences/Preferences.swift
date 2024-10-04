@@ -40,7 +40,7 @@ struct Preferences: Decodable {
         )
         self.destinations = try container
             .decodeIfPresent([Destination].self, forKey: .destinations)?
-            .sorted {$0.lastKnownVolumeName ?? "" < $1.lastKnownVolumeName ?? "" }
+            .sorted { $0.lastKnownVolumeName ?? "" < $1.lastKnownVolumeName ?? "" }
         self.skipPaths = try container.decodeIfPresent([String].self, forKey: .skipPaths)
     }
 
@@ -144,13 +144,13 @@ extension Destination {
             bytesAvailable: .random(in: 10_000_000_000...100_000_000_000),
             filesystemTypeName: "APFS",
             lastKnownEncryptionState: "Encrypted",
-            quotaGB: .random(in: 400...1000),
+            quotaGB: .random(in: 400...1_000),
             networkURL: network ? "smb://nas.local/share" : nil,
             destinationID: UUID(),
             consistencyScanDate: .distantPast,
             referenceLocalSnapshotDate: .now,
-            snapshotDates: [.distantPast, .now.addingTimeInterval(.random(in: -100000...0))],
-            attemptDates: [.distantPast, .now.addingTimeInterval(.random(in: -100000...0))]
+            snapshotDates: [.distantPast, .now.addingTimeInterval(.random(in: -100_000...0))],
+            attemptDates: [.distantPast, .now.addingTimeInterval(.random(in: -100_000...0))]
         )
     }
 }

@@ -11,8 +11,8 @@
 
 import Logging
 import LoggingOSLog
-import SwiftUI
 @_exported import SFSafeSymbols
+import SwiftUI
 
 @main
 struct TimeMachineStatusApp: App {

@@ -87,7 +87,7 @@ class TMUtilityImpl: TMUtility {
 
     var canReadPreferences: Bool {
         do {
-            let _ = try Data(contentsOf: Constants.URLs.timeMachinePreferencesPlist)
+            _ = try Data(contentsOf: Constants.URLs.timeMachinePreferencesPlist)
             return true
         } catch {
             return false

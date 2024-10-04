@@ -11,13 +11,13 @@
 
 import SwiftUI
 
-private struct HideWindowControllsViewModifier: ViewModifier {
+private struct HideWindowControlsViewModifier: ViewModifier {
 
     let types: [NSWindow.ButtonType]
 
     func body(content: Content) -> some View {
         content
-            .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeKeyNotification)) { notification in
+            .onReceive(NotificationCenter.default.publisher(for: NSWindow.didBecomeKeyNotification)) { _ in
                 guard let window = NSApplication.shared.windows.first(where: { $0.isKeyWindow }) else { return }
                 hideWindowControls(for: window)
             }
@@ -38,6 +38,6 @@ extension View {
             .zoomButton
         ]
     ) -> some View {
-        modifier(HideWindowControllsViewModifier(types: types))
+        modifier(HideWindowControlsViewModifier(types: types))
     }
 }

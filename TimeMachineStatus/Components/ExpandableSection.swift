@@ -37,7 +37,7 @@ struct ExpandableSection<C: View, H: View>: View {
                 HStack {
                     header()
                     Spacer()
-                    Image(systemName: "chevron.right")
+                    Image(systemSymbol: .chevronRight)
                         .rotationEffect(expanded ? .degrees(90) : .zero)
                         .padding(.horizontal, 12)
                         .contentShape(.rect)
