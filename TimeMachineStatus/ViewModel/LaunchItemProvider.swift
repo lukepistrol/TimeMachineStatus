@@ -45,7 +45,7 @@ class LaunchItemProvider: ObservableObject {
             try launchItem.register()
         } catch {
             log.error("Failed to register login item: \(error)")
-            launchAtLogin = false
+            launchAtLogin = launchItem.status == .enabled
         }
     }
 
@@ -55,7 +55,7 @@ class LaunchItemProvider: ObservableObject {
             try launchItem.unregister()
         } catch {
             log.error("Failed to unregister login item: \(error)")
-            launchAtLogin = true
+            launchAtLogin = launchItem.status == .enabled
         }
     }
 }

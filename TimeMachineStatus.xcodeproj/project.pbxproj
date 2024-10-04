@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2808509E2CB0070E00880CE4 /* TimeMachineStatusHelper.app in Copy Helper */ = {isa = PBXBuildFile; fileRef = 28710D312CAFE3CE00033855 /* TimeMachineStatusHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		280AF0D32CAC4B2C000B389B /* PreferencesFileImporterViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AF0D22CAC4B2C000B389B /* PreferencesFileImporterViewModifier.swift */; };
 		280AF0D52CAD33A1000B389B /* VisualEffectBackgroundViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AF0D42CAD33A1000B389B /* VisualEffectBackgroundViewModifier.swift */; };
 		280AF0D72CAD33D4000B389B /* HideWindowControlsViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AF0D62CAD33D4000B389B /* HideWindowControlsViewModifier.swift */; };
@@ -71,6 +72,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
+				2808509E2CB0070E00880CE4 /* TimeMachineStatusHelper.app in Copy Helper */,
 			);
 			name = "Copy Helper";
 			runOnlyForDeploymentPostprocessing = 0;
