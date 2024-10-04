@@ -69,7 +69,7 @@ struct InitializeView: View {
         .padding(.top, -26)
         .frame(width: 300)
         .backgroundVisualEffect(.hudWindow)
-        .task {
+        .task(id: utility.canReadPreferences) {
             if utility.canReadPreferences {
                 try? await Task.sleep(for: .seconds(1))
                 dismiss()
