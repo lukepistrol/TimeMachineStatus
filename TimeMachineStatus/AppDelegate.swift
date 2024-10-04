@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return windowController
     }()
 
-    @MainActor let utility: TMUtility = .init()
+    @MainActor let utility: TMUtilityImpl = .init()
 
     var updaterController: SPUStandardUpdaterController!
 

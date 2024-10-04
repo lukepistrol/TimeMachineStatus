@@ -69,7 +69,7 @@ struct SettingsView: View {
     @AppStorage(StorageKeys.logLevel.id)
     private var logLevel: Logger.Level = StorageKeys.logLevel.default
 
-    private enum Tabs: Hashable, CaseIterable {
+    enum Tabs: Hashable, CaseIterable {
         case general
         case appearance
         case about
@@ -87,14 +87,17 @@ struct SettingsView: View {
         }
     }
 
-    @State private var selection: Tabs = .general
+    @State private var selection: Tabs
     @StateObject private var launchItemProvider = LaunchItemProvider()
     @ObservedObject private var updaterViewModel: UpdaterViewModel
+    @State private var utility: any TMUtility
     private let updater: SPUUpdater
 
-    init(updater: SPUUpdater) {
+    init(updater: SPUUpdater, utility: any TMUtility, selection: Tabs = .general) {
         self.updater = updater
         self.updaterViewModel = UpdaterViewModel(updater: updater)
+        self.utility = utility
+        self.selection = selection
     }
 
     var body: some View {
@@ -109,19 +112,22 @@ struct SettingsView: View {
         )
     }
 
+    @State private var showPicker: Bool = false
+
     private var generalTab: some View {
         Form {
-            Section("settings_section_permissions") {
-                VStack(alignment: .leading) {
-                    Text("settings_item_fulldiskaccess_title")
-                    Text("settings_item_fulldiskaccess_description")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-                HStack {
-                    Spacer()
-                    Button("button_opensystemsettings") {
-                        NSWorkspace.shared.open(Constants.URLs.settingsFullDiskAccess)
+            if !utility.canReadPreferences {
+                Section("settings_section_permissions") {
+                    VStack(alignment: .leading) {
+                        Text("settings_item_preferences_file_permission")
+                            .font(.callout)
+                    }
+                    HStack {
+                        Spacer()
+                        Button("button_grant_access") {
+                            showPicker = true
+                        }
+                        .buttonStyle(.borderedProminent)
                     }
                 }
             }
@@ -154,9 +160,10 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .tabItem {
-            Label("settings_tab_item_general", systemImage: Symbols.gear())
+            Label("settings_tab_item_general", systemSymbol: .gear)
         }
         .tag(Tabs.general)
+        .preferencesFileImporter($showPicker)
     }
 
     private var appearandeTab: some View {
@@ -239,7 +246,7 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .tabItem {
-            Label("settings_tab_item_appearance", systemImage: Symbols.wandAndStarsInverse())
+            Label("settings_tab_item_appearance", systemSymbol: .wandAndStarsInverse)
         }
         .tag(Tabs.appearance)
     }
@@ -268,12 +275,40 @@ struct SettingsView: View {
             .font(.caption2)
         }
         .tabItem {
-            Label("settings_tab_item_about", systemImage: Symbols.infoCircle())
+            Label("settings_tab_item_about", systemSymbol: .infoCircle)
         }
         .tag(Tabs.about)
     }
 }
 
-#Preview {
-    SettingsView(updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater)
+#Preview("General/Default") {
+    SettingsView(
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater,
+        utility: TMUtilityMock(),
+        selection: .general
+    )
+}
+
+#Preview("General/No Permission") {
+    SettingsView(
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater,
+        utility: TMUtilityMock(error: .preferencesFilePermissionNotGranted, canReadPreferences: false),
+        selection: .general
+    )
+}
+
+#Preview("Appearance") {
+    SettingsView(
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater,
+        utility: TMUtilityMock(),
+        selection: .appearance
+    )
+}
+
+#Preview("About") {
+    SettingsView(
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater,
+        utility: TMUtilityMock(),
+        selection: .about
+    )
 }

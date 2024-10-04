@@ -153,6 +153,29 @@
         }
       }
     },
+    "button_close" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schließen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vicino"
+          }
+        }
+      }
+    },
     "button_feedback" : {
       "localizations" : {
         "de" : {
@@ -193,6 +216,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gli sponsor di GitHub..."
+          }
+        }
+      }
+    },
+    "button_grant_access" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zugriff erlauben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grant Access"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concedi l'accesso"
           }
         }
       }
@@ -239,6 +285,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chiudi"
+          }
+        }
+      }
+    },
+    "button_select" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auswählen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selezionare"
           }
         }
       }
@@ -748,6 +817,29 @@
         }
       }
     },
+    "dialog_label_select_file_%@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die \"%@\" Datei auswählen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select the \"%@\" file"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selezionare il file \"%@\""
+          }
+        }
+      }
+    },
     "error_debug_description%@" : {
       "localizations" : {
         "de" : {
@@ -1109,6 +1201,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Backup su \"%@\"..."
+          }
+        }
+      }
+    },
+    "label_initializing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initialisiere…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initializing..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inizializzazione..."
           }
         }
       }
@@ -1650,6 +1765,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Info (Predefinito)"
+          }
+        }
+      }
+    },
+    "settings_item_preferences_file_permission" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Damit TimeMachineStatus funktioniert, ist Zugriff auf die Time Machine Einstellungsdatei erforderlich."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TimeMachineStatus requires access to the Time Machine preferences file in order to work."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TimeMachineStatus richiede l'accesso al file delle preferenze di Time Machine per funzionare."
           }
         }
       }

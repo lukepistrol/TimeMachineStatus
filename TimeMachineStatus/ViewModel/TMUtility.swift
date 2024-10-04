@@ -14,11 +14,70 @@ import Logging
 import ShellOut
 
 @MainActor
-class TMUtility: ObservableObject {
-    @Published var status: BackupState._State = BackupState.None()
-    @Published var preferences: Preferences?
-    @Published var lastUpdated: Date?
-    @Published var error: UserfacingError?
+protocol TMUtility {
+    var status: BackupState._State { get set }
+    var preferences: Preferences? { get set }
+    var lastUpdated: Date? { get set }
+    var canReadPreferences: Bool { get }
+    var error: UserfacingError? { get set }
+
+    var isIdle: Bool { get }
+
+    func start(force: Bool)
+    func startBackup(id: UUID?)
+    func stopBackup()
+    func launchTimeMachine()
+}
+
+extension TMUtility {
+    func startBackup() {
+        startBackup(id: nil)
+    }
+}
+
+@MainActor
+@Observable
+class TMUtilityMock: TMUtility {
+    var status: BackupState._State = BackupState.None()
+    var preferences: Preferences?
+    var lastUpdated: Date?
+    var error: UserfacingError?
+    var canReadPreferences: Bool { _canReadPreferences }
+
+    private var _canReadPreferences: Bool
+
+    var isIdle: Bool { !status.running }
+
+    init(
+        status: BackupState._State = BackupState.None(),
+        preferences: Preferences? = nil,
+        lastUpdated: Date? = nil,
+        error: UserfacingError? = nil,
+        canReadPreferences: Bool = true
+    ) {
+        self.status = status
+        self.preferences = preferences
+        self.lastUpdated = lastUpdated
+        self.error = error
+        self._canReadPreferences = canReadPreferences
+    }
+
+    func start(force: Bool = false) {}
+
+    func startBackup(id: UUID? = nil) {}
+
+    func stopBackup() {}
+
+    func launchTimeMachine() {}
+}
+
+@MainActor
+@Observable
+class TMUtilityImpl: TMUtility {
+    var status: BackupState._State = BackupState.None()
+    var preferences: Preferences?
+    var lastUpdated: Date?
+    var error: UserfacingError?
 
     let log = Logger(label: "\(Bundle.identifier).TMUtility")
 
@@ -26,13 +85,25 @@ class TMUtility: ObservableObject {
 
     private var timer: Timer?
 
+    var canReadPreferences: Bool {
+        do {
+            let _ = try Data(contentsOf: Constants.URLs.timeMachinePreferencesPlist)
+            return true
+        } catch {
+            return false
+        }
+    }
+
     init() {
         readPreferences()
         start(force: true)
     }
 
     deinit {
-        timer?.invalidate()
+        Task { [weak self] in
+            guard let timer = await self?.timer else { return }
+            timer.invalidate()
+        }
     }
 
     func start(force: Bool = false) {
@@ -72,7 +143,7 @@ class TMUtility: ObservableObject {
         } catch {
             log.error("Error reading preferences: \(error)")
             if (error as NSError).code == 257 {
-                self.error = UserfacingError.fullDiskPermissionDenied
+                self.error = UserfacingError.preferencesFilePermissionNotGranted
             } else {
                 self.error = UserfacingError.debugError(error: error)
             }

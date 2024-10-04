@@ -16,11 +16,11 @@ import SwiftUI
 struct MenuView: View {
     @Environment(\.openWindow) private var openWindow
 
-    @ObservedObject private var utility: TMUtility
+    @State private var utility: any TMUtility
     @ObservedObject private var updaterViewModel: UpdaterViewModel
     private let updater: SPUUpdater
 
-    init(utility: TMUtility, updater: SPUUpdater) {
+    init(utility: any TMUtility, updater: SPUUpdater) {
         self.utility = utility
         self.updater = updater
         self.updaterViewModel = UpdaterViewModel(updater: updater)
@@ -48,9 +48,8 @@ struct MenuView: View {
             ExpandableSection {
                 VStack(alignment: .leading) {
                     ForEach(destinations, id: \.destinationID) { dest in
-                        DestinationCell(dest)
+                        DestinationCell(dest, utility: utility)
                             .frame(maxWidth: .infinity)
-                            .environmentObject(utility)
                     }
                 }
             } header: {
@@ -135,7 +134,7 @@ struct MenuView: View {
                     utility.stopBackup()
                 }
             } label: {
-                Label("button_startbackup", systemImage: utility.isIdle ? Symbols.playFill() : Symbols.stopFill())
+                Label("button_startbackup", systemSymbol: utility.isIdle ? .playFill : .stopFill)
             }
             .focusable(false)
             toolbarStatus
@@ -262,7 +261,15 @@ struct MenuView: View {
 
 #Preview("Light") {
     MenuView(
-        utility: .init(),
+        utility: TMUtilityMock(preferences: .mock),
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
+    )
+    .preferredColorScheme(.light)
+}
+
+#Preview("Light Error") {
+    MenuView(
+        utility: TMUtilityMock(preferences: .mock, error: .preferencesFilePermissionNotGranted, canReadPreferences: false),
         updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
     )
     .preferredColorScheme(.light)
@@ -270,7 +277,7 @@ struct MenuView: View {
 
 #Preview("Dark") {
     MenuView(
-        utility: .init(),
+        utility: TMUtilityImpl(),
         updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
     )
     .preferredColorScheme(.dark)

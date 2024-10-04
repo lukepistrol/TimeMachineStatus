@@ -44,6 +44,30 @@ struct Preferences: Decodable {
         self.skipPaths = try container.decodeIfPresent([String].self, forKey: .skipPaths)
     }
 
+    private init(
+        autoBackup: Bool?,
+        autoBackupInterval: Int?,
+        excludedVolumeUUIDs: [UUID]?,
+        preferencesVersion: Int,
+        requiresACPower: Bool?,
+        lastConfigurationTraceDate: Date?,
+        lastDestinationID: UUID?,
+        localizedDiskImageVolumeName: String?,
+        skipPaths: [String]?,
+        destinations: [Destination]?
+    ) {
+        self.autoBackup = autoBackup
+        self.autoBackupInterval = autoBackupInterval
+        self.excludedVolumeUUIDs = excludedVolumeUUIDs
+        self.preferencesVersion = preferencesVersion
+        self.requiresACPower = requiresACPower
+        self.lastConfigurationTraceDate = lastConfigurationTraceDate
+        self.lastDestinationID = lastDestinationID
+        self.localizedDiskImageVolumeName = localizedDiskImageVolumeName
+        self.skipPaths = skipPaths
+        self.destinations = destinations
+    }
+
     let autoBackup: Bool?
     let autoBackupInterval: Int?
     let excludedVolumeUUIDs: [UUID]?
@@ -95,4 +119,38 @@ struct Destination: Decodable {
     let referenceLocalSnapshotDate: Date?
     let snapshotDates: [Date]?
     let attemptDates: [Date]?
+}
+
+extension Preferences {
+    static let mock = Preferences(
+        autoBackup: false,
+        autoBackupInterval: 0,
+        excludedVolumeUUIDs: nil,
+        preferencesVersion: 1,
+        requiresACPower: true,
+        lastConfigurationTraceDate: .distantPast,
+        lastDestinationID: nil,
+        localizedDiskImageVolumeName: "Backups of XX",
+        skipPaths: nil,
+        destinations: [.mock(name: "Test Drive 1"), .mock(name: "Test Drive 2", network: true)]
+    )
+}
+
+extension Destination {
+    static func mock(name: String, network: Bool = false) -> Self {
+        Destination(
+            lastKnownVolumeName: name,
+            bytesUsed: .random(in: 100_000_000_000...500_000_000_000),
+            bytesAvailable: .random(in: 10_000_000_000...100_000_000_000),
+            filesystemTypeName: "APFS",
+            lastKnownEncryptionState: "Encrypted",
+            quotaGB: .random(in: 400...1000),
+            networkURL: network ? "smb://nas.local/share" : nil,
+            destinationID: UUID(),
+            consistencyScanDate: .distantPast,
+            referenceLocalSnapshotDate: .now,
+            snapshotDates: [.distantPast, .now.addingTimeInterval(.random(in: -100000...0))],
+            attemptDates: [.distantPast, .now.addingTimeInterval(.random(in: -100000...0))]
+        )
+    }
 }
