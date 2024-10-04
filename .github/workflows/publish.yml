@@ -12,7 +12,7 @@ env:
 jobs:
   build:
     name: Build and Publish Release
-    runs-on: macOS-13
+    runs-on: macOS-15
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
