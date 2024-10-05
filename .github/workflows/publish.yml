@@ -50,10 +50,11 @@ jobs:
         run: |
           set -o pipefail && xcodebuild archive -project "TimeMachineStatus.xcodeproj" \
             -scheme "TimeMachineStatus" \
+            -destination generic/platform=macOS \
             -configuration "Release" \
             -derivedDataPath "$RUNNER_TEMP/DerivedData" \
             -archivePath "$RUNNER_TEMP/TimeMachineStatus.xcarchive" \
-            DEVELOPMENT_TEAM=$APPLE_TEAM_ID
+            DEVELOPMENT_TEAM=$APPLE_TEAM_ID | xcpretty
 
       - name: Sign
         env:

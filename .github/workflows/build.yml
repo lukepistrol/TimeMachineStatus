@@ -44,9 +44,10 @@ jobs:
         run: |
           set -o pipefail && xcodebuild build -project "TimeMachineStatus.xcodeproj" \
             -scheme "TimeMachineStatus" \
+            -destination generic/platform=macOS \
             -configuration "Release" \
             -derivedDataPath "$RUNNER_TEMP/DerivedData" \
-            DEVELOPMENT_TEAM=$APPLE_TEAM_ID | xcbeautify
+            DEVELOPMENT_TEAM=$APPLE_TEAM_ID | xcpretty
 
       - name: Clean up keychain and provisioning profile
         if: ${{ always() }}
