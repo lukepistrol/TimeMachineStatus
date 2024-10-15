@@ -170,6 +170,14 @@ struct MenuView: View {
             }
             .foregroundStyle(.secondary)
             .font(.caption2)
+        } else if let status = utility.status as? BackupState.Unknown {
+            Text(status.statusString)
+                .foregroundStyle(.secondary)
+                .font(.caption2)
+                .help(status.rawState)
+                .onTapGesture {
+                    NSPasteboard.general.setString(status.rawState, forType: .string)
+                }
         } else {
             if let latestDate = utility.preferences?.latestBackupDate,
                let latestVolume = utility.preferences?.latestBackupVolume {
@@ -267,7 +275,6 @@ struct MenuView: View {
 #Preview("Light Error") {
     MenuView(
         utility: TMUtilityMock(
-            preferences: .mock,
             error: .preferencesFilePermissionNotGranted,
             canReadPreferences: false
         ),
@@ -276,9 +283,42 @@ struct MenuView: View {
     .preferredColorScheme(.light)
 }
 
-#Preview("Dark") {
+#Preview("Dark Copying") {
+    let preferences = Preferences.mock
+    // swiftlint:disable:next force_unwrapping
+    let status = BackupState._State.Mock.copying(preferences.destinations!.first!.destinationID)
     MenuView(
-        utility: TMUtilityImpl(),
+        utility: TMUtilityMock(
+            status: status,
+            preferences: preferences
+        ),
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
+    )
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Dark Finding Changes") {
+    let preferences = Preferences.mock
+    // swiftlint:disable:next force_unwrapping
+    let status = BackupState._State.Mock.findingChanges(preferences.destinations!.first!.destinationID)
+    MenuView(
+        utility: TMUtilityMock(
+            status: status,
+            preferences: preferences
+        ),
+        updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
+    )
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Dark Unknown") {
+    let preferences = Preferences.mock
+    let status = BackupState._State.Mock.unknown
+    MenuView(
+        utility: TMUtilityMock(
+            status: status,
+            preferences: preferences
+        ),
         updater: SPUStandardUpdaterController(updaterDelegate: nil, userDriverDelegate: nil).updater
     )
     .preferredColorScheme(.dark)

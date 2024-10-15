@@ -29,6 +29,7 @@
 		2818227A2AFE292A0067E564 /* UserfacingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281822792AFE292A0067E564 /* UserfacingError.swift */; };
 		2818227C2AFE33CA0067E564 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227B2AFE33CA0067E564 /* Constants.swift */; };
 		2818227E2AFE36780067E564 /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227D2AFE36780067E564 /* Bundle+.swift */; };
+		281C819E2CBC887D00CDFED6 /* HiddenViewModifier+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C819D2CBC887D00CDFED6 /* HiddenViewModifier+.swift */; };
 		28263F912B023D4E00F74655 /* HelperAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28263F902B023D4E00F74655 /* HelperAppDelegate.swift */; };
 		28263FA32B023FFE00F74655 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28263FA22B023FFE00F74655 /* ServiceManagement.framework */; };
 		28710D2F2CAF16AF00033855 /* Timer+Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28710D2E2CAF16AF00033855 /* Timer+Sendable.swift */; };
@@ -58,6 +59,7 @@
 		28F2D4412B0257E700B75998 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2818227B2AFE33CA0067E564 /* Constants.swift */; };
 		28F2D4452B02F2F300B75998 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 28F2D4442B02F2F300B75998 /* Sparkle */; };
 		28F2D4472B02F62400B75998 /* UpdaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2D4462B02F62400B75998 /* UpdaterViewModel.swift */; };
+		28F7A65E2CBE5323000158D5 /* Unknown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7A65D2CBE5323000158D5 /* Unknown.swift */; };
 		28FAD5A72AFE3DBF00F642E7 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */; };
 		28FAD5A92AFE9BCB00F642E7 /* DestinationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */; };
 		28FAD5AB2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */; };
@@ -101,6 +103,7 @@
 		281822792AFE292A0067E564 /* UserfacingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserfacingError.swift; sourceTree = "<group>"; };
 		2818227B2AFE33CA0067E564 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2818227D2AFE36780067E564 /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
+		281C819D2CBC887D00CDFED6 /* HiddenViewModifier+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HiddenViewModifier+.swift"; sourceTree = "<group>"; };
 		28263F902B023D4E00F74655 /* HelperAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperAppDelegate.swift; sourceTree = "<group>"; };
 		28263FA22B023FFE00F74655 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		28263FA42B0241E200F74655 /* TimeMachineStatusHelper.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TimeMachineStatusHelper.entitlements; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 		28F2D43F2B02560400B75998 /* LaunchItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchItemProvider.swift; sourceTree = "<group>"; };
 		28F2D4462B02F62400B75998 /* UpdaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdaterViewModel.swift; sourceTree = "<group>"; };
 		28F2D4482B03000900B75998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		28F7A65D2CBE5323000158D5 /* Unknown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unknown.swift; sourceTree = "<group>"; };
 		28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 		28FAD5A82AFE9BCB00F642E7 /* DestinationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationInfoView.swift; sourceTree = "<group>"; };
 		28FAD5AA2AFE9BF300F642E7 /* CustomLabeledContentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabeledContentStyle.swift; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 				281822662AFD86AC0067E564 /* Color+RawRepresentable.swift */,
 				2888D17B2C99B3E80081FBBB /* KeyedDecodingContainer+.swift */,
 				28710D2E2CAF16AF00033855 /* Timer+Sendable.swift */,
+				281C819D2CBC887D00CDFED6 /* HiddenViewModifier+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				281822682AFD8E5A0067E564 /* Internal */,
 				28A002542AFC03E300E2A01E /* BackupState.swift */,
 				28A0025B2AFC04B300E2A01E /* Idle.swift */,
+				28F7A65D2CBE5323000158D5 /* Unknown.swift */,
 				2818225C2AFD3FB80067E564 /* FindingBackupVolume.swift */,
 				28A0026F2AFC342100E2A01E /* Starting.swift */,
 				28A0025D2AFC04D300E2A01E /* Mounting.swift */,
@@ -534,7 +540,9 @@
 				28F2D4472B02F62400B75998 /* UpdaterViewModel.swift in Sources */,
 				28A0026E2AFC312000E2A01E /* Finishing.swift in Sources */,
 				28A0026C2AFC0CC700E2A01E /* Preferences.swift in Sources */,
+				28F7A65E2CBE5323000158D5 /* Unknown.swift in Sources */,
 				281822512AFCF8750067E564 /* DestinationCell.swift in Sources */,
+				281C819E2CBC887D00CDFED6 /* HiddenViewModifier+.swift in Sources */,
 				28A002552AFC03E300E2A01E /* BackupState.swift in Sources */,
 				281822592AFCFAE50067E564 /* AppDelegate.swift in Sources */,
 			);

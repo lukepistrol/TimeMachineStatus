@@ -108,6 +108,15 @@ struct StatusBarItem: View {
             .onChange(of: utility.isIdle) { oldValue, newValue in
                 log.trace("Changed: \(oldValue) -> \(newValue)")
             }
+            .overlay(alignment: .topTrailing) {
+                #if DEBUG
+                Text("D")
+                    .font(.system(size: 6))
+                    .bold()
+                    .padding(.horizontal, 2)
+                    .background(.red, in: .rect(cornerRadius: 3))
+                #endif
+            }
     }
 
     struct AnimatedIcon: View {
@@ -126,7 +135,13 @@ struct StatusBarItem: View {
     }
 }
 
-#Preview {
+#Preview("Light") {
     StatusBarItem(sizePassthrough: .init(), utility: .init())
         .frame(height: 24)
+}
+
+#Preview("Dark") {
+    StatusBarItem(sizePassthrough: .init(), utility: .init())
+        .frame(height: 24)
+        .preferredColorScheme(.dark)
 }

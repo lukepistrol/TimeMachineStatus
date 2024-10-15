@@ -22,6 +22,11 @@ extension BackupState {
             try super.init(from: decoder)
         }
 
+        fileprivate init(clientID: String) {
+            self.clientID = clientID
+            super.init()
+        }
+
         let clientID: String
 
         override var statusString: String {
@@ -32,4 +37,8 @@ extension BackupState {
             "Idle"
         }
     }
+}
+
+extension BackupState._State.Mock {
+    static let idle = BackupState.Idle(clientID: "1234")
 }

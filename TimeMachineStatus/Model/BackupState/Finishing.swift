@@ -21,8 +21,34 @@ extension BackupState {
             "Finishing"
         }
 
+        override fileprivate init(
+            clientID: String,
+            destinationID: UUID,
+            attemptOptions: Int,
+            stateChange: Date?,
+            destinationMountPoint: String
+        ) {
+            super.init(
+                clientID: clientID,
+                destinationID: destinationID,
+                attemptOptions: attemptOptions,
+                stateChange: stateChange,
+                destinationMountPoint: destinationMountPoint
+            )
+        }
+
         override var shortStatusString: String {
             statusString
         }
     }
+}
+
+extension BackupState._State.Mock {
+    static let finishing = BackupState.Finishing(
+        clientID: "1234",
+        destinationID: UUID(uuidString: "1234")!, // swiftlint:disable:this force_unwrapping
+        attemptOptions: 0,
+        stateChange: Date(),
+        destinationMountPoint: "/Volumes/Backup"
+    )
 }

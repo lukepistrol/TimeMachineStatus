@@ -15,7 +15,8 @@ extension BackupState {
     class _State: Decodable {
         enum _BState {
             case _idle, _findingBackupVol, _starting, _mounting, _preparing, _findingChanges, _copying, _finishing
-            case _stopping, _thinning, _unknown
+            case _stopping, _thinning
+            case _unknown(state: String)
         }
 
         enum CodingKeys: String, CodingKey {
@@ -23,9 +24,9 @@ extension BackupState {
             case running = "Running"
         }
 
-        init() {
+        init(running: Bool = false) {
             self.phase = ""
-            self.running = false
+            self.running = running
         }
 
         required init(from decoder: Decoder) throws {
@@ -69,7 +70,11 @@ extension BackupState {
                     return ._thinning
                 default:
                     log.error("Unknown phase: \(phase)")
-                    fatalError("Unknown phase: \(phase)")
+                    #if DEBUG
+                    return ._unknown(state: phase)
+                    #else
+                    return ._unknown(state: phase)
+                    #endif
                 }
             } else {
                 return ._idle
@@ -78,7 +83,7 @@ extension BackupState {
     }
 
     class None: _State {
-        override init() {
+        init() {
             super.init()
             self.phase = "None"
         }

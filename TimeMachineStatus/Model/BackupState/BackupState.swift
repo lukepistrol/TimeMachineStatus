@@ -25,10 +25,15 @@ enum BackupState {
             throw BackupStateError.couldNotConvertStringToData(string: result)
         }
 
-        if let state = try _decodePlist(data) {
+        if let state = try? _decodePlist(data, raw: result) {
             return state
         }
+        #if DEBUG
+        log.error("Unknown state: \(result)")
+        fatalError("Unknown state: \(result)")
+        #else
         throw BackupStateError.invalidState(raw: result)
+        #endif
     }
 }
 
@@ -42,7 +47,7 @@ extension BackupState {
     }()
 
     // swiftlint:disable:next cyclomatic_complexity
-    private static func _decodePlist(_ data: Data) throws -> _State? {
+    private static func _decodePlist(_ data: Data, raw: String) throws -> _State {
         let decoder = PropertyListDecoder()
         let state = try decoder.decode(BackupState._State.self, from: data)
         switch state.state {
@@ -66,8 +71,16 @@ extension BackupState {
             return try decoder.decode(BackupState.Stopping.self, from: data)
         case ._thinning:
             return try decoder.decode(BackupState.Thinning.self, from: data)
-        case ._unknown:
-            return nil
+        case ._unknown(let state):
+            #if DEBUG
+            throw BackupStateError.invalidState(raw: raw)
+            #else
+            return BackupState.Unknown(title: state, raw: raw)
+            #endif
         }
     }
+}
+
+extension BackupState._State {
+    enum Mock {}
 }

@@ -33,6 +33,18 @@ extension BackupState {
             try super.init(from: decoder)
         }
 
+        init(
+            clientID: String,
+            destinationID: UUID,
+            attemptOptions: Int,
+            stateChange: Date?,
+            destinationMountPoint: String
+        ) {
+            self.stateChange = stateChange
+            self.destinationMountPoint = destinationMountPoint
+            super.init(clientID: clientID, destinationID: destinationID, attemptOptions: attemptOptions)
+        }
+
         let stateChange: Date?
         let destinationMountPoint: String
     }
