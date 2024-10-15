@@ -48,6 +48,7 @@ struct DestinationCell: View {
                 symbol
                 volumeInfo
                 Spacer()
+                failureWarning
                 progressIndicator
                 startStopButton
             }
@@ -128,28 +129,50 @@ struct DestinationCell: View {
         }
     }
 
-    private var startStopButton: some View {
-        Button {
-            if utility.status.activeDestinationID == dest.destinationID {
-                utility.stopBackup()
-            } else {
-                utility.startBackup(id: dest.destinationID)
+    @ViewBuilder
+    private var failureWarning: some View {
+        if dest.lastBackupFailed && !isActive {
+            Button {
+                NSWorkspace.shared.open(Constants.URLs.timeMachineSystemSettings)
+            } label: {
+                Image(systemSymbol: .exclamationmarkTriangleFill)
+                    .foregroundStyle(.red)
+                    .padding([.vertical, .leading], 4)
             }
-        } label: {
-            if utility.status.activeDestinationID == dest.destinationID {
-                Image(systemSymbol: .stopFill)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 13)
-            } else {
-                Image(systemSymbol: .playFill)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 13)
-            }
+            .buttonStyle(.plain)
+            .focusable(false)
+            .help("dest_label_last_backup_failed")
         }
-        .buttonStyle(.custom)
-        .focusable(false)
+    }
+
+    @ViewBuilder
+    private var startStopButton: some View {
+        if !utility.isIdle && !isActive {
+            EmptyView()
+        } else {
+            Button {
+                if utility.status.activeDestinationID == dest.destinationID {
+                    utility.stopBackup()
+                } else {
+                    utility.startBackup(id: dest.destinationID)
+                }
+            } label: {
+                if utility.status.activeDestinationID == dest.destinationID {
+                    Image(systemSymbol: .stopFill)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 13)
+                } else {
+                    Image(systemSymbol: .playFill)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 13)
+                }
+            }
+            .disabled(!utility.isIdle && !isActive)
+            .buttonStyle(.custom)
+            .focusable(false)
+        }
     }
 
     @ViewBuilder

@@ -12,6 +12,7 @@
 import SwiftUI
 
 struct CustomButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) var isEnabled
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -21,10 +22,14 @@ struct CustomButtonStyle: ButtonStyle {
     }
 
     private func foreground(_ configuration: Configuration) -> Color {
-        if configuration.isPressed {
-            Color.accentColor.opacity(0.5)
+        if isEnabled {
+            if configuration.isPressed {
+                Color.accentColor.opacity(0.5)
+            } else {
+                Color.accentColor
+            }
         } else {
-            Color.accentColor
+            Color.secondary
         }
     }
 }

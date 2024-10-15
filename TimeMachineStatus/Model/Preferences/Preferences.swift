@@ -119,6 +119,16 @@ struct Destination: Decodable {
     let referenceLocalSnapshotDate: Date?
     let snapshotDates: [Date]?
     let attemptDates: [Date]?
+
+    var lastBackupFailed: Bool {
+        guard let snapshotDates,
+              let last = snapshotDates.last,
+              let attemptDates,
+              let lastAttempt = attemptDates.last
+        else { return false }
+
+        return lastAttempt > last
+    }
 }
 
 extension Preferences {

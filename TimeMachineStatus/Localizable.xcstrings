@@ -655,6 +655,29 @@
         }
       }
     },
+    "dest_label_last_backup_failed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letztes Backup fehlgeschlagen. TimeMachine Einstellungen öffnen um mehr zu erfahren."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Backup Failed. Open TimeMachine Settings for more information."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultimo backup non riuscito. Apri le Impostazioni di TimeMachine per ulteriori informazioni."
+          }
+        }
+      }
+    },
     "dest_label_no_size_info" : {
       "localizations" : {
         "de" : {
