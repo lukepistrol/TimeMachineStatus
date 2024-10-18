@@ -28,3 +28,9 @@ struct CustomLabeledContentStyle: LabeledContentStyle {
         }
     }
 }
+
+extension LabeledContentStyle where Self == CustomLabeledContentStyle {
+    static var custom: CustomLabeledContentStyle {
+        CustomLabeledContentStyle()
+    }
+}

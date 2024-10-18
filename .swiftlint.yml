@@ -63,3 +63,8 @@ custom_rules:
     message: "Use `SFSafeSymbols` via `systemSymbol` parameters for type safety."
     regex: "(Image\\(systemName:)|(NSImage\\(symbolName:)|(Label[^,]+?,\\s*systemImage:)|(UIApplicationShortcutIcon\\(systemImageName:)"
     severity: warning
+  no_print_statements:
+    name: "No print statements"
+    message: "Use the `Logging` package instead."
+    regex: "(print\\(.*\\))|(debugPrint\\(.*\\))"
+    severity: warning

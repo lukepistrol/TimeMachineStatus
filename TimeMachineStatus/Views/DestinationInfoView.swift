@@ -22,7 +22,7 @@ struct DestinationInfoView: View {
                 if let lastKnownEncryptionState = dest.lastKnownEncryptionState {
                     LabeledContent("dest_info_encrypted", value: lastKnownEncryptionState)
                 }
-                if let networkURL = dest.networkURL {
+                if let networkURL = dest.networkURL?.removingPercentEncoding {
                     LabeledContent("dest_info_url", value: networkURL)
                 }
             }
@@ -41,6 +41,7 @@ struct DestinationInfoView: View {
                 }
             }
             Section {
+                LabeledContent("dest_info_number_of_backups", value: "\(dest.numberOfBackups)")
                 if let last = dest.snapshotDates?.max() {
                     LabeledContent("dest_info_lastbackup", value: last.formatted(.relativeDate))
                 }
@@ -48,9 +49,14 @@ struct DestinationInfoView: View {
                     LabeledContent("dest_info_lastattempt", value: last.formatted(.relativeDate))
                 }
             }
+            Section {
+                if let errorCode = dest.result, errorCode != 0 {
+                    LabeledContent("dest_info_error", value: "\(errorCode)")
+                }
+            }
         }
         .formStyle(.grouped)
-        .labeledContentStyle(CustomLabeledContentStyle())
+        .labeledContentStyle(.custom)
         .frame(width: 500)
     }
 }

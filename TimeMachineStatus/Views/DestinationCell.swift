@@ -61,6 +61,9 @@ struct DestinationCell: View {
         .contentShape(.rect)
         .contextMenu { contextMenuActions }
         .card(.background.secondary)
+        .onTapGesture {
+            showInfo.toggle()
+        }
         .onHover { hovering in
             withAnimation(.snappy) {
                 self.hovering = hovering
@@ -141,7 +144,7 @@ struct DestinationCell: View {
             }
             .buttonStyle(.plain)
             .focusable(false)
-            .help("dest_label_last_backup_failed")
+            .help("dest_label_last_backup_failed_\(dest.result ?? -1)")
         }
     }
 

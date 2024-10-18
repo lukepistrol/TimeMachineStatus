@@ -105,6 +105,7 @@ struct Destination: Decodable {
         case referenceLocalSnapshotDate = "ReferenceLocalSnapshotDate"
         case snapshotDates = "SnapshotDates"
         case attemptDates = "AttemptDates"
+        case result = "RESULT"
     }
 
     let lastKnownVolumeName: String?
@@ -119,6 +120,7 @@ struct Destination: Decodable {
     let referenceLocalSnapshotDate: Date?
     let snapshotDates: [Date]?
     let attemptDates: [Date]?
+    let result: Int?
 
     var lastBackupFailed: Bool {
         guard let snapshotDates,
@@ -128,6 +130,10 @@ struct Destination: Decodable {
         else { return false }
 
         return lastAttempt > last
+    }
+
+    var numberOfBackups: Int {
+        snapshotDates?.count ?? 0
     }
 }
 
@@ -160,7 +166,8 @@ extension Destination {
             consistencyScanDate: .distantPast,
             referenceLocalSnapshotDate: .now,
             snapshotDates: [.distantPast, .now.addingTimeInterval(.random(in: -100_000...0))],
-            attemptDates: [.distantPast, .now.addingTimeInterval(.random(in: -100_000...0))]
+            attemptDates: [.distantPast, .now.addingTimeInterval(.random(in: -100_000...0))],
+            result: 0
         )
     }
 }

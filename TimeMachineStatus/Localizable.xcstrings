@@ -426,8 +426,15 @@
       }
     },
     "D" : {
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "D"
@@ -460,6 +467,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crittografato"
+          }
+        }
+      }
+    },
+    "dest_info_error" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler Code"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error Code"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Codice errore"
           }
         }
       }
@@ -579,6 +608,28 @@
         }
       }
     },
+    "dest_info_number_of_backups" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anzahl an Sicherungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Number of backups"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numero di backup"
+          }
+        }
+      }
+    },
     "dest_info_quota" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -671,25 +722,25 @@
         }
       }
     },
-    "dest_label_last_backup_failed" : {
+    "dest_label_last_backup_failed_%lld" : {
       "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Letztes Backup fehlgeschlagen. TimeMachine Einstellungen öffnen um mehr zu erfahren."
+            "value" : "Letztes Backup fehlgeschlagen (%lld). TimeMachine Einstellungen öffnen um mehr zu erfahren."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Last Backup Failed. Open TimeMachine Settings for more information."
+            "value" : "Last Backup Failed (%lld). Open TimeMachine Settings for more information."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ultimo backup non riuscito. Apri le Impostazioni di TimeMachine per ulteriori informazioni."
+            "value" : "Ultimo backup non riuscito (%lld). Apri le Impostazioni di TimeMachine per ulteriori informazioni."
           }
         }
       }

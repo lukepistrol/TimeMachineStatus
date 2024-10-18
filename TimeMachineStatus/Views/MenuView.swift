@@ -118,7 +118,7 @@ struct MenuView: View {
             } header: {
                 Text("section_general_info")
             }
-            .labeledContentStyle(CustomLabeledContentStyle())
+            .labeledContentStyle(.custom)
         }
     }
 

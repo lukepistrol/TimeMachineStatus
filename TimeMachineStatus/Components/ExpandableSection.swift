@@ -51,3 +51,15 @@ struct ExpandableSection<C: View, H: View>: View {
         }
     }
 }
+
+#Preview {
+    List {
+        ExpandableSection {
+            Text("Item 1")
+            Text("Item 2")
+            Text("Item 3")
+        } header: {
+            Text("Header")
+        }
+    }
+}

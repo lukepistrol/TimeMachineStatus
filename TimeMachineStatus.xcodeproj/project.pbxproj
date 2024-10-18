@@ -190,6 +190,7 @@
 				28FAD5A62AFE3DBF00F642E7 /* CardViewModifier.swift */,
 				28FAD5AC2AFF0D7200F642E7 /* ExpandableSection.swift */,
 				28FAD5AE2AFF0D9600F642E7 /* UserfacingErrorView.swift */,
+				281C819D2CBC887D00CDFED6 /* HiddenViewModifier+.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -281,7 +282,6 @@
 				281822662AFD86AC0067E564 /* Color+RawRepresentable.swift */,
 				2888D17B2C99B3E80081FBBB /* KeyedDecodingContainer+.swift */,
 				28710D2E2CAF16AF00033855 /* Timer+Sendable.swift */,
-				281C819D2CBC887D00CDFED6 /* HiddenViewModifier+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

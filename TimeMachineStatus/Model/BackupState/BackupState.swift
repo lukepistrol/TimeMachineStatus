@@ -28,12 +28,12 @@ enum BackupState {
         if let state = try? _decodePlist(data, raw: result) {
             return state
         }
+
         #if DEBUG
         log.error("Unknown state: \(result)")
-        fatalError("Unknown state: \(result)")
-        #else
-        throw BackupStateError.invalidState(raw: result)
         #endif
+
+        throw BackupStateError.invalidState(raw: result)
     }
 }
 
@@ -72,11 +72,8 @@ extension BackupState {
         case ._thinning:
             return try decoder.decode(BackupState.Thinning.self, from: data)
         case ._unknown(let state):
-            #if DEBUG
-            throw BackupStateError.invalidState(raw: raw)
-            #else
+            log.warning("Unknown state: \(state), raw: \(raw)")
             return BackupState.Unknown(title: state, raw: raw)
-            #endif
         }
     }
 }
