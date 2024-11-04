@@ -154,11 +154,7 @@ struct DestinationCell: View {
             EmptyView()
         } else {
             Button {
-                if utility.status.activeDestinationID == dest.destinationID {
-                    utility.stopBackup()
-                } else {
-                    utility.startBackup(id: dest.destinationID)
-                }
+                startStopBackup()
             } label: {
                 if utility.status.activeDestinationID == dest.destinationID {
                     Image(systemSymbol: .stopFill)
@@ -178,14 +174,29 @@ struct DestinationCell: View {
         }
     }
 
+    private func startStopBackup() {
+        if utility.status.activeDestinationID == dest.destinationID {
+            utility.stopBackup()
+        } else {
+            utility.startBackup(id: dest.destinationID)
+        }
+    }
+
     @ViewBuilder
     private var contextMenuActions: some View {
         let unknown = NSLocalizedString("dest_label_no_volume_name", comment: "")
         Button("button_show_info") { showInfo.toggle() }
         Divider()
-        Button("button_backup_to_\(dest.lastKnownVolumeName ?? unknown)_now") {
-            utility.startBackup(id: dest.destinationID)
+        Button {
+            startStopBackup()
+        } label: {
+            if utility.status.activeDestinationID == dest.destinationID {
+                Text("button_cancel_backup")
+            } else {
+                Text("button_backup_to_\(dest.lastKnownVolumeName ?? unknown)_now")
+            }
         }
+        .disabled(!utility.isIdle && !isActive)
     }
 
     @ViewBuilder

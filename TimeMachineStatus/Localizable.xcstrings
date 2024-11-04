@@ -153,6 +153,28 @@
         }
       }
     },
+    "button_cancel_backup" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backup Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel Backup"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annullare il backup"
+          }
+        }
+      }
+    },
     "button_close" : {
       "extractionState" : "manual",
       "localizations" : {
