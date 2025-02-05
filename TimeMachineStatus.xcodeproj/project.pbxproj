@@ -838,15 +838,15 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		281822602AFD40920067E564 /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-log.git";
+			repositoryURL = "https://github.com/apple/swift-log";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.3;
+				minimumVersion = 1.6.2;
 			};
 		};
 		281822632AFD438B0067E564 /* XCRemoteSwiftPackageReference "swift-log-oslog" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/chrisaljoudi/swift-log-oslog.git";
+			repositoryURL = "https://github.com/chrisaljoudi/swift-log-oslog";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.2.2;
@@ -854,7 +854,7 @@
 		};
 		28710D322CAFE7BB00033855 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.3.0;
@@ -862,7 +862,7 @@
 		};
 		28A002482AFBC91500E2A01E /* XCRemoteSwiftPackageReference "ShellOut" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JohnSundell/ShellOut.git";
+			repositoryURL = "https://github.com/JohnSundell/ShellOut";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.3.0;
@@ -873,7 +873,7 @@
 			repositoryURL = "https://github.com/sparkle-project/Sparkle";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.1;
+				minimumVersion = 2.6.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
