@@ -47,7 +47,7 @@ jobs:
             -destination generic/platform=macOS \
             -configuration "Release" \
             -derivedDataPath "$RUNNER_TEMP/DerivedData" \
-            DEVELOPMENT_TEAM=$APPLE_TEAM_ID # | xcpretty
+            DEVELOPMENT_TEAM=$APPLE_TEAM_ID | xcpretty
 
       - name: Clean up keychain and provisioning profile
         if: ${{ always() }}
