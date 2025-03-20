@@ -20,6 +20,7 @@ protocol TMUtility {
     var lastUpdated: Date? { get set }
     var canReadPreferences: Bool { get }
     var error: UserfacingError? { get set }
+    var hasFailedBackup: Bool { get }
 
     var isIdle: Bool { get }
 
@@ -43,6 +44,7 @@ class TMUtilityMock: TMUtility {
     var lastUpdated: Date?
     var error: UserfacingError?
     var canReadPreferences: Bool { _canReadPreferences }
+    var hasFailedBackup: Bool { false }
 
     private var _canReadPreferences: Bool
 
@@ -92,6 +94,12 @@ class TMUtilityImpl: TMUtility {
         } catch {
             return false
         }
+    }
+
+    var hasFailedBackup: Bool {
+        guard let preferences else { return false }
+        guard preferences.lastDestinationID != nil else { return false }
+        return (preferences.destinations ?? []).contains { $0.lastBackupFailed }
     }
 
     init() {

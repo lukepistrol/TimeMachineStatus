@@ -63,8 +63,10 @@ struct StatusBarItem: View {
     private var mainContent: some View {
         HStack(spacing: spacing) {
             if utility.isIdle {
-                Image(systemSymbol: .clockArrowCirclepath)
-                    .font(.body.weight(boldIcon ? .bold : .medium))
+                Image(
+                    systemSymbol: utility.hasFailedBackup ? .exclamationmarkArrowCirclepath : .clockArrowCirclepath
+                )
+                .font(.body.weight(boldIcon ? .bold : .medium))
             } else {
                 if animateIcon {
                     AnimatedIcon()

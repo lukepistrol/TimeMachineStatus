@@ -29,7 +29,10 @@ extension BackupState {
             } else {
                 self.stateChange = nil
             }
-            self.destinationMountPoint = try container.decode(String.self, forKey: .destinationMountPoint)
+            self.destinationMountPoint = try container.decodeIfPresent(
+                String.self,
+                forKey: .destinationMountPoint
+            ) ?? ""
             try super.init(from: decoder)
         }
 
