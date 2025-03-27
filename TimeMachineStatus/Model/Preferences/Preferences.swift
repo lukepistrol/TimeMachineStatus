@@ -122,6 +122,10 @@ struct Destination: Decodable {
     let attemptDates: [Date]?
     let result: Int?
 
+    var destinationError: DestinationError? {
+        DestinationError(result)
+    }
+
     var lastBackupFailed: Bool {
         guard let snapshotDates,
               let last = snapshotDates.last,
@@ -169,5 +173,78 @@ extension Destination {
             attemptDates: [.distantPast, .now.addingTimeInterval(.random(in: -100_000...0))],
             result: 0
         )
+    }
+}
+
+struct DestinationError: Error {
+    let errorCode: Int
+
+    init?(_ errorCode: Int?) {
+        guard let errorCode else { return nil }
+        self.errorCode = errorCode
+    }
+
+    var localizedString: LocalizedStringResource {
+        return switch errorCode {
+        case 1: "DESTINATION_ERROR_1_MESSAGE"
+        case 2: "DESTINATION_ERROR_2_MESSAGE"
+        case 3, 6: "DESTINATION_ERROR_3_MESSAGE"
+        case 4: "DESTINATION_ERROR_4_MESSAGE"
+        case 5: "DESTINATION_ERROR_5_MESSAGE"
+        case 7: "DESTINATION_ERROR_7_MESSAGE"
+        case 8: "DESTINATION_ERROR_8_MESSAGE"
+        case 9: "DESTINATION_ERROR_9_MESSAGE"
+        case 10: "DESTINATION_ERROR_10_MESSAGE"
+        case 11: "DESTINATION_ERROR_11_MESSAGE"
+        case 12: "DESTINATION_ERROR_12_MESSAGE"
+        case 14: "DESTINATION_ERROR_14_MESSAGE"
+        case 15, 16: "DESTINATION_ERROR_15_MESSAGE"
+        case 17: "DESTINATION_ERROR_17_MESSAGE"
+        case 18: "DESTINATION_ERROR_18_MESSAGE"
+        case 19: "DESTINATION_ERROR_19_MESSAGE"
+        case 20: "DESTINATION_ERROR_20_MESSAGE"
+        case 21: "DESTINATION_ERROR_21_MESSAGE"
+        case 22: "DESTINATION_ERROR_22_MESSAGE"
+        case 23: "DESTINATION_ERROR_23_MESSAGE"
+        case 24: "DESTINATION_ERROR_24_MESSAGE"
+        case 25: "DESTINATION_ERROR_25_MESSAGE"
+        case 26: "DESTINATION_ERROR_26_MESSAGE"
+        case 27: "DESTINATION_ERROR_27_MESSAGE"
+        case 28: "DESTINATION_ERROR_28_MESSAGE"
+        case 29: "DESTINATION_ERROR_29_MESSAGE"
+        case 30: "DESTINATION_ERROR_30_MESSAGE"
+        case 31: "DESTINATION_ERROR_31_MESSAGE"
+        case 32: "DESTINATION_ERROR_32_MESSAGE"
+        case 33: "DESTINATION_ERROR_33_MESSAGE"
+        case 37: "DESTINATION_ERROR_37_MESSAGE"
+        case 38: "DESTINATION_ERROR_38_MESSAGE"
+        case 39: "DESTINATION_ERROR_39_MESSAGE"
+        case 42: "DESTINATION_ERROR_42_MESSAGE"
+        case 44: "DESTINATION_ERROR_44_MESSAGE"
+        case 45: "DESTINATION_ERROR_45_MESSAGE"
+        case 49: "DESTINATION_ERROR_49_MESSAGE"
+        case 50: "DESTINATION_ERROR_50_MESSAGE"
+        case 52: "DESTINATION_ERROR_52_MESSAGE"
+        case 53: "DESTINATION_ERROR_53_MESSAGE"
+        case 60: "DESTINATION_ERROR_60_MESSAGE"
+        case 70: "DESTINATION_ERROR_70_MESSAGE"
+        case 100: "DESTINATION_ERROR_100_MESSAGE"
+        case 101: "DESTINATION_ERROR_101_MESSAGE"
+        case 102: "DESTINATION_ERROR_102_MESSAGE"
+        case 103: "DESTINATION_ERROR_103_MESSAGE"
+        case 104: "DESTINATION_ERROR_104_MESSAGE"
+        case 105, 106: "DESTINATION_ERROR_105_MESSAGE"
+        case 300, 301, 302, 303: "DESTINATION_ERROR_300_MESSAGE"
+        case 402: "DESTINATION_ERROR_402_MESSAGE"
+        case 404: "DESTINATION_ERROR_404_MESSAGE"
+        case 406: "DESTINATION_ERROR_406_MESSAGE"
+        case 450: "DESTINATION_ERROR_450_MESSAGE"
+        case 451: "DESTINATION_ERROR_451_MESSAGE"
+        case 455: "DESTINATION_ERROR_455_MESSAGE"
+        case 501: "DESTINATION_ERROR_501_MESSAGE"
+        case 703: "DESTINATION_ERROR_703_MESSAGE"
+        case 704: "DESTINATION_ERROR_704_MESSAGE"
+        default: "DESTINATION_ERROR_999_MESSAGE"
+        }
     }
 }

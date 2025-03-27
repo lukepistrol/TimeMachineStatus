@@ -50,8 +50,11 @@ struct DestinationInfoView: View {
                 }
             }
             Section {
+                if let errorDescription = dest.destinationError?.localizedString {
+                    LabeledContent("dest_info_error", value: String(localized: errorDescription))
+                }
                 if let errorCode = dest.result, errorCode != 0 {
-                    LabeledContent("dest_info_error", value: "\(errorCode)")
+                    LabeledContent("dest_info_error_code", value: "\(errorCode)")
                 }
             }
         }

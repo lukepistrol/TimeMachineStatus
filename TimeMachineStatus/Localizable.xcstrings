@@ -498,6 +498,28 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Fehler"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Errore"
+          }
+        }
+      }
+    },
+    "dest_info_error_code" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Fehler Code"
           }
         },
@@ -925,6 +947,596 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_1_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to launch Time Machine."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_2_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while starting the backup. Anti-virus software may be preventing Time Machine from writing to the backup."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_3_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk is not in Apple File System or Mac OS Extended (Journaled) format."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_4_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to get status of backup disk."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_5_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while enabling ownership on the backup disk."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_7_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine was only able to complete part of the backup because there is insufficient free space on the backup disk."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_8_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Files can’t be copied onto the backup disk because it is read-only."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_9_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk does not have Access Control Lists enabled, which is required."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_10_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while preparing the backup."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_11_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destination could not be backed up."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_12_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while linking files on the backup disk."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_14_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while attempting to remove expired backups from the backup disk."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_15_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All expired backups have been removed, but the backup disk is still full. Select a larger backup disk or make the backup smaller by excluding files."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_17_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No backup disk has been selected."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_18_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk could not be found. Make sure the backup disk is connected or select a different backup disk."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_19_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk is not available. Make sure the backup disk is connected or select a different backup disk."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_20_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk image could not be created."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_21_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk image could not be accessed."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_22_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backup canceled."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_23_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A disk you are backing up is case-sensitive, but the backup disk is not. Select a different backup disk or exclude the case-sensitive disk from backups."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_24_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Two of the disks to back up have the same name. Rename one of the disks."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_25_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There were no disks found to back up. This can happen if all available disks have been excluded from the backup. Click Options to edit the excluded items."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_26_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The network disk disconnected from your Mac while backing up. Make sure the computer and the backup disk are on the same network, and that the backup disk is turned on."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_27_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk was ejected or disconnected from your Mac while backing up.\n\nMake sure the backup disk is connected and turned on.\n\nIf you continue to have problems, try connecting the disk using a different cable."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_28_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk did not have enough space to complete the backup."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_29_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The network backup disk could not be accessed because there was a problem with the network username or password. You may need to re-select the backup disk and enter the correct username and password."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_30_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine could not inherit backup for use with this computer."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_31_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk image is already in use.\nCheck that the image is not in use by another computer. If the image is not in use and the error persists, try rebooting the server."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_32_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk image could not be found."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_33_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The system date and time is incorrect."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_37_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One of the disks being backed up was ejected or disconnected from your Mac while backing up."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_38_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine can’t use the disk image because it is read-only."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_39_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine did not back up because the backup disk was previously encrypted but is no longer encrypted."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_42_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine couldn’t verify your backups.\n\nVerification may have been interrupted by a network problem. Try again after the network problems are resolved."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_44_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine could not delete the backup disk image."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_45_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The network backup disk does not support the required capabilities."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_49_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine could not back up the disk  because a snapshot of the disk could not be created."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_50_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine could not back up the disk because it is nearly full.\nDelete some files on this disk and try again."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_52_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine did not back up because the backup was encrypted with an empty password. Use Time Machine Settings to set up a new backup."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_53_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The password for the disk image is incorrect. Please provide the correct password."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_60_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine could not back up because backups are restricted by a managed profile."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_70_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup disk image was ejected or disconnected from your Mac while backing up."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_100_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine did not back up because the computer was running on battery power. Connect your Mac to a power source while your backup disk is available."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_101_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine did not back up because the battery charge was low."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_102_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine did not back up because the computer was in a poor thermal state."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_103_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine could not back up the disk because it is being encrypted or decrypted by FileVault.\n\nTry again once FileVault finishes."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_104_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine did not finish backing up because some files were unavailable. Backups will resume when your Mac is unlocked."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_105_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine cannot back up because some cloud files have not finished syncing.\n\nSyncing happens when your Mac is turned on and connected to the Internet. Syncing may take a few days. Syncing will happen more quickly while your Mac is connected to a power source."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_300_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while preparing the backup."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_402_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The disk could not be backed up."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_404_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while finishing the backup."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_406_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The file could not be backed up because its path is too long. Rename this file with a shorter name or exclude it from backup and try again."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_450_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while sealing the backup."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_451_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The configuration of this backup disk is out-of-date. Try removing the disk from the list of Time Machine destinations and adding it back."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_455_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The configuration of this backup disk was invalid. Try removing the disk from the list of Time Machine destinations and adding it back."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_501_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine detected that your backups can not be reliably restored.\n\nTime Machine must erase your existing backup history and start a new backup to correct this."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_703_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup was cancelled so that one of the disks being backed up could be ejected."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_704_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The backup was cancelled so that the backup disk could be ejected."
+          }
+        }
+      }
+    },
+    "DESTINATION_ERROR_999_MESSAGE" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Machine couldn’t complete the backup.\n\nAn unknown error occurred."
           }
         }
       }
