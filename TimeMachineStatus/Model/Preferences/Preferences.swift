@@ -180,7 +180,7 @@ struct DestinationError: Error {
     let errorCode: Int
 
     init?(_ errorCode: Int?) {
-        guard let errorCode else { return nil }
+        guard let errorCode, errorCode != 0 else { return nil }
         self.errorCode = errorCode
     }
 
