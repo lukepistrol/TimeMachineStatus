@@ -144,7 +144,12 @@ struct DestinationCell: View {
             }
             .buttonStyle(.plain)
             .focusable(false)
-            .help(String(localized: dest.destinationError?.localizedString ?? "dest_label_last_backup_failed_\(dest.result ?? -1)"))
+            .help(
+                String(
+                    localized: dest.destinationError?.localizedString ??
+                    "dest_label_last_backup_failed_\(dest.result ?? -1)"
+                )
+            )
         }
     }
 
