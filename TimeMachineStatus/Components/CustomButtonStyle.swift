@@ -24,12 +24,12 @@ struct CustomButtonStyle: ButtonStyle {
     private func foreground(_ configuration: Configuration) -> Color {
         if isEnabled {
             if configuration.isPressed {
-                Color.accentColor.opacity(0.5)
+                return .white.opacity(0.5) // Changed from accentColor
             } else {
-                Color.accentColor
+                return .white // Changed from accentColor
             }
         } else {
-            Color.secondary
+            return .secondary
         }
     }
 }

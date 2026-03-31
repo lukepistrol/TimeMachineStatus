@@ -7,8 +7,9 @@
 //  Copyright © 2023 Lukas Pistrol. All rights reserved.
 //
 //  See LICENSE.md for license information.
-//  
+//
 
+import Sparkle
 import SwiftUI
 
 struct DestinationCell: View {
@@ -107,6 +108,12 @@ struct DestinationCell: View {
                         .foregroundStyle(.secondary)
                 }
             }
+            //added destinition url info and extracted hostname with regex
+            if dest.networkURL != nil {
+                if let match = dest.networkURL!.firstMatch(of: /@([^\/]+)\//) {
+                    Text(match.output.1)
+                }
+            }
             if let bytesUsed = dest.bytesUsed, let bytesAvailable = dest.bytesAvailable {
                 let used = bytesUsed.formatted(byteFormat)
                 let available = bytesAvailable.formatted(byteFormat)
@@ -146,8 +153,8 @@ struct DestinationCell: View {
             .focusable(false)
             .help(
                 String(
-                    localized: dest.destinationError?.localizedString ??
-                    "dest_label_last_backup_failed_\(dest.result ?? -1)"
+                    localized: dest.destinationError?.localizedString
+                        ?? "dest_label_last_backup_failed_\(dest.result ?? -1)"
                 )
             )
         }
@@ -162,7 +169,7 @@ struct DestinationCell: View {
                 startStopBackup()
             } label: {
                 if utility.status.activeDestinationID == dest.destinationID {
-                    Image(systemSymbol: .stopFill)
+                    Image(systemSymbol: .xmark)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 13)
@@ -234,7 +241,7 @@ struct DestinationCell: View {
     private var progressBackground: some View {
         GeometryReader { geometry in
             if let percent = utility.status.progessPercentage {
-                Color.accentColor
+                Color.white
                     .frame(width: geometry.size.width * percent)
                     .opacity(0.3)
                     .animation(.easeInOut, value: percent)
@@ -246,8 +253,6 @@ struct DestinationCell: View {
         .byteCount(style: .file)
     }
 }
-
-import Sparkle
 
 #Preview("Light") {
     MenuView(

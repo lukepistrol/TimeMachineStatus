@@ -7,7 +7,7 @@
 //  Copyright © 2023 Lukas Pistrol. All rights reserved.
 //
 //  See LICENSE.md for license information.
-//  
+//
 
 import Sparkle
 import SwiftUI
@@ -131,7 +131,8 @@ struct MenuView: View {
                     utility.stopBackup()
                 }
             } label: {
-                Label("button_startbackup", systemSymbol: utility.isIdle ? .playFill : .stopFill)
+                // 1. Changed .stopFill to .xmark
+                Label("button_startbackup", systemSymbol: utility.isIdle ? .playFill : .xmark)
             }
             .focusable(false)
             toolbarStatus
@@ -155,14 +156,19 @@ struct MenuView: View {
     @ViewBuilder
     private var toolbarStatus: some View {
         if let activeUUID = utility.status.activeDestinationID,
-           let destination = utility.preferences?.destinations?.first(where: { $0.destinationID == activeUUID }) {
+            let destination = utility.preferences?.destinations?.first(where: {
+                $0.destinationID == activeUUID
+            })
+        {
             let unknown = NSLocalizedString("dest_label_no_volume_name", comment: "")
             VStack(alignment: .leading, spacing: 0) {
                 Text("label_currentbackup_\(destination.lastKnownVolumeName ?? unknown)")
                 HStack(spacing: 0) {
                     Text(utility.status.statusString)
                     if let percentage = utility.status.progessPercentage {
-                        Text(verbatim: " – " + percentage.formatted(.percent.precision(.fractionLength(0))))
+                        Text(
+                            verbatim: " – "
+                                + percentage.formatted(.percent.precision(.fractionLength(0))))
                     }
                 }
                 .font(.caption)
@@ -180,10 +186,15 @@ struct MenuView: View {
                 }
         } else {
             if let latestDate = utility.preferences?.latestBackupDate,
-               let latestVolume = utility.preferences?.latestBackupVolume {
+                let latestVolume = utility.preferences?.latestBackupVolume
+            {
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("label_lastbackup_\(latestDate.formatted(.relativeDate))_on_\(latestVolume)")
-                    if let interval = utility.preferences?.autoBackupInterval, utility.preferences?.autoBackup == true {
+                    Text(
+                        "label_lastbackup_\(latestDate.formatted(.relativeDate))_on_\(latestVolume)"
+                    )
+                    if let interval = utility.preferences?.autoBackupInterval,
+                        utility.preferences?.autoBackup == true
+                    {
                         let nextDate = latestDate.addingTimeInterval(.init(interval))
                         if nextDate < .now {
                             Text("label_nextbackup_issue")
@@ -300,7 +311,8 @@ struct MenuView: View {
 #Preview("Dark Finding Changes") {
     let preferences = Preferences.mock
     // swiftlint:disable:next force_unwrapping
-    let status = BackupState._State.Mock.findingChanges(preferences.destinations!.first!.destinationID)
+    let status = BackupState._State.Mock.findingChanges(
+        preferences.destinations!.first!.destinationID)
     MenuView(
         utility: TMUtilityMock(
             status: status,
